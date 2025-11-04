@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Currículo — Vinicius Capanema (V06 • Neo Metro)</title>
+<meta name="description" content="Currículo de Vinicius Capanema — versão V06 com novo layout Neo Metro, tipografia ousada, painéis com borda gradiente e microanimações.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+/* ===== V06 Neo Metro — tokens ===== */
+:root{
+  /* Paleta v05 (modo claro) */
+  --bg:#f6f8fc; --fg:#0e1116; --muted:#5f6b7a;
+  --panel:#ffffff; --panel-muted:#f2f5fa; --hair:#e5e7eb;
+  --grad-1:#7aa2ff; --grad-2:#2563eb; --brand:#2563eb;
+  --ring: color-mix(in oklab, var(--grad-2) 40%, var(--grad-1) 20%);
+  --shadow-sm: 0 6px 20px rgba(2,6,23,.08);
+  --shadow-md: 0 10px 26px rgba(2,6,23,.12);
+  --shadow-lg: 0 20px 60px rgba(2,6,23,.18);
+}
+:root.dark{
+  /* Paleta v05 (modo escuro) */
+  --bg:#0b0d12; --fg:#e8eaf0; --muted:#9aa3b2;
+  --panel:#0f131b; --panel-muted:#0c1017; --hair:#1f2937;
+  --grad-1:#7aa2ff; --grad-2:#2563eb; --brand:#2563eb;
+  --ring: color-mix(in oklab, var(--grad-2) 44%, var(--grad-1) 24%);
+  --shadow-sm: 0 6px 20px rgba(255,255,255,.06);
+  --shadow-md: 0 12px 30px rgba(255,255,255,.10);
+  --shadow-lg: 0 26px 70px rgba(255,255,255,.14);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 "IBM Plex Sans", system-ui, Segoe UI, Roboto, Arial}
+a{color:var(--brand);text-decoration:none}
+
+/* Header barra neon */
+.topbar{position:sticky;top:0;z-index:10;background:linear-gradient(90deg,var(--grad-1),var(--grad-2));}
+.topbar-inner{max-width:1200px;margin:auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;color:#fff}
+.brand{display:flex;align-items:center;gap:10px;font:700 18px/1 "Space Grotesk",system-ui;letter-spacing:.2px}
+.brand i{font-size:18px}
+.actions{display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-weight:700}
+.btn:hover{background:rgba(255,255,255,.18)}
+.ghost{background:transparent}
+
+/* Layout com sidebar fixa */
+.wrap{max-width:1200px;margin:20px auto;padding:0 22px;display:grid;grid-template-columns:320px 1fr;gap:24px}
+.sidebar{position:sticky;top:64px;align-self:start;display:flex;flex-direction:column;gap:16px}
+.avatar{width:100%;aspect-ratio:4/3;border-radius:18px;background:linear-gradient(135deg,var(--grad-1),var(--grad-2));display:grid;place-items:center;color:#fff;font:700 26px "Space Grotesk";box-shadow:var(--shadow-md)}
+.panel{position:relative;border-radius:16px;padding:16px;background:
+  linear-gradient(#0000,#0000) padding-box,
+  linear-gradient(135deg,var(--grad-1),var(--grad-2)) border-box; border:1px solid transparent;box-shadow:var(--shadow-sm)}
+.panel h2{margin:0 0 10px;font:700 18px/1.2 "Space Grotesk"}
+.pill{display:inline-flex;align-items:center;padding:6px 12px;border-radius:999px;background:var(--panel-muted);border:1px solid var(--hair);font-size:.85rem;margin:4px 6px 0 0}
+.content{display:flex;flex-direction:column;gap:24px}
+.section{position:relative;border-radius:18px;background:var(--panel);box-shadow:var(--shadow-sm);padding:20px;border:1px solid var(--hair)}
+.section h2{margin:0 0 12px;font:700 24px/1.2 "Space Grotesk"}
+.kv{display:grid;grid-template-columns:1fr;gap:8px}
+.small{color:var(--muted);font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.mini{background:var(--panel-muted);border:1px dashed var(--hair);border-radius:12px;padding:14px}
+.mini h3{margin:0 0 6px;font:700 16px/1 "Space Grotesk"}
+blockquote{margin:0;padding:12px 14px;border-left:3px solid var(--ring);background:color-mix(in oklab, var(--ring) 14%, transparent);border-radius:10px}
+
+/* Utils */
+.list-indent{margin:0 0 0 18px}
+.mt-8{margin-top:8px}
+.gap-10{gap:10px}
+.field{border:1px solid var(--hair);border-radius:10px;padding:12px;background:var(--panel-muted);color:var(--fg);font:inherit}
+.field.text{min-height:110px}
+
+/* Cards de experiência com step bullets */
+.exp{list-style:none;margin:0;padding:0}
+.exp li{position:relative;border:1px solid var(--hair);border-radius:14px;padding:14px 14px 14px 38px;background:var(--panel);box-shadow:var(--shadow-sm)}
+.exp li + li{margin-top:12px}
+.exp li::before{content:"";position:absolute;left:14px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--ring);box-shadow:0 0 0 4px color-mix(in oklab, var(--ring) 20%, transparent)}
+
+/* Projetos link CTA */
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.cta{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--hair);background:var(--panel-muted);font-weight:700}
+.cta i{font-size:18px}
+
+/* Animations */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+
+footer{max-width:1200px;margin:24px auto;padding:10px 22px;color:var(--muted);text-align:center}
+
+@media (max-width:980px){.wrap{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><i class="bi bi-brightness-high"></i><span>Currículo • V06</span></div>
+      <div class="actions">
+        <a class="btn ghost" href="./portfolio.html" target="_blank" rel="noopener"><i class="bi bi-grid-3x3-gap"></i> Portfólio</a>
+        <a class="btn" id="themeToggle"><i class="bi bi-moon-stars"></i> Tema</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <aside class="sidebar">
+      <div class="avatar">Vinicius C.</div>
+      <section class="panel">
+        <h2>Competências‑chave</h2>
+        <div class="kv small">
+          <span class="pill">Python · ETL/ELT</span>
+          <span class="pill">R · Estatística</span>
+          <span class="pill">PostgreSQL/PostGIS</span>
+          <span class="pill">Leaflet · WebGIS</span>
+          <span class="pill">GeoServer</span>
+          <span class="pill">IA aplicada a Geo</span>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Idiomas</h2>
+  <ul class="small list-indent">
+          <li><strong>Inglês</strong> — Avançado</li>
+          <li><strong>Espanhol</strong> — Intermediário</li>
+        </ul>
+      </section>
+      <section class="panel">
+        <h2>Contatos</h2>
+        <div class="row">
+          <a class="cta" href="https://www.linkedin.com/in/viniciuscapanema/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
+          <a class="cta" href="http://lattes.cnpq.br/4908905634731966" target="_blank" rel="noopener"><i class="bi bi-journal-text"></i> Lattes</a>
+        </div>
+      </section>
+    </aside>
+
+    <section class="content">
+      <section class="section reveal">
+        <h2>Vinicius do Prado Capanema</h2>
+        <p class="small">Engenharia Florestal · Sensoriamento Remoto · Geoprocessamento · WebGIS / Dados</p>
+        <p>Engenheiro Florestal, Mestre e Doutor em Sensoriamento Remoto pelo INPE, com 15 anos de carreira desenvolvida na área das geociências. Atua de maneira integrada em pesquisa, desenvolvimento e inovação aplicando técnicas avançadas de geoprocessamento aos dados derivados de sensoriamento remoto. Experiência em estudos voltados ao mapeamento e monitoramento de fatores que impactam a gestão ambiental, territorial e a sustentabilidade.</p>
+        <p>Desenvolve estudos e ações estratégicas aplicadas à gestão de infraestrutura rodoviária, recursos hídricos, desastres naturais e descarbonização. Atua em projetos multidisciplinares que envolvem engenharia, meio ambiente e tecnologia, promovendo a integração de equipes interdisciplinares. Experiência em análise de impacto ambiental, desenvolvimento de modelos computacionais e criação de ferramentas de apoio à tomada de decisão.</p>
+      </section>
+
+      <section class="section reveal">
+        <h2>Formação Acadêmica</h2>
+        <div class="grid">
+          <div class="mini"><h3><i class="bi bi-mortarboard-fill"></i> Doutorado</h3><strong>Sensoriamento Remoto</strong><div class="small">INPE — 2022</div></div>
+          <div class="mini"><h3><i class="bi bi-graph-up"></i> MBA</h3><strong>Gestão de Projetos</strong><div class="small">Unopar — 2020</div></div>
+          <div class="mini"><h3><i class="bi bi-mortarboard-fill"></i> Mestrado</h3><strong>Sensoriamento Remoto</strong><div class="small">INPE — 2017</div></div>
+          <div class="mini"><h3><i class="bi bi-rulers"></i> Especialização</h3><strong>Georreferenciamento</strong><div class="small">F. Vale do Juruena — 2010</div></div>
+          <div class="mini"><h3><i class="bi bi-tree-fill"></i> Graduação</h3><strong>Engenharia Florestal</strong><div class="small">UNEMAT — 2009</div></div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <h2>Experiência Profissional</h2>
+        <ul class="exp small">
+          <li><strong>SEMIL/SP — Engenheiro de Dados</strong> <span>(Julho/2025 – Atual)</span><br>Desenvolve soluções web aplicando geoprocessamento e análise geoestatística de dados para o Plano Logístico Integrado (PLI)...</li>
+          <li><strong>DER/SP — Coordenador Interino de Meio Ambiente</strong> <span>(Set/2024 – Jan/2025)</span><br>Liderança em governança ambiental e sustentabilidade, estudos estratégicos para infraestrutura, descarbonização e risco climático...</li>
+          <li><strong>DER/SP — Eng. Florestal Especialista GIS</strong> <span>(Ago/2023 – Set/2024)</span><br>Gestão da malha rodoviária com imagens de satélite, conformidade socioambiental e automação de processos geoespaciais...</li>
+          <li><strong>Stantec — Consultor Técnico (Remoto - Bélgica)</strong> <span>(Jan/2024 – Mar/2024)</span><br>Coleta, processamento e análise de dados geoespaciais em projeto internacional...</li>
+          <li><strong>VEGA Monitoramento — Analista de Geoprocessamento</strong> <span>(Mar/2022 – Ago/2023)</span> ...</li>
+          <li><strong>GeoBrasilis — Consultor Especialista GIS</strong> <span>(Set/2021 – Mar/2022)</span> ...</li>
+          <li><strong>FUNCATE — Especialista em Geoprocessamento</strong> <span>(Mai/2017 – Mar/2018)</span> ...</li>
+          <li><strong>Mognos Eng. Florestal e Civil — Eng. Florestal</strong> <span>(2010 – 2015)</span> ...</li>
+        </ul>
+      </section>
+
+      <section class="section reveal">
+        <h2>Publicações</h2>
+  <ul class="small list-indent">
+          <li>Characterization of municipalities in the timber production chain in the north of Mato Grosso, Brazil — IUFRO 2019.</li>
+          <li>Padrões da paisagem associados ao extrativismo na Amazônia — IUFRO 2019.</li>
+          <li>Comparação TerraClass Amazônia e MapBiomas — SBSR 2019.</li>
+          <li>Degradação Florestal na Amazônia — SBSR 2017.</li>
+          <li>Cicatrizes de queimadas e mudanças de uso da terra no sudoeste do Pará — SBSR 2017.</li>
+        </ul>
+      </section>
+
+      <section class="section reveal">
+        <h2>VPC‑GEOSER — Soluções Geoespaciais</h2>
+        <p>A <strong>VPC‑GEOSER</strong> viabiliza o negócio e a criação de <strong>soluções avançadas de geoprocessamento, sensoriamento remoto e data science</strong>, conectando banco de dados espaciais, pipelines de dados e aplicações WebGIS/APIs orientadas ao uso real e à tomada de decisão estratégica.</p>
+        <blockquote><strong>Do dado bruto ao insight que decide:</strong> ETL/ELT automatizado, modelagem PostGIS robusta, serviços WMS/WFS otimizados, front Leaflet interativo, APIs FastAPI escaláveis e painéis com rastreabilidade completa.</blockquote>
+  <div class="row mt-8">
+          <a class="cta" href="./portfolio.html" target="_blank" rel="noopener"><i class="bi bi-grid"></i> Ver Portfólio</a>
+          <a class="cta" href="https://www.linkedin.com/in/viniciuscapanema/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <h2>Entre em Contato</h2>
+        <p class="small">Tem um projeto em mente? Envie sua mensagem de forma segura.</p>
+        <form class="kv gap-10" id="contactForm">
+          <textarea id="messageInput" name="message" placeholder="Mensagem..." required class="field text"></textarea>
+          <input type="email" id="emailInput" name="email" placeholder="Seu e‑mail (opcional)" class="field">
+          <div class="row">
+            <button type="submit" class="cta" id="submitBtn"><i class="bi bi-send-fill"></i> Enviar</button>
+          </div>
+          <p class="small" id="contactHint">Seus dados são enviados de forma privada.</p>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer>Currículo eletrônico de Vinicius Capanema<br>Desenvolvido e implementado por VPC‑GEOSER 2025</footer>
+
+<script>
+// Tema: padrão claro
+const root=document.documentElement;
+const saved=localStorage.getItem('v06-theme');
+if(saved==='dark'){root.classList.add('dark')}
+document.getElementById('themeToggle')?.addEventListener('click',()=>{
+  root.classList.toggle('dark');
+  localStorage.setItem('v06-theme', root.classList.contains('dark') ? 'dark':'light');
+});
+
+// Reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Form (placeholder sem backend)
+(function(){
+  const f=document.getElementById('contactForm');
+  const btn=document.getElementById('submitBtn');
+  const msg=document.getElementById('messageInput');
+  const email=document.getElementById('emailInput');
+  f?.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    if(!msg.value.trim()){msg.focus();return}
+    btn.disabled=true;btn.innerHTML='⏳ Enviando...';
+    await new Promise(r=>setTimeout(r,800));
+    btn.disabled=false;btn.innerHTML='<i class="bi bi-send-fill"></i> Enviar';
+    msg.value=''; if(email) email.value='';
+    alert('Mensagem registrada localmente (configure um backend para envio real).');
+  });
+})();
+</script>
+</body>
+</html>

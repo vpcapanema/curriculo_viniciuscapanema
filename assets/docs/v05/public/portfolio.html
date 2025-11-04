@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfólio — Vinicius Capanema | VPC-GEOSER (V05 • Orizon inspired)</title>
+<meta name="description" content="Portfólio de projetos em geoprocessamento, sensoriamento remoto e data science — Vinicius Capanema">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+/* Paleta Original */
+:root[data-palette="original"]{
+  --bg:#0b0c0f; --fg:#e7e7ea; --muted:#9aa0a6;
+  --card:#12141a; --border:#262a33; --brand:#7aa2ff; --chip:#1a2233;
+  --link:#9ec1ff;
+}
+:root[data-palette="original"].light{
+  --bg:#f7f8fa; --fg:#0e1116; --muted:#5f6b7a;
+  --card:#ffffff; --border:#e5e7eb; --brand:#2563eb; --chip:#eef2ff;
+  --link:#264bc5;
+}
+
+/* Paleta Profissional Azul */
+:root[data-palette="professional"]{
+  --bg:#0a0e14; --fg:#e8eaed; --muted:#9ba3ae;
+  --card:#141b24; --border:#1f2937; --brand:#4a9eff; --chip:#1a2332;
+  --link:#6db3ff;
+}
+:root[data-palette="professional"].light{
+  --bg:#f4f6f8; --fg:#0d1117; --muted:#57606a;
+  --card:#ffffff; --border:#d0d7de; --brand:#0969da; --chip:#ddf4ff;
+  --link:#0969da;
+}
+
+/* Paleta Minimalista Cinza */
+:root[data-palette="minimal"]{
+  --bg:#0d0d0d; --fg:#ebebeb; --muted:#a1a1a1;
+  --card:#1a1a1a; --border:#2a2a2a; --brand:#666666; --chip:#151515;
+  --link:#999999;
+}
+:root[data-palette="minimal"].light{
+  --bg:#fafafa; --fg:#171717; --muted:#666666;
+  --card:#ffffff; --border:#e5e5e5; --brand:#404040; --chip:#f5f5f5;
+  --link:#525252;
+}
+
+/* Paleta Verde Florestal */
+:root[data-palette="forest"]{
+  --bg:#0a0f0a; --fg:#e7ebe7; --muted:#95a895;
+  --card:#12181a; --border:#1f2d22; --brand:#4ade80; --chip:#1a2820;
+  --link:#6ee7a7;
+}
+:root[data-palette="forest"].light{
+  --bg:#f4f7f4; --fg:#0f1611; --muted:#587058;
+  --card:#ffffff; --border:#d1e7d1; --brand:#16a34a; --chip:#dcfce7;
+  --link:#15803d;
+}
+
+/* Paleta Roxo Tech */
+:root[data-palette="tech"]{
+  --bg:#0e0a14; --fg:#eae7ed; --muted:#a89bb3;
+  --card:#1a141f; --border:#2a1f37; --brand:#a78bfa; --chip:#1f1a28;
+  --link:#c4b5fd;
+}
+:root[data-palette="tech"].light{
+  --bg:#f7f4fa; --fg:#160d1f; --muted:#6b5a70;
+  --card:#ffffff; --border:#e9d5ff; --brand:#7c3aed; --chip:#f3e8ff;
+  --link:#6d28d9;
+}
+
+/* Paleta Oceano */
+:root[data-palette="ocean"]{
+  --bg:#0a1014; --fg:#e7ebed; --muted:#95a8b3;
+  --card:#0f1922; --border:#1a2d3a; --brand:#22d3ee; --chip:#14232e;
+  --link:#67e8f9;
+}
+:root[data-palette="ocean"].light{
+  --bg:#f0f7f9; --fg:#0d1619; --muted:#527087;
+  --card:#ffffff; --border:#cce7ed; --brand:#0891b2; --chip:#cffafe;
+  --link:#0e7490;
+}
+
+/* Orizon-inspired tokens */
+:root{
+  --brand-1:#7aa2ff; --brand-2:#2563eb; --brand:#2563eb;
+  --bg:#0b0d12; --fg:#e8eaf0; --muted:#9aa3b2;
+  --card:rgba(20,24,34,0.7); --border:rgba(148,163,184,0.18); --chip:rgba(255,255,255,0.06);
+  --link:#9dbaff;
+  /* shadows (dark mode → claras) */
+  --shadow-card: 0 6px 20px rgba(255,255,255,0.06);
+  --shadow-medium: 0 8px 22px rgba(255,255,255,0.08);
+  --shadow-strong: 0 22px 60px rgba(255,255,255,0.12), 0 8px 24px rgba(255,255,255,0.08);
+  --shadow-hover-strong: 0 30px 80px rgba(255,255,255,0.16), 0 12px 26px rgba(255,255,255,0.10);
+}
+:root.light{
+  --bg:#f6f8fc; --fg:#0e1116; --muted:#5f6b7a;
+  --card:rgba(255,255,255,0.65); --border:rgba(2,6,23,0.12); --chip:rgba(2,6,23,0.06);
+  --link:#264bc5;
+  /* shadows (light mode → escuras) */
+  --shadow-card: 0 6px 20px rgba(0,0,0,0.12);
+  --shadow-medium: 0 8px 22px rgba(0,0,0,0.16);
+  --shadow-strong: 0 22px 60px rgba(0,0,0,0.24), 0 8px 24px rgba(0,0,0,0.14);
+  --shadow-hover-strong: 0 30px 80px rgba(0,0,0,0.30), 0 12px 26px rgba(0,0,0,0.18);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font:16px/1.75 'Inter',system-ui,Segoe UI,Roboto,Arial;color:var(--fg);background:var(--bg)}
+a{color:var(--link);text-decoration:none}
+.container{max-width:1100px;margin:auto;padding:24px}
+.header{background:transparent;border-bottom:1px solid var(--border);padding:20px 24px;position:relative}
+.header::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(1000px 500px at 50% 0%, color-mix(in oklab, var(--brand-1) 50%, transparent), transparent),
+    radial-gradient(800px 400px at 50% 0%, color-mix(in oklab, var(--brand-2) 50%, transparent), transparent);
+  opacity:1}
+.header-content{max-width:1100px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.header-actions{display:flex;gap:10px;align-items:center}
+.btn-small{padding:6px 10px;font-size:.85rem}
+.palette-btn{padding:6px 10px;font-size:.85rem;cursor:pointer}
+.name{font-size:clamp(24px,4vw,36px);margin:0}
+.tagline{margin:4px 0 0;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;margin-top:22px;box-shadow:var(--shadow-card);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.card--subtle{background:
+  linear-gradient(135deg, color-mix(in oklab, var(--brand-1) 12%, transparent), transparent),
+  linear-gradient(315deg, color-mix(in oklab, var(--brand-2) 12%, transparent), transparent),
+  var(--card);box-shadow:var(--shadow-medium)}
+.card:first-of-type{
+  background:
+    radial-gradient(1000px 500px at 50% 0%, color-mix(in oklab, var(--brand-1) 50%, transparent), transparent),
+    radial-gradient(800px 400px at 50% 0%, color-mix(in oklab, var(--brand-2) 50%, transparent), transparent),
+    var(--card);
+}
+.card h2{margin:0 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:22px;margin-top:22px}
+.grid-plate{position:static}
+.grid-plate::before{display:none}
+.grid-plate > *{position:static;z-index:auto}
+.project-card{background:
+  linear-gradient(135deg, color-mix(in oklab, var(--brand-1) 24%, transparent), transparent),
+  linear-gradient(315deg, color-mix(in oklab, var(--brand-2) 24%, transparent), transparent),
+  var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;display:flex;flex-direction:column;
+  box-shadow:var(--shadow-strong);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:transform .2s ease, box-shadow .2s ease;isolation:isolate}
+.project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover-strong)}
+.project-card:nth-child(4n+1){background:
+  linear-gradient(135deg, color-mix(in oklab, var(--brand-1) 24%, transparent), transparent),
+  linear-gradient(315deg, color-mix(in oklab, var(--brand-2) 24%, transparent), transparent),
+  var(--card)}
+.project-card:nth-child(4n+2){background:
+  linear-gradient(225deg, color-mix(in oklab, var(--brand-1) 24%, transparent), transparent),
+  linear-gradient(45deg, color-mix(in oklab, var(--brand-2) 24%, transparent), transparent),
+  var(--card)}
+.project-card:nth-child(4n+3){background:
+  linear-gradient(315deg, color-mix(in oklab, var(--brand-1) 24%, transparent), transparent),
+  linear-gradient(135deg, color-mix(in oklab, var(--brand-2) 24%, transparent), transparent),
+  var(--card)}
+.project-card:nth-child(4n+4){background:
+  linear-gradient(45deg, color-mix(in oklab, var(--brand-1) 24%, transparent), transparent),
+  linear-gradient(225deg, color-mix(in oklab, var(--brand-2) 24%, transparent), transparent),
+  var(--card)}
+.project-card[data-featured="true"]{position:relative}
+.project-card[data-featured="true"]::after{content:"\2713";position:absolute;top:12px;right:12px;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,var(--brand-1),var(--brand-2));color:#fff;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.project-card h3{margin:0 0 8px}
+.project-card p{margin:10px 0;color:var(--muted);font-size:1rem;text-align:justify;line-height:1.7}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.pill{padding:6px 12px;border:1px solid var(--border);border-radius:999px;background:var(--chip);font-size:.85rem;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.btn,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:12px;border:1px solid var(--border);font-weight:700;text-decoration:none;transition:transform .2s ease, box-shadow .2s ease, background .2s ease}
+.btn{background:linear-gradient(135deg, var(--brand-1), var(--brand-2));color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(37,99,235,0.25)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(37,99,235,0.35)}
+.btn-ghost{background:transparent;color:var(--fg)}
+.btn-ghost:hover{background:color-mix(in oklab, var(--brand-2) 10%, transparent)}
+.btn-ghost{background:transparent;color:var(--fg)}
+.palette-selector{position:relative;display:inline-block}
+.palette-menu{display:none;position:absolute;top:100%;right:0;margin-top:4px;background:var(--card);border:1px solid var(--border);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.3);min-width:200px;z-index:1000}
+.palette-menu.show{display:block}
+.palette-option{padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--border);font-size:.85rem;display:flex;align-items:center;gap:8px}
+.palette-option:last-child{border-bottom:none}
+.palette-option:hover{background:var(--chip)}
+.palette-option.active{background:var(--chip);font-weight:700}
+.palette-indicator{width:16px;height:16px;border-radius:4px;border:1px solid var(--border)}
+.palette-indicator[data-color="original"]{background:#7aa2ff}
+.palette-indicator[data-color="professional"]{background:#4a9eff}
+.palette-indicator[data-color="minimal"]{background:#666666}
+.palette-indicator[data-color="forest"]{background:#4ade80}
+.palette-indicator[data-color="tech"]{background:#a78bfa}
+.palette-indicator[data-color="ocean"]{background:#22d3ee}
+.footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);text-align:center}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+.row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.mt{margin-top:auto;padding-top:12px}
+.heading-gap{margin-top:32px}
+i{margin-right:6px}
+</style>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="header-content">
+        <div>
+          <h1 class="name">Portfólio — VPC-GEOSER</h1>
+          <p class="tagline">Projetos e demonstrações</p>
+        </div>
+        <div class="header-actions">
+          <a class="btn-ghost btn-small" id="themeToggle"><i class="bi bi-sun"></i>Tema</a>
+          <div class="palette-selector">
+            <a class="btn-ghost btn-small palette-btn" id="paletteToggle"><i class="bi bi-palette2"></i>Paleta</a>
+            <div id="paletteMenu" class="palette-menu">
+              <div class="palette-option" data-palette="original">
+                <span class="palette-indicator" data-color="original"></span>
+                <span>Original</span>
+              </div>
+              <div class="palette-option" data-palette="professional">
+                <span class="palette-indicator" data-color="professional"></span>
+                <span>Profissional</span>
+              </div>
+              <div class="palette-option" data-palette="minimal">
+                <span class="palette-indicator" data-color="minimal"></span>
+                <span>Minimalista</span>
+              </div>
+              <div class="palette-option" data-palette="forest">
+                <span class="palette-indicator" data-color="forest"></span>
+                <span>Verde Florestal</span>
+              </div>
+              <div class="palette-option" data-palette="tech">
+                <span class="palette-indicator" data-color="tech"></span>
+                <span>Roxo Tech</span>
+              </div>
+              <div class="palette-option" data-palette="ocean">
+                <span class="palette-indicator" data-color="ocean"></span>
+                <span>Oceano</span>
+              </div>
+            </div>
+          </div>
+          <a class="btn" href="./index.html">Ver Currículo</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="card card--subtle">
+      <h2>Sobre o Portfólio</h2>
+      <p>Este portfólio apresenta <strong>7 aplicações reais desenvolvidas</strong> com foco em análise multicritério, geoprocessamento, análise topográfica, logística e suporte à decisão estratégica para gestão de infraestrutura rodoviária e planejamento territorial.</p>
+      <p>Os projetos integram metodologias robustas (AHP/Saaty), tecnologias de WebGIS, Google Earth Engine, extração e processamento de dados geoespaciais (OpenStreetMap, DEM, Shapefiles), sistemas de coleta de dados logísticos e avaliação de indicadores para o <strong>Sistema SIGMA-PLI</strong> (Sistema Integrado de Gestão, Monitoramento e Apoio técnico ao PLI/SP-2050) e <strong>DER/SP</strong> (Departamento de Estradas de Rodagem de São Paulo).</p>
+    </section>
+
+    <h2 class="heading-gap">Projetos em Destaque</h2>
+  <div class="grid">
+  <div class="project-card" data-featured="true" title="Destaque">
+        <h3><i class="bi bi-bullseye"></i>SIGMA - Calculadora AHP</h3>
+        <p>Sistema de análise multicritério usando o método AHP (Analytic Hierarchy Process) de Saaty. Permite comparações pareadas de até 20 critérios com cálculo automático de pesos e índices de consistência. Gera visualizações gráficas interativas e exporta resultados em PDF, CSV e XLSX.</p>
+        <div class="pills">
+          <span class="pill">AHP/Saaty</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Análise Multicritério</span>
+          <span class="pill">Visualização</span>
+        </div>
+        <div class="row mt">
+          <a class="btn" href="https://vpcapanema.github.io/FAD-AHP_tool/sigma-ahp.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i>Acessar Aplicação</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3><i class="bi bi-sign-turn-right"></i>Estadualização de Rodovias DER/SP</h3>
+        <p>Ferramenta metodológica de apoio à tomada de decisão para estadualização de elementos rodoviários do DER/SP. Analisa 1.247 rodovias usando AHP com critérios ambientais, socioeconômicos e de integração territorial. Gera indicadores de favorabilidade espacial (IFM), socioeconômica (IFS) e qualidade de infraestrutura (IQI).</p>
+        <div class="pills">
+          <span class="pill">AHP</span>
+          <span class="pill">Geoprocessamento</span>
+          <span class="pill">Infraestrutura</span>
+          <span class="pill">DER/SP</span>
+        </div>
+        <div class="row mt">
+          <a class="btn" href="https://vpcapanema.github.io/estadualizacao-der/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i>Acessar Aplicação</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3><i class="bi bi-bar-chart"></i>Calculadora de Aderência de Indicadores</h3>
+        <p>Sistema PLI SIGMA para avaliação metodológica de indicadores através de sete critérios analíticos: proximidade conceitual, mecanismo causal, validade empírica, especificidade, sensibilidade, mensurabilidade e custo-benefício. Classifica indicadores em quatro níveis de aderência e permite upload de CSV para análise em lote.</p>
+        <div class="pills">
+          <span class="pill">Análise Multicritério</span>
+          <span class="pill">Indicadores</span>
+          <span class="pill">CSV Upload</span>
+          <span class="pill">JavaScript</span>
+        </div>
+        <div class="row mt">
+          <a class="btn" href="https://vpcapanema.github.io/calculadora_aderencia_indicadores/home.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i>Acessar Aplicação</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3><i class="bi bi-map"></i>FAD - SmartGeo (OSM Extractor)</h3>
+        <p>Ferramenta de geoprocessamento inteligente para extração automatizada de dados vetoriais do OpenStreetMap via API. Permite extrair estradas, rios e limites municipais usando máscaras poligonais. Gera buffers segmentados com largura configurável e exporta resultados em Shapefiles ESRI (.shp) compactados prontos para uso em SIG.</p>
+        <div class="pills">
+          <span class="pill">OpenStreetMap API</span>
+          <span class="pill">Shapefile</span>
+          <span class="pill">Buffer Analysis</span>
+          <span class="pill">Python</span>
+        </div>
+        <div class="row mt">
+          <a class="btn" href="https://vpcapanema.github.io/FAD-SmartGeo/docs/index.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i>Acessar Aplicação</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3><i class="bi bi-globe-americas"></i>WebGIS - Estadualização</h3>
+        <p>Sistema WebGIS interativo desenvolvido com Leaflet para visualização e análise espacial de elementos rodoviários candidatos à estadualização. Integra múltiplas camadas temáticas (bases administrativas, restrições ambientais, infraestrutura e projetos). Interface com controle de camadas, ferramentas de medição e três bases cartográficas (OpenStreetMap, ESRI Rua e Satélite).</p>
+        <div class="pills">
+          <span class="pill">Leaflet</span>
+          <span class="pill">WebGIS</span>
+          <span class="pill">Análise Espacial</span>
+          <span class="pill">JavaScript</span>
+        </div>
+        <div class="row mt">
+          <a class="btn" href="https://vinicapanema.github.io/webgis-estadualizacao/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i>Acessar Aplicação</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3><i class="bi bi-clipboard-data"></i>Formulário de Entrevista com Embarcadores</h3>
+        <p>Sistema web estruturado para coleta e caracterização de dados logísticos do transporte de mercadorias no Estado de São Paulo. Captura informações sobre produtos, origens, destinos, modalidades, custos e fatores decisórios (custo, tempo, confiabilidade, segurança, capacidade). Inclui análise de sensibilidade modal, validação de dados e exportação JSON para processamento posterior.</p>
+        <div class="pills">
+          <span class="pill">Logística</span>
+          <span class="pill">Coleta de Dados</span>
+          <span class="pill">Análise Modal</span>
+          <span class="pill">JavaScript</span>
+        </div>
+        <div class="row mt">
+          <a class="btn" href="https://vpcapanema.github.io/formulario_entrevista_embarcadores/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i>Acessar Aplicação</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3><i class="bi bi-triangle"></i>FAD-Slope (Google Earth Engine)</h3>
+        <p>Aplicação geoespacial baseada em Google Earth Engine para análise e visualização de declividade do terreno em larga escala. Utiliza modelos digitais de elevação (DEM) para cálculo automático de slope, permitindo identificação de áreas com diferentes gradientes topográficos. Ferramenta essencial para estudos ambientais, planejamento territorial, análise de riscos e viabilidade de infraestrutura.</p>
+        <div class="pills">
+          <span class="pill">Google Earth Engine</span>
+          <span class="pill">DEM</span>
+          <span class="pill">Análise Topográfica</span>
+          <span class="pill">Cloud Computing</span>
+        </div>
+        <div class="row mt">
+          <a class="btn" href="https://ee-viniciuspradocapanema.projects.earthengine.app/view/fad-slope" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i>Acessar Aplicação</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="card card--subtle heading-gap">
+      <h2>Tecnologias & Competências</h2>
+      <div class="pills">
+        <span class="pill">Análise Multicritério (AHP)</span>
+        <span class="pill">Geoprocessamento</span>
+        <span class="pill">OpenStreetMap API</span>
+        <span class="pill">Leaflet</span>
+        <span class="pill">WebGIS</span>
+        <span class="pill">Python</span>
+        <span class="pill">JavaScript</span>
+        <span class="pill">Shapefile/GDAL</span>
+        <span class="pill">Buffer Analysis</span>
+        <span class="pill">Análise Espacial</span>
+        <span class="pill">Google Earth Engine</span>
+        <span class="pill">QGIS</span>
+        <span class="pill">ArcGIS</span>
+        <span class="pill">PostgreSQL/PostGIS</span>
+        <span class="pill">Sensoriamento Remoto</span>
+        <span class="pill">Infraestrutura Rodoviária</span>
+        <span class="pill">Indicadores de Gestão</span>
+        <span class="pill">Análise Topográfica</span>
+        <span class="pill">Logística & Transporte</span>
+        <span class="pill">Cloud Computing</span>
+      </div>
+      <div class="row mt">
+        <a class="btn" href="./index.html">Ver currículo completo</a>
+        <a class="btn-ghost" href="https://www.linkedin.com/in/viniciuscapanema/" target="_blank" rel="noopener noreferrer">Conectar no LinkedIn</a>
+        <a class="btn-ghost" href="http://lattes.cnpq.br/4908905634731966" target="_blank" rel="noopener noreferrer">Lattes CNPq</a>
+      </div>
+    </section>
+
+    <footer class="footer">Currículo eletrônico de Vinicius Capanema<br>Desenvolvido e implementado por VPC-GEOSER 2025</footer>
+  </main>
+
+<script>
+// Theme toggle with persistence (default: light mode)
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+// Se não houver tema salvo, define como claro por padrão
+if(saved === 'dark') {
+  // Mantém escuro se usuário escolheu
+} else {
+  root.classList.add('light');
+}
+document.getElementById('themeToggle')?.addEventListener('click', ()=>{
+  root.classList.toggle('light');
+  localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+});
+
+// Palette selector
+const savedPalette = localStorage.getItem('palette') || 'original';
+root.setAttribute('data-palette', savedPalette);
+
+const paletteToggle = document.getElementById('paletteToggle');
+const paletteMenu = document.getElementById('paletteMenu');
+const paletteOptions = document.querySelectorAll('.palette-option');
+
+// Toggle menu visibility
+paletteToggle?.addEventListener('click', (e) => {
+  e.stopPropagation();
+  paletteMenu.classList.toggle('show');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!paletteMenu.contains(e.target) && e.target !== paletteToggle) {
+    paletteMenu.classList.remove('show');
+  }
+});
+
+// Set active palette indicator
+function updateActivePalette() {
+  const current = root.getAttribute('data-palette');
+  paletteOptions.forEach(opt => {
+    opt.classList.toggle('active', opt.dataset.palette === current);
+  });
+}
+
+// Handle palette selection
+paletteOptions.forEach(option => {
+  option.addEventListener('click', () => {
+    const palette = option.dataset.palette;
+    root.setAttribute('data-palette', palette);
+    localStorage.setItem('palette', palette);
+    updateActivePalette();
+    paletteMenu.classList.remove('show');
+  });
+});
+
+updateActivePalette();
+
+// Reveal on scroll for project cards and sections
+const revealTargets = document.querySelectorAll('.project-card, .card');
+revealTargets.forEach(el => el.classList.add('reveal'));
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+},{threshold:0.12});
+revealTargets.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

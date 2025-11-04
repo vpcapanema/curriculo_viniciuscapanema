@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfólio — VPC‑GEOSER (V06 • Neo Metro)</title>
+<meta name="description" content="Portfólio de projetos — versão V06 com novo layout Neo Metro, grid responsivo, bordas gradientes e microanimações.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+/* ===== V06 Neo Metro — tokens ===== */
+:root{
+  /* Paleta v05 (modo claro) */
+  --bg:#f6f8fc; --fg:#0e1116; --muted:#5f6b7a;
+  --panel:#ffffff; --panel-muted:#f2f5fa; --hair:#e5e7eb;
+  --grad-1:#7aa2ff; --grad-2:#2563eb; --brand:#2563eb;
+  --ring: color-mix(in oklab, var(--grad-2) 40%, var(--grad-1) 20%);
+  --shadow-sm: 0 6px 20px rgba(2,6,23,.08);
+  --shadow-md: 0 10px 26px rgba(2,6,23,.12);
+  --shadow-lg: 0 20px 60px rgba(2,6,23,.18);
+}
+:root.dark{
+  /* Paleta v05 (modo escuro) */
+  --bg:#0b0d12; --fg:#e8eaf0; --muted:#9aa3b2;
+  --panel:#0f131b; --panel-muted:#0c1017; --hair:#1f2937;
+  --grad-1:#7aa2ff; --grad-2:#2563eb; --brand:#2563eb;
+  --ring: color-mix(in oklab, var(--grad-2) 44%, var(--grad-1) 24%);
+  --shadow-sm: 0 6px 20px rgba(255,255,255,.06);
+  --shadow-md: 0 12px 30px rgba(255,255,255,.10);
+  --shadow-lg: 0 26px 70px rgba(255,255,255,.14);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 "IBM Plex Sans", system-ui, Segoe UI, Roboto, Arial}
+a{color:var(--brand);text-decoration:none}
+
+.topbar{position:sticky;top:0;z-index:10;background:linear-gradient(90deg,var(--grad-1),var(--grad-2));}
+.topbar-inner{max-width:1200px;margin:auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;color:#fff}
+.brand{display:flex;align-items:center;gap:10px;font:700 18px/1 "Space Grotesk",system-ui;letter-spacing:.2px}
+.actions{display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-weight:700}
+.btn:hover{background:rgba(255,255,255,.18)}
+.ghost{background:transparent}
+
+.container{max-width:1200px;margin:24px auto;padding:0 22px}
+.hero{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:10px}
+.title{margin:0;font:700 clamp(24px,4vw,36px)/1.15 "Space Grotesk"}
+.muted{color:var(--muted)}
+
+.panel{position:relative;border-radius:16px;padding:18px;background:
+  linear-gradient(#0000,#0000) padding-box,
+  linear-gradient(135deg,var(--grad-1),var(--grad-2)) border-box; border:1px solid transparent;box-shadow:var(--shadow-sm)}
+.panel h2{margin:0 0 8px;font:700 22px/1.2 "Space Grotesk"}
+.p{margin:10px 0}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:14px}
+.card{position:relative;border-radius:16px;background:var(--panel);border:1px solid var(--hair);box-shadow:var(--shadow-sm);padding:16px;display:flex;flex-direction:column;min-height:180px;transition:transform .2s ease, box-shadow .2s ease}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.card.gradient{background:
+  linear-gradient(#0000,#0000) padding-box,
+  linear-gradient(135deg, color-mix(in oklab, var(--grad-1) 28%, transparent), color-mix(in oklab, var(--grad-2) 28%, transparent)) border-box; border:1px solid transparent}
+.card h3{margin:0 0 6px;font:700 18px/1.2 "Space Grotesk"}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.chip{padding:6px 12px;border-radius:999px;background:var(--panel-muted);border:1px solid var(--hair);font-size:.85rem}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.btn-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--hair);background:var(--panel-muted);font-weight:700}
+.badge{position:absolute;top:10px;right:10px;padding:6px 10px;border-radius:999px;background:linear-gradient(135deg,var(--grad-1),var(--grad-2));color:#fff;font:700 12px/1 "Space Grotesk"}
+
+.footer{margin:26px 0 10px;color:var(--muted);text-align:center}
+
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+.h2-compact{font-size:24px;margin:18px 0 8px}
+.mt-18{margin-top:18px}
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><i class="bi bi-brightness-high"></i><span>Portfólio • V06</span></div>
+      <div class="actions">
+        <a class="btn ghost" href="./index.html"><i class="bi bi-person-badge"></i> Currículo</a>
+        <a class="btn" id="themeToggle"><i class="bi bi-moon-stars"></i> Tema</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <div>
+        <h1 class="title">Portfólio — VPC‑GEOSER</h1>
+        <p class="muted">Projetos e demonstrações</p>
+      </div>
+    </div>
+
+    <section class="panel reveal">
+      <h2>Sobre o Portfólio</h2>
+      <p class="p">Este portfólio apresenta <strong>7 aplicações reais desenvolvidas</strong> com foco em análise multicritério, geoprocessamento, análise topográfica, logística e suporte à decisão estratégica para gestão de infraestrutura rodoviária e planejamento territorial.</p>
+      <p class="p">Os projetos integram metodologias robustas (AHP/Saaty), tecnologias de WebGIS, Google Earth Engine, extração e processamento de dados geoespaciais (OpenStreetMap, DEM, Shapefiles), sistemas de coleta de dados logísticos e avaliação de indicadores para o <strong>Sistema SIGMA-PLI</strong> (Sistema Integrado de Gestão, Monitoramento e Apoio técnico ao PLI/SP-2050) e <strong>DER/SP</strong> (Departamento de Estradas de Rodagem de São Paulo).</p>
+    </section>
+
+  <h2 class="title h2-compact">Projetos em Destaque</h2>
+    <section class="grid">
+      <article class="card gradient reveal">
+        <span class="badge">Destaque</span>
+        <h3><i class="bi bi-bullseye"></i> SIGMA - Calculadora AHP</h3>
+        <p class="muted">Sistema de análise multicritério usando o método AHP (Analytic Hierarchy Process) de Saaty. Permite comparações pareadas de até 20 critérios com cálculo automático de pesos e índices de consistência. Gera visualizações gráficas interativas e exporta resultados em PDF, CSV e XLSX.</p>
+        <div class="chips">
+          <span class="chip">AHP/Saaty</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Análise Multicritério</span>
+          <span class="chip">Visualização</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn-cta" href="https://vpcapanema.github.io/FAD-AHP_tool/sigma-ahp.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <h3><i class="bi bi-sign-turn-right"></i> Estadualização de Rodovias DER/SP</h3>
+        <p class="muted">Ferramenta metodológica de apoio à tomada de decisão para estadualização de elementos rodoviários do DER/SP. Analisa 1.247 rodovias usando AHP com critérios ambientais, socioeconômicos e de integração territorial. Gera indicadores de favorabilidade espacial (IFM), socioeconômica (IFS) e qualidade de infraestrutura (IQI).</p>
+        <div class="chips">
+          <span class="chip">AHP</span>
+          <span class="chip">Geoprocessamento</span>
+          <span class="chip">Infraestrutura</span>
+          <span class="chip">DER/SP</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn-cta" href="https://vpcapanema.github.io/estadualizacao-der/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <h3><i class="bi bi-bar-chart"></i> Calculadora de Aderência de Indicadores</h3>
+        <p class="muted">Sistema PLI SIGMA para avaliação metodológica de indicadores através de sete critérios analíticos: proximidade conceitual, mecanismo causal, validade empírica, especificidade, sensibilidade, mensurabilidade e custo-benefício. Classifica indicadores em quatro níveis de aderência e permite upload de CSV para análise em lote.</p>
+        <div class="chips">
+          <span class="chip">Análise Multicritério</span>
+          <span class="chip">Indicadores</span>
+          <span class="chip">CSV Upload</span>
+          <span class="chip">JavaScript</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn-cta" href="https://vpcapanema.github.io/calculadora_aderencia_indicadores/home.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <h3><i class="bi bi-map"></i> FAD - SmartGeo (OSM Extractor)</h3>
+        <p class="muted">Ferramenta de geoprocessamento inteligente para extração automatizada de dados vetoriais do OpenStreetMap via API. Permite extrair estradas, rios e limites municipais usando máscaras poligonais. Gera buffers segmentados com largura configurável e exporta resultados em Shapefiles ESRI (.shp) compactados prontos para uso em SIG.</p>
+        <div class="chips">
+          <span class="chip">OpenStreetMap API</span>
+          <span class="chip">Shapefile</span>
+          <span class="chip">Buffer Analysis</span>
+          <span class="chip">Python</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn-cta" href="https://vpcapanema.github.io/FAD-SmartGeo/docs/index.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <h3><i class="bi bi-globe-americas"></i> WebGIS - Estadualização</h3>
+        <p class="muted">Sistema WebGIS interativo desenvolvido com Leaflet para visualização e análise espacial de elementos rodoviários candidatos à estadualização. Integra múltiplas camadas temáticas (bases administrativas, restrições ambientais, infraestrutura e projetos). Interface com controle de camadas, ferramentas de medição e três bases cartográficas (OpenStreetMap, ESRI Rua e Satélite).</p>
+        <div class="chips">
+          <span class="chip">Leaflet</span>
+          <span class="chip">WebGIS</span>
+          <span class="chip">Análise Espacial</span>
+          <span class="chip">JavaScript</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn-cta" href="https://vinicapanema.github.io/webgis-estadualizacao/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <h3><i class="bi bi-clipboard-data"></i> Formulário de Entrevista com Embarcadores</h3>
+        <p class="muted">Sistema web estruturado para coleta e caracterização de dados logísticos do transporte de mercadorias no Estado de São Paulo. Captura informações sobre produtos, origens, destinos, modalidades, custos e fatores decisórios (custo, tempo, confiabilidade, segurança, capacidade). Inclui análise de sensibilidade modal, validação de dados e exportação JSON para processamento posterior.</p>
+        <div class="chips">
+          <span class="chip">Logística</span>
+          <span class="chip">Coleta de Dados</span>
+          <span class="chip">Análise Modal</span>
+          <span class="chip">JavaScript</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn-cta" href="https://vpcapanema.github.io/formulario_entrevista_embarcadores/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <h3><i class="bi bi-triangle"></i> FAD-Slope (Google Earth Engine)</h3>
+        <p class="muted">Aplicação geoespacial baseada em Google Earth Engine para análise e visualização de declividade do terreno em larga escala. Utiliza modelos digitais de elevação (DEM) para cálculo automático de slope, permitindo identificação de áreas com diferentes gradientes topográficos. Ferramenta essencial para estudos ambientais, planejamento territorial, análise de riscos e viabilidade de infraestrutura.</p>
+        <div class="chips">
+          <span class="chip">Google Earth Engine</span>
+          <span class="chip">DEM</span>
+          <span class="chip">Análise Topográfica</span>
+          <span class="chip">Cloud Computing</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn-cta" href="https://ee-viniciuspradocapanema.projects.earthengine.app/view/fad-slope" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar</a>
+        </div>
+      </article>
+    </section>
+
+  <section class="panel reveal mt-18">
+      <h2>Tecnologias & Competências</h2>
+      <div class="chips">
+        <span class="chip">Análise Multicritério (AHP)</span>
+        <span class="chip">Geoprocessamento</span>
+        <span class="chip">OpenStreetMap API</span>
+        <span class="chip">Leaflet</span>
+        <span class="chip">WebGIS</span>
+        <span class="chip">Python</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">Shapefile/GDAL</span>
+        <span class="chip">Buffer Analysis</span>
+        <span class="chip">Análise Espacial</span>
+        <span class="chip">Google Earth Engine</span>
+        <span class="chip">QGIS</span>
+        <span class="chip">ArcGIS</span>
+        <span class="chip">PostgreSQL/PostGIS</span>
+        <span class="chip">Sensoriamento Remoto</span>
+        <span class="chip">Infraestrutura Rodoviária</span>
+        <span class="chip">Indicadores de Gestão</span>
+        <span class="chip">Análise Topográfica</span>
+        <span class="chip">Logística & Transporte</span>
+        <span class="chip">Cloud Computing</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn-cta" href="./index.html"><i class="bi bi-person-badge"></i> Ver currículo completo</a>
+        <a class="btn-cta" href="https://www.linkedin.com/in/viniciuscapanema/" target="_blank" rel="noopener noreferrer">Conectar no LinkedIn</a>
+        <a class="btn-cta" href="http://lattes.cnpq.br/4908905634731966" target="_blank" rel="noopener noreferrer">Lattes CNPq</a>
+      </div>
+    </section>
+
+    <div class="footer">Currículo eletrônico de Vinicius Capanema<br>Desenvolvido e implementado por VPC‑GEOSER 2025</div>
+  </main>
+
+<script>
+// Tema persistente
+const root=document.documentElement;
+const saved=localStorage.getItem('v06-theme');
+if(saved==='dark'){root.classList.add('dark')}
+document.getElementById('themeToggle')?.addEventListener('click',()=>{
+  root.classList.toggle('dark');
+  localStorage.setItem('v06-theme', root.classList.contains('dark') ? 'dark':'light');
+});
+
+// Reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
