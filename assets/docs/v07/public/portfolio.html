@@ -206,7 +206,7 @@ a:hover{color:var(--accent-dark)}
   
   /* Projetos */
   .project{padding:20px 16px;height:auto;min-height:400px}
-  .project-icon{width:50px;height:50px;font-size:28px;margin-bottom:12px}
+  .project-icon{width:50px;height:50px;font-size:28px;margin-bottom:12px;text-align:center;margin-left:auto;margin-right:auto}
   .project h3{font-size:1.1rem;margin-bottom:10px}
   .project .desc{font-size:0.9rem;line-height:1.5;text-align:left}
   .project .tags{gap:6px;margin-bottom:12px}
@@ -229,7 +229,7 @@ a:hover{color:var(--accent-dark)}
   .logo{font-size:20px}
   .panel,.section{padding:16px 12px}
   .project{padding:16px 12px;min-height:380px}
-  .project-icon{width:44px;height:44px;font-size:24px}
+  .project-icon{width:44px;height:44px;font-size:24px;text-align:center;margin-left:auto;margin-right:auto}
   .project h3{font-size:1rem}
   .filter-pill{padding:6px 12px;font-size:12px}
   .tag{font-size:0.7rem;padding:3px 6px}
@@ -451,10 +451,17 @@ a:hover{color:var(--accent-dark)}
 // Theme
 const root=document.documentElement;
 const saved=localStorage.getItem('v07-theme');
-if(saved==='dark'){root.classList.add('dark')}
+if(saved==='light'){root.classList.add('light')}
 document.getElementById('themeToggle')?.addEventListener('click',()=>{
-  root.classList.toggle('dark');
-  localStorage.setItem('v07-theme', root.classList.contains('dark') ? 'dark':'light');
+  root.classList.toggle('light');
+  const icon = document.querySelector('#themeToggle i');
+  if(root.classList.contains('light')){
+    localStorage.setItem('v07-theme', 'light');
+    icon.className = 'bi bi-moon';
+  }else{
+    localStorage.setItem('v07-theme', 'dark');
+    icon.className = 'bi bi-sun';
+  }
 });
 
 // Reveal

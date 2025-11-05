@@ -886,20 +886,21 @@ window.addEventListener('load',()=>{
 
 // Theme
 const root=document.documentElement;
-const saved=localStorage.getItem('v07-theme') || 'dark';
+const saved=localStorage.getItem('v07-theme');
 if(saved==='light'){
-  root.classList.remove('dark');
   root.classList.add('light');
+}else if(!saved){
+  root.classList.add('dark');
 }
 document.getElementById('themeToggle')?.addEventListener('click',()=>{
-  if(root.classList.contains('dark')){
-    root.classList.remove('dark');
-    root.classList.add('light');
-    localStorage.setItem('v07-theme','light');
-  }else{
+  if(root.classList.contains('light')){
     root.classList.remove('light');
     root.classList.add('dark');
     localStorage.setItem('v07-theme','dark');
+  }else{
+    root.classList.remove('dark');
+    root.classList.add('light');
+    localStorage.setItem('v07-theme','light');
   }
 });
 
