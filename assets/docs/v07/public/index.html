@@ -212,9 +212,118 @@ a:hover{color:var(--accent-dark)}
 .field.textarea{min-height:140px;resize:vertical}
 .hint{font-size:.9rem;color:var(--muted);text-align:center}
 
+/* ===== RESPONSIVIDADE MOBILE-FIRST ===== */
+
+/* Tablet: 640px - 900px */
 @media (max-width:900px){
   .hero,.split{grid-template-columns:1fr}
   .split.reverse{direction:ltr}
+  .hero{gap:40px;margin:40px auto 30px}
+  .section{margin:60px auto}
+  .grid{grid-template-columns:1fr;gap:20px}
+}
+
+/* Mobile: até 640px */
+@media (max-width:640px){
+  /* Layout geral */
+  body{font-size:15px;line-height:1.6}
+  
+  /* Navegação mobile */
+  .nav-inner{padding:12px 16px;flex-wrap:wrap;gap:8px}
+  .logo{font-size:22px}
+  .logo::after{font-size:10px}
+  .nav-actions{gap:8px;width:100%;justify-content:center}
+  .btn{padding:8px 12px;font-size:0.9rem}
+  
+  /* Hero mobile */
+  .hero{
+    margin:24px auto 20px;
+    padding:0 16px;
+    gap:24px;
+    grid-template-columns:1fr;
+  }
+  .hero-text h1{font-size:clamp(28px,8vw,36px);margin-bottom:12px}
+  .hero-text .lead{font-size:1rem;margin-bottom:20px}
+  .hero-actions{flex-direction:column;width:100%;gap:10px}
+  .hero-actions .btn{width:100%;justify-content:center;padding:12px}
+  .hero-avatar{
+    order:-1;
+    max-width:200px;
+    margin:0 auto;
+  }
+  
+  /* Sections mobile */
+  .section{
+    margin:40px auto;
+    padding:0 16px;
+  }
+  .split{gap:30px}
+  .content h2{font-size:clamp(24px,6vw,32px);margin-bottom:12px}
+  .content p{margin-bottom:12px;font-size:0.95rem}
+  
+  /* Cards mobile */
+  .grid{gap:16px;margin-top:24px}
+  .card{
+    padding:16px;
+    margin-bottom:16px;
+  }
+  .card h2{font-size:1.1rem;margin-bottom:12px}
+  .card h3{font-size:0.95rem;margin-bottom:8px}
+  .card p{font-size:0.9rem;margin-bottom:12px}
+  .card .meta{font-size:0.8rem;margin-bottom:8px}
+  
+  /* Timeline mobile */
+  .timeline-item{padding-bottom:16px;margin-bottom:10px}
+  .timeline-item h3{font-size:0.9rem;gap:6px}
+  .timeline-content{font-size:0.85rem}
+  .timeline-content ul{padding-left:16px}
+  .timeline-content li{margin-bottom:6px;font-size:0.85rem}
+  
+  /* Competências mobile */
+  .competency-header{font-size:0.9rem;padding:6px 0}
+  .competency-content p{font-size:0.85rem;margin-bottom:10px}
+  
+  /* Utils mobile */
+  .mb-24{margin-bottom:16px}
+  .mb-16{margin-bottom:12px}
+  .mt-24{margin-top:16px}
+  .mt-20{margin-top:16px}
+  
+  /* Form mobile */
+  .form-contact{gap:12px}
+  .field{padding:12px;font-size:0.95rem}
+  .field.textarea{min-height:120px}
+  
+  /* Footer mobile */
+  .footer{margin:40px auto 16px;padding:16px;font-size:0.85rem}
+  .footer-action{margin-bottom:12px}
+  
+  /* Texto justificado desabilitado em mobile */
+  .content p,
+  .content li,
+  .timeline-content p,
+  .timeline-content li,
+  .card p{text-align:left}
+  
+  /* Touch targets maiores */
+  .btn,
+  .timeline-item h3,
+  .competency-header{
+    min-height:44px;
+    display:flex;
+    align-items:center;
+  }
+}
+
+/* Mobile muito pequeno: até 375px (iPhone SE) */
+@media (max-width:375px){
+  body{font-size:14px}
+  .hero-text h1{font-size:clamp(24px,9vw,28px)}
+  .logo{font-size:20px}
+  .card{padding:12px}
+  .nav-inner{padding:10px 12px}
+  .section{padding:0 12px}
+  .hero{padding:0 12px}
 }
 </style>
 </head>
