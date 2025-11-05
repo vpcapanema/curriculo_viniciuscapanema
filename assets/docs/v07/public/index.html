@@ -166,6 +166,20 @@ a:hover{color:var(--accent-dark)}
 .timeline-content li{margin-bottom:8px;text-align:justify}
 .timeline-content p{text-align:justify;margin-bottom:8px}
 
+/* Card Item (sem linha timeline) */
+.card-item{
+  position:relative;padding-bottom:20px;margin-bottom:12px;
+  background:transparent
+}
+.card-item.padding-0{
+  padding-bottom:0
+}
+.card-item h3{font-size:0.95rem;margin-bottom:4px;display:flex;align-items:center;gap:8px;cursor:pointer;-webkit-user-select:none;user-select:none;font-weight:600}
+.card-item h3:hover{opacity:.8}
+.card-item .meta{color:var(--muted);font-size:0.85rem;margin-bottom:8px}
+.card-item .expand-icon{font-size:12px;transition:transform .2s}
+.card-item .expand-icon.expanded{transform:rotate(90deg)}
+
 /* Competências */
 .competency-list{list-style:none;padding:0;margin:0}
 .competency-item{margin:12px 0;padding-bottom:12px;border-bottom:none}
@@ -273,8 +287,9 @@ a:hover{color:var(--accent-dark)}
   .card .meta{font-size:0.8rem;margin-bottom:8px}
   
   /* Timeline mobile */
-  .timeline-item{padding-bottom:16px;margin-bottom:10px}
-  .timeline-item h3{font-size:0.9rem;gap:6px}
+  .timeline-item,.card-item{padding-bottom:16px;margin-bottom:10px}
+  .timeline-item h3,
+  .card-item h3{font-size:0.9rem;gap:6px}
   .timeline-content{font-size:0.85rem}
   .timeline-content ul{padding-left:16px}
   .timeline-content li{margin-bottom:6px;font-size:0.85rem}
@@ -308,6 +323,7 @@ a:hover{color:var(--accent-dark)}
   /* Touch targets maiores */
   .btn,
   .timeline-item h3,
+  .card-item h3,
   .competency-header{
     min-height:44px;
     display:flex;
@@ -465,7 +481,7 @@ a:hover{color:var(--accent-dark)}
         <div class="card mb-24">
           <h2 class="mb-16">Cursos</h2>
           <ul class="timeline">
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Georreferenciamento & Topografia</h3>
               <div class="timeline-content">
                 <ul>
@@ -476,7 +492,7 @@ a:hover{color:var(--accent-dark)}
                 </ul>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Geoprocessamento & SIG</h3>
               <div class="timeline-content">
                 <ul>
@@ -486,7 +502,7 @@ a:hover{color:var(--accent-dark)}
                 </ul>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Programação & Dados</h3>
               <div class="timeline-content">
                 <ul>
@@ -495,7 +511,7 @@ a:hover{color:var(--accent-dark)}
                 </ul>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Meio Ambiente & Licenciamento</h3>
               <div class="timeline-content">
                 <ul>
@@ -505,7 +521,7 @@ a:hover{color:var(--accent-dark)}
                 </ul>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Gestão & Negócios</h3>
               <div class="timeline-content">
                 <ul>
@@ -521,7 +537,7 @@ a:hover{color:var(--accent-dark)}
         <div class="card">
           <h2 class="mb-16">Projetos</h2>
           <ul class="timeline">
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Monitoramento Ambiental por Satélite (INPE)</h3>
               <div class="timeline-content">
                 <p class="meta">2017-2018</p>
@@ -532,7 +548,7 @@ a:hover{color:var(--accent-dark)}
                 </ul>
               </div>
             </li>
-            <li class="timeline-item padding-0">
+            <li class="card-item padding-0">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> e-Sensing: Big Earth Observation Data Analytics</h3>
               <div class="timeline-content">
                 <p class="meta">Pesquisa Doutoral (2018-2022)</p>
@@ -550,7 +566,7 @@ a:hover{color:var(--accent-dark)}
         <div class="card tech-card">
           <h2 class="mb-16">Tecnologias & Ferramentas</h2>
           <ul class="timeline">
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Geoprocessamento & Sensoriamento Remoto</h3>
               <div class="timeline-content">
                 <p class="text-muted"><strong>Desktop GIS:</strong> QGIS (modelador gráfico, plugins Python, análise espacial avançada), ArcGIS/ArcGIS Pro (geoprocessamento, análise de redes, 3D), TerraView, TerraAmazon (monitoramento florestal), GEODA (análise exploratória espacial), AutoCAD (projetos CAD-GIS), TopoEVN (topografia e georreferenciamento).</p>
@@ -558,7 +574,7 @@ a:hover{color:var(--accent-dark)}
                 <p class="text-muted"><strong>Bibliotecas & CLI:</strong> GDAL/OGR (conversão e processamento raster/vector via linha de comando e Python), PROJ (transformações de coordenadas), Rasterio, Fiona, Shapely, GeoPandas.</p>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Programação & Análise de Dados</h3>
               <div class="timeline-content">
                 <p class="text-muted"><strong>Python:</strong> Pandas/GeoPandas (manipulação de dados tabulares e espaciais), NumPy/SciPy (computação científica), Matplotlib/Seaborn (visualização), Scikit-learn (machine learning aplicado a classificação de imagens), Rasterio/GDAL (processamento raster), Shapely/Fiona (geometrias vetoriais), PyProj (projeções), Requests/BeautifulSoup (web scraping), SQLAlchemy (ORM para bancos de dados).</p>
@@ -566,14 +582,14 @@ a:hover{color:var(--accent-dark)}
                 <p class="text-muted"><strong>JavaScript:</strong> Conhecimento intermediário para desenvolvimento web, manipulação de DOM, integração com APIs REST, bibliotecas de visualização (Chart.js, Leaflet.js).</p>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Banco de Dados Espaciais</h3>
               <div class="timeline-content">
                 <p class="text-muted"><strong>PostgreSQL/PostGIS:</strong> Modelagem de dados espaciais, funções ST_* (ST_Intersects, ST_Buffer, ST_Union, ST_Distance, ST_Within), índices espaciais (GIST, SP-GIST, BRIN), análise topológica, geocodificação reversa, otimização de queries espaciais, triggers e stored procedures.</p>
                 <p class="text-muted"><strong>Boas Práticas:</strong> Normalização de schemas, constraints e validações geométricas, views materializadas para consultas complexas, particionamento de tabelas grandes, backup e restore, replicação e alta disponibilidade.</p>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> WebGIS & Publicação de Serviços</h3>
               <div class="timeline-content">
                 <p class="text-muted"><strong>Frontend:</strong> Leaflet.js (mapas interativos, controle de camadas, filtros dinâmicos, popups personalizados, plugins de clustering, heatmaps, draw tools), OpenLayers (alternativa para projetos complexos).</p>
@@ -581,7 +597,7 @@ a:hover{color:var(--accent-dark)}
                 <p class="text-muted"><strong>Tiles & Performance:</strong> Geração de tiles vetoriais (MVT), cache de tiles raster, otimização de estilos, compressão de dados, CDN para entrega global.</p>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> APIs & Backend Geoespacial</h3>
               <div class="timeline-content">
                 <p class="text-muted"><strong>FastAPI:</strong> Desenvolvimento de APIs REST geoespaciais (endpoints para consultas espaciais, filtros por geometria, buffers dinâmicos), autenticação JWT, rate limiting, logging estruturado, validação Pydantic, documentação automática (Swagger/OpenAPI).</p>
@@ -589,7 +605,7 @@ a:hover{color:var(--accent-dark)}
                 <p class="text-muted"><strong>Integração:</strong> Consumo de APIs externas (IBGE, INPE, OpenStreetMap, serviços meteorológicos), webhooks, processamento assíncrono com Celery/RQ.</p>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> DevOps & Infraestrutura</h3>
               <div class="timeline-content">
                 <p class="text-muted"><strong>Containers:</strong> Docker (criação de imagens, Dockerfile otimizado, multi-stage builds), Docker Compose (orquestração local de stacks completos: PostGIS + GeoServer + API + Frontend).</p>
@@ -597,7 +613,7 @@ a:hover{color:var(--accent-dark)}
                 <p class="text-muted"><strong>Deploy & CI/CD:</strong> Git/GitHub (versionamento, workflows), conhecimento em GitHub Actions, deploy em servidores Linux (Ubuntu/Debian), monitoramento básico com logs.</p>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> IA & Machine Learning Aplicado</h3>
               <div class="timeline-content">
                 <p class="text-muted"><strong>Ferramentas de IA:</strong> Domínio de ferramentas modernas de inteligência artificial (ChatGPT, Claude, GitHub Copilot) aplicadas à geração de código, análise de dados, automação de processos, documentação técnica e resolução de problemas complexos.</p>
@@ -605,7 +621,7 @@ a:hover{color:var(--accent-dark)}
                 <p class="text-muted"><strong>Processamento de Linguagem Natural:</strong> Prompt engineering para otimização de tarefas, integração de LLMs em workflows de desenvolvimento.</p>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Governança & Qualidade de Dados</h3>
               <div class="timeline-content">
                 <p class="text-muted"><strong>Metadata & Catalogação:</strong> Documentação de datasets com padrões ISO 19115/19139, GeoNetwork para catalogação, registro de linhagem de dados (proveniência).</p>
@@ -613,7 +629,7 @@ a:hover{color:var(--accent-dark)}
                 <p class="text-muted"><strong>Qualidade:</strong> Validação topológica de geometrias, detecção de overlaps/gaps, análise de completude, acurácia posicional, documentação reprodutível com Jupyter Notebooks/R Markdown.</p>
               </div>
             </li>
-            <li class="timeline-item padding-0">
+            <li class="card-item padding-0">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Office & Produtividade</h3>
               <div class="timeline-content">
                 <p class="text-muted"><strong>Microsoft Office:</strong> Word (elaboração de relatórios técnicos com alta complexidade, formatação ABNT, revisões colaborativas), PowerPoint (apresentações executivas com infográficos, mapas e dashboards), Excel (análise de dados com tabelas dinâmicas, fórmulas avançadas, macros VBA, integração com Power Query), Outlook (gestão de emails, calendários e tarefas).</p>
@@ -758,21 +774,21 @@ a:hover{color:var(--accent-dark)}
         <div class="card mb-24">
           <h2 class="mb-16">Publicações</h2>
           <ul class="timeline">
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Characterization of municipalities in the timber production chain</h3>
               <div class="timeline-content">
                 <p class="meta">XXV IUFRO World Congress · 2019</p>
                 <p class="text-muted">CAPANEMA, V. P.; ESCADA, M. I. S. Characterization of municipalities in the timber production chain in the north of Mato Grosso, Brazil. In: CONGRESSO MUNDIAL DA IUFRO, Curitiba, PR. 2019.</p>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Padrões da paisagem associados ao extrativismo na Amazônia</h3>
               <div class="timeline-content">
                 <p class="meta">XXV IUFRO World Congress · 2019</p>
                 <p class="text-muted">SOUZA, A. R.; ESCADA, M. I. S.; SANTOS, G. V. S.; MONTEIRO, A. M. V.; CAPANEMA, V. P. Padrões da paisagem associados ao extrativismo na Amazônia: caracterização e mapeamento de áreas potenciais de ocorrência de açaí no nordeste Paraense. In: CONGRESSO MUNDIAL DA IUFRO, Curitiba, PR. 2019.</p>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Comparação entre TerraClass Amazônia e MapBiomas</h3>
               <div class="timeline-content">
                 <p class="meta">Anais do XIX Simpósio Brasileiro de Sensoriamento Remoto · 2019</p>
@@ -780,7 +796,7 @@ a:hover{color:var(--accent-dark)}
                 <p class="text-muted"><a href="http://urlib.net/rep/8JMKD3MGP6W34M/3U67378" target="_blank" rel="noopener">http://urlib.net/rep/8JMKD3MGP6W34M/3U67378</a></p>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Mapeamento de padrões de intensidade da degradação florestal</h3>
               <div class="timeline-content">
                 <p class="meta">Revista Brasileira de Cartografia, v. 70, n. 1 · 2018</p>
@@ -788,14 +804,14 @@ a:hover{color:var(--accent-dark)}
                 <p class="text-muted">DOI: <a href="http://dx.doi.org/10.14393/rbcv70n1-45254" target="_blank" rel="noopener">10.14393/rbcv70n1-45254</a></p>
               </div>
             </li>
-            <li class="timeline-item">
+            <li class="card-item">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Degradação Florestal na Amazônia: indicador espacial</h3>
               <div class="timeline-content">
                 <p class="meta">XVIII Simpósio Brasileiro de Sensoriamento Remoto - SBSR · 2017</p>
                 <p class="text-muted">CAPANEMA, V. P.; ESCADA, M. I. S. Degradação Florestal na Amazônia: Geração de um Indicador Espacial de Suscetibilidade à Degradação Florestal. In: XVIII Simpósio Brasileiro de Sensoriamento Remoto - SBSR, Santos, 2017.</p>
               </div>
             </li>
-            <li class="timeline-item padding-0">
+            <li class="card-item padding-0">
               <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span> Cicatrizes de queimadas e mudanças de uso da terra no Pará</h3>
               <div class="timeline-content">
                 <p class="meta">XVIII Simpósio Brasileiro de Sensoriamento Remoto - SBSR · 2017</p>
