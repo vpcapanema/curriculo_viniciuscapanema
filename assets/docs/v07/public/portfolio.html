@@ -167,10 +167,11 @@ a:hover{color:var(--accent-dark)}
 
 /* Responsividade Tablet */
 @media (max-width:1000px){
-  .masonry{column-count:2}
+  .masonry{grid-template-columns:repeat(2,1fr)}
   .container{max-width:720px;padding:0 24px}
   .header{padding:80px 24px 60px}
   .header h1{font-size:clamp(36px,6vw,48px)}
+  .project{height:auto;min-height:450px}
 }
 
 /* Responsividade Mobile */
@@ -200,23 +201,24 @@ a:hover{color:var(--accent-dark)}
   .filter-pill{padding:8px 16px;font-size:13px;min-height:40px;white-space:nowrap}
   
   /* Masonry */
-  .masonry{column-count:1;gap:16px}
+  .masonry{grid-template-columns:1fr;gap:16px}
   .masonry-item{margin-bottom:16px}
   
   /* Projetos */
-  .project{padding:20px 16px}
-  .project-icon{width:50px;height:50px;font-size:22px;margin-bottom:12px}
+  .project{padding:20px 16px;height:auto;min-height:400px}
+  .project-icon{width:50px;height:50px;font-size:28px;margin-bottom:12px}
   .project h3{font-size:1.1rem;margin-bottom:10px}
-  .project .desc{font-size:0.9rem;line-height:1.5}
-  .project .stack{font-size:0.8rem;margin-top:12px}
+  .project .desc{font-size:0.9rem;line-height:1.5;text-align:left}
+  .project .tags{gap:6px;margin-bottom:12px}
+  .tag{font-size:0.75rem;padding:4px 8px}
   .project .actions{margin-top:16px;gap:8px}
-  .project .btn{padding:8px 14px;font-size:13px;min-height:44px}
+  .project .btn,.project-link{padding:10px 16px;font-size:14px;min-height:44px}
   
   /* Melhorar legibilidade em mobile */
   p{text-align:left}
   
   /* Touch targets mínimos 44px */
-  button,a.btn,.btn{min-height:44px;min-width:44px}
+  button,a.btn,.btn,.filter-pill,.project-link{min-height:44px;min-width:44px}
 }
 
 /* Responsividade iPhone SE e similares (<375px) */
@@ -226,9 +228,11 @@ a:hover{color:var(--accent-dark)}
   .nav-inner{padding:10px 12px}
   .logo{font-size:20px}
   .panel,.section{padding:16px 12px}
-  .project{padding:16px 12px}
-  .project-icon{width:44px;height:44px;font-size:20px}
+  .project{padding:16px 12px;min-height:380px}
+  .project-icon{width:44px;height:44px;font-size:24px}
+  .project h3{font-size:1rem}
   .filter-pill{padding:6px 12px;font-size:12px}
+  .tag{font-size:0.7rem;padding:3px 6px}
 }
 </style>
 </head>
