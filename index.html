@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=./assets/docs/v07/public/index.html">
     <title>Currículo - Vinicius Capanema</title>
+    <script>
+      // Redirect only if not on Render (fallback for local/other hosts)
+      if (!window.location.hostname.includes('onrender.com')) {
+        window.location.replace('./assets/docs/v07/public/index.html');
+      }
+    </script>
 </head>
 <body>
     <p>Redirecionando para o currículo...</p>
