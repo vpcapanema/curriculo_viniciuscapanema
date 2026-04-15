@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfólio — VPC‑GEOSER (V07 • Avant)</title>
-<meta name="description" content="Portfólio de projetos em geoprocessamento, sensoriamento remoto e data science — V07 Avant.">
+<title>Portfolio — VPC‑GEOSER (V07 • Avant)</title>
+<meta name="description" content="Project portfolio in geoprocessing, remote sensing and data science — V07 Avant.">
 <meta name="color-scheme" content="light dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -165,7 +165,7 @@ a:hover{color:var(--accent-dark)}
 .mt-40{margin-top:40px}
 .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
 
-/* Responsividade Tablet */
+/* Tablet responsiveness */
 @media (max-width:1000px){
   .masonry{grid-template-columns:repeat(2,1fr)}
   .container{max-width:720px;padding:0 24px}
@@ -174,37 +174,30 @@ a:hover{color:var(--accent-dark)}
   .project{height:auto;min-height:450px}
 }
 
-/* Responsividade Mobile */
+/* Mobile responsiveness */
 @media (max-width:640px){
   body{font-size:15px;line-height:1.6}
   
-  /* Navegação */
   .nav-inner{padding:12px 16px;flex-wrap:wrap;gap:8px}
   .logo{font-size:22px}
   .nav-actions{gap:8px}
   .nav-actions .btn{padding:8px 14px;font-size:14px;min-height:40px}
   
-  /* Header */
   .header{padding:60px 16px 40px}
   .header h1{font-size:clamp(28px,8vw,36px);line-height:1.2}
   .header p{font-size:16px;margin-top:12px}
   
-  /* Container */
   .container{padding:0 16px;max-width:100%}
   
-  /* Seções */
   .panel,.section{padding:20px 16px;margin:16px 0}
   .section-title{font-size:clamp(22px,6vw,26px);margin-bottom:16px}
   
-  /* Filtros */
   .filters{gap:8px}
   .filter-pill{padding:8px 16px;font-size:13px;min-height:40px;white-space:nowrap}
   
-  /* Masonry */
   .masonry{grid-template-columns:1fr;gap:16px}
   .masonry-item{margin-bottom:16px}
   
-  /* Projetos */
   .project{padding:20px 16px;height:auto;min-height:400px}
   .project-icon{width:50px;height:50px;font-size:28px;margin-bottom:12px;text-align:center;margin-left:auto;margin-right:auto}
   .project h3{font-size:1.1rem;margin-bottom:10px}
@@ -214,14 +207,12 @@ a:hover{color:var(--accent-dark)}
   .project .actions{margin-top:16px;gap:8px}
   .project .btn,.project-link{padding:10px 16px;font-size:14px;min-height:44px}
   
-  /* Melhorar legibilidade em mobile */
   p{text-align:left}
   
-  /* Touch targets mínimos 44px */
   button,a.btn,.btn,.filter-pill,.project-link{min-height:44px;min-width:44px}
 }
 
-/* Responsividade iPhone SE e similares (<375px) */
+/* iPhone SE and similar (<375px) */
 @media (max-width:375px){
   body{font-size:14px}
   .header h1{font-size:clamp(24px,9vw,28px)}
@@ -239,34 +230,34 @@ a:hover{color:var(--accent-dark)}
 <body>
   <nav class="nav">
     <div class="nav-inner">
-      <a href="./index.html" class="logo">VPC‑GEOSER</a>
+      <a href="./index-en.html" class="logo">VPC‑GEOSER</a>
       <div class="nav-actions">
-        <a class="btn" href="./index.html">Currículo</a>
-        <a class="btn" href="./portfolio-en.html" title="English version"><i class="bi bi-globe"></i> EN</a>
-        <button type="button" class="btn" id="themeToggle" aria-label="Alternar tema"><i class="bi bi-moon"></i></button>
+        <a class="btn" href="./index-en.html">Resume</a>
+        <a class="btn" href="./portfolio.html" title="Versão em Português"><i class="bi bi-globe"></i> PT</a>
+        <button type="button" class="btn" id="themeToggle" aria-label="Toggle theme"><i class="bi bi-moon"></i></button>
       </div>
     </div>
   </nav>
 
   <header class="header">
-    <h1>Portfólio de Projetos</h1>
-    <p>Soluções geoespaciais, análise de dados e WebGIS</p>
+    <h1>Project Portfolio</h1>
+    <p>Geospatial solutions, data analytics, and WebGIS</p>
   </header>
 
   <main class="container">
     <section class="panel reveal">
-      <h2>Sobre o Portfólio</h2>
-      <p>Confira abaixo algumas de nossas soluções web já implementadas. Todas as aplicações são idealizadas sob o arcabouço teórico-conceitual do open source, utilizando ferramentas abertas e padrões consolidados, adaptados a cada problema. Atuamos em frentes como análise multicritério (AHP/Saaty), extração e processamento de dados geoespaciais (OpenStreetMap, DEM, Shapefiles, GeoTIFFs) com computação em nuvem (Google Earth Engine), WebGIS (Leaflet/OpenLayers, QGIS Server, GeoServer, PostGIS) e logística/planejamento territorial e de infraestrutura — sempre com pipelines reprodutíveis (Python/GeoPandas/Rasterio, ETL, versionamento em Git/Docker) e integração a sistemas como SIGMA-PLI e DER/SP.</p>
-      <p>Reforçando nosso compromisso com a ciência, unimos conceitos científicos — modelagem, inferência e governança/qualidade de dados — à tecnologia — arquiteturas modernas, interoperabilidade e automação — para entregar soluções transparentes, auditáveis e escaláveis. Essa associação rigorosa entre teoria e ferramenta eleva a assertividade das análises e prepara nossos produtos para grandes volumes e variedade de dados, atendendo demandas diversas.</p>
+      <h2>About the Portfolio</h2>
+      <p>Below you will find a selection of our deployed web-based solutions. All applications are conceived under an open-source theoretical and conceptual framework, leveraging open tools and well-established standards tailored to each specific challenge. We operate across domains such as multi-criteria analysis (AHP/Saaty), extraction and processing of geospatial data (OpenStreetMap, DEM, Shapefiles, GeoTIFFs) with cloud computing (Google Earth Engine), WebGIS (Leaflet/OpenLayers, QGIS Server, GeoServer, PostGIS), and logistics/territorial and infrastructure planning — always with reproducible pipelines (Python/GeoPandas/Rasterio, ETL, Git/Docker version control) and integration with systems such as SIGMA-PLI and DER/SP.</p>
+      <p>Reinforcing our commitment to science, we combine scientific principles — modeling, inference, and data governance/quality — with technology — modern architectures, interoperability, and automation — to deliver transparent, auditable, and scalable solutions. This rigorous association between theory and tooling enhances the reliability of our analyses and prepares our products for large volumes and diverse datasets, meeting a wide range of demands.</p>
     </section>
 
     <section class="container">
-      <h2 class="section-title">Soluções em Produção</h2>
+      <h2 class="section-title">Production Solutions</h2>
       <section class="filters reveal">
-        <button class="filter-pill active" data-filter="all">Todos os Projetos</button>
-        <button class="filter-pill" data-filter="ahp">Análise Multicritério</button>
+        <button class="filter-pill active" data-filter="all">All Projects</button>
+        <button class="filter-pill" data-filter="ahp">Multi-Criteria Analysis</button>
         <button class="filter-pill" data-filter="webgis">WebGIS</button>
-        <button class="filter-pill" data-filter="geoprocessing">Geoprocessamento</button>
+        <button class="filter-pill" data-filter="geoprocessing">Geoprocessing</button>
         <button class="filter-pill" data-filter="cloud">Cloud Computing</button>
       </section>
     </section>
@@ -275,45 +266,45 @@ a:hover{color:var(--accent-dark)}
       <div class="masonry-item reveal" data-category="ahp">
         <article class="project">
           <div class="project-icon"><i class="bi bi-bullseye"></i></div>
-          <h3>SIGMA - Calculadora AHP</h3>
-          <p class="desc">Sistema de análise multicritério usando o método AHP (Analytic Hierarchy Process) de Saaty. Permite comparações pareadas de até 20 critérios com cálculo automático de pesos e índices de consistência. Gera visualizações gráficas interativas e exporta resultados em PDF, CSV e XLSX.</p>
+          <h3>SIGMA - AHP Calculator</h3>
+          <p class="desc">Multi-criteria analysis system using the Analytic Hierarchy Process (AHP) method by Saaty. Supports pairwise comparisons of up to 20 criteria with automatic weight calculation and consistency indices. Generates interactive graphical visualizations and exports results in PDF, CSV, and XLSX formats.</p>
           <div class="tags">
             <span class="tag">AHP/Saaty</span>
             <span class="tag">JavaScript</span>
-            <span class="tag">Análise Multicritério</span>
-            <span class="tag">Visualização</span>
+            <span class="tag">Multi-Criteria Analysis</span>
+            <span class="tag">Visualization</span>
           </div>
-          <a class="project-link" href="https://vpcapanema.github.io/FAD-AHP_tool/sigma-ahp.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
+          <a class="project-link" href="https://vpcapanema.github.io/FAD-AHP_tool/sigma-ahp.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
       <div class="masonry-item reveal" data-category="ahp geoprocessing">
         <article class="project">
           <div class="project-icon"><i class="bi bi-sign-turn-right"></i></div>
-          <h3>Estadualização de Rodovias DER/SP</h3>
-          <p class="desc">Ferramenta metodológica de apoio à tomada de decisão para estadualização de elementos rodoviários do DER/SP. Analisa 1.247 rodovias usando AHP com critérios ambientais, socioeconômicos e de integração territorial. Gera indicadores de favorabilidade espacial (IFM), socioeconômica (IFS) e qualidade de infraestrutura (IQI).</p>
+          <h3>Road Jurisdictionalization DER/SP</h3>
+          <p class="desc">Methodological decision-support tool for the jurisdictionalization of road elements under DER/SP. Analyzes 1,247 roads using AHP with environmental, socioeconomic, and territorial integration criteria. Generates spatial favorability (IFM), socioeconomic (IFS), and infrastructure quality (IQI) indicators.</p>
           <div class="tags">
             <span class="tag">AHP</span>
-            <span class="tag">Geoprocessamento</span>
-            <span class="tag">Infraestrutura</span>
+            <span class="tag">Geoprocessing</span>
+            <span class="tag">Infrastructure</span>
             <span class="tag">DER/SP</span>
           </div>
-          <a class="project-link" href="https://vpcapanema.github.io/estadualizacao-der/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
+          <a class="project-link" href="https://vpcapanema.github.io/estadualizacao-der/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
       <div class="masonry-item reveal" data-category="ahp">
         <article class="project">
           <div class="project-icon"><i class="bi bi-bar-chart"></i></div>
-          <h3>Calculadora de Aderência de Indicadores</h3>
-          <p class="desc">Sistema PLI SIGMA para avaliação metodológica de indicadores através de sete critérios analíticos: proximidade conceitual, mecanismo causal, validade empírica, especificidade, sensibilidade, mensurabilidade e custo-benefício. Classifica indicadores em quatro níveis de aderência e permite upload de CSV para análise em lote.</p>
+          <h3>Indicator Adherence Calculator</h3>
+          <p class="desc">PLI SIGMA system for methodological assessment of indicators through seven analytical criteria: conceptual proximity, causal mechanism, empirical validity, specificity, sensitivity, measurability, and cost-effectiveness. Classifies indicators into four adherence levels and supports CSV upload for batch analysis.</p>
           <div class="tags">
-            <span class="tag">Análise Multicritério</span>
-            <span class="tag">Indicadores</span>
+            <span class="tag">Multi-Criteria Analysis</span>
+            <span class="tag">Indicators</span>
             <span class="tag">CSV Upload</span>
             <span class="tag">JavaScript</span>
           </div>
-          <a class="project-link" href="https://vpcapanema.github.io/calculadora_aderencia_indicadores/home.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
+          <a class="project-link" href="https://vpcapanema.github.io/calculadora_aderencia_indicadores/home.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
@@ -321,44 +312,44 @@ a:hover{color:var(--accent-dark)}
         <article class="project">
           <div class="project-icon"><i class="bi bi-map"></i></div>
           <h3>FAD - SmartGeo (OSM Extractor)</h3>
-          <p class="desc">Ferramenta de geoprocessamento inteligente para extração automatizada de dados vetoriais do OpenStreetMap via API. Permite extrair estradas, rios e limites municipais usando máscaras poligonais. Gera buffers segmentados com largura configurável e exporta resultados em Shapefiles ESRI (.shp) compactados prontos para uso em SIG.</p>
+          <p class="desc">Intelligent geoprocessing tool for automated extraction of vector data from OpenStreetMap via API. Enables extraction of roads, rivers, and municipal boundaries using polygon masks. Generates segmented buffers with configurable width and exports results as compressed ESRI Shapefiles (.shp) ready for use in GIS environments.</p>
           <div class="tags">
             <span class="tag">OpenStreetMap API</span>
             <span class="tag">Shapefile</span>
             <span class="tag">Buffer Analysis</span>
             <span class="tag">Python</span>
           </div>
-          <a class="project-link" href="https://vpcapanema.github.io/FAD-SmartGeo/docs/index.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
+          <a class="project-link" href="https://vpcapanema.github.io/FAD-SmartGeo/docs/index.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
       <div class="masonry-item reveal" data-category="webgis geoprocessing">
         <article class="project">
           <div class="project-icon"><i class="bi bi-globe-americas"></i></div>
-          <h3>WebGIS - Estadualização</h3>
-          <p class="desc">Sistema WebGIS interativo desenvolvido com Leaflet para visualização e análise espacial de elementos rodoviários candidatos à estadualização. Integra múltiplas camadas temáticas (bases administrativas, restrições ambientais, infraestrutura e projetos). Interface com controle de camadas, ferramentas de medição e três bases cartográficas (OpenStreetMap, ESRI Rua e Satélite).</p>
+          <h3>WebGIS - Jurisdictionalization</h3>
+          <p class="desc">Interactive WebGIS system built with Leaflet for visualization and spatial analysis of road elements subject to jurisdictionalization. Integrates multiple thematic layers (administrative boundaries, environmental restrictions, infrastructure, and projects). Features layer control, measurement tools, and three basemaps (OpenStreetMap, ESRI Street, and Satellite).</p>
           <div class="tags">
             <span class="tag">Leaflet</span>
             <span class="tag">WebGIS</span>
-            <span class="tag">Análise Espacial</span>
+            <span class="tag">Spatial Analysis</span>
             <span class="tag">JavaScript</span>
           </div>
-          <a class="project-link" href="https://vinicapanema.github.io/webgis-estadualizacao/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
+          <a class="project-link" href="https://vinicapanema.github.io/webgis-estadualizacao/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
       <div class="masonry-item reveal" data-category="geoprocessing">
         <article class="project">
           <div class="project-icon"><i class="bi bi-clipboard-data"></i></div>
-          <h3>Formulário de Entrevista com Embarcadores</h3>
-          <p class="desc">Sistema web estruturado para coleta e caracterização de dados logísticos do transporte de mercadorias no Estado de São Paulo. Captura informações sobre produtos, origens, destinos, modalidades, custos e fatores decisórios (custo, tempo, confiabilidade, segurança, capacidade). Inclui análise de sensibilidade modal, validação de dados e exportação JSON para processamento posterior.</p>
+          <h3>Shipper Interview Form</h3>
+          <p class="desc">Structured web system for collecting and characterizing freight logistics data in the State of São Paulo. Captures information on products, origins, destinations, transport modes, costs, and decision factors (cost, time, reliability, safety, capacity). Includes modal sensitivity analysis, data validation, and JSON export for downstream processing.</p>
           <div class="tags">
-            <span class="tag">Logística</span>
-            <span class="tag">Coleta de Dados</span>
-            <span class="tag">Análise Modal</span>
+            <span class="tag">Logistics</span>
+            <span class="tag">Data Collection</span>
+            <span class="tag">Modal Analysis</span>
             <span class="tag">JavaScript</span>
           </div>
-          <a class="project-link" href="https://vpcapanema.github.io/formulario_entrevista_embarcadores/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
+          <a class="project-link" href="https://vpcapanema.github.io/formulario_entrevista_embarcadores/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
@@ -366,53 +357,53 @@ a:hover{color:var(--accent-dark)}
         <article class="project">
           <div class="project-icon"><i class="bi bi-triangle"></i></div>
           <h3>FAD-Slope (Google Earth Engine)</h3>
-          <p class="desc">Aplicação geoespacial baseada em Google Earth Engine para análise e visualização de declividade do terreno em larga escala. Utiliza modelos digitais de elevação (DEM) para cálculo automático de slope, permitindo identificação de áreas com diferentes gradientes topográficos. Ferramenta essencial para estudos ambientais, planejamento territorial, análise de riscos e viabilidade de infraestrutura.</p>
+          <p class="desc">Geospatial application powered by Google Earth Engine for large-scale terrain slope analysis and visualization. Utilizes Digital Elevation Models (DEM) for automated slope calculation, enabling identification of areas with varying topographic gradients. An essential tool for environmental studies, territorial planning, risk assessment, and infrastructure feasibility analysis.</p>
           <div class="tags">
             <span class="tag">Google Earth Engine</span>
             <span class="tag">DEM</span>
-            <span class="tag">Análise Topográfica</span>
+            <span class="tag">Topographic Analysis</span>
             <span class="tag">Cloud Computing</span>
           </div>
-          <a class="project-link" href="https://ee-viniciuspradocapanema.projects.earthengine.app/view/fad-slope" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
+          <a class="project-link" href="https://ee-viniciuspradocapanema.projects.earthengine.app/view/fad-slope" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
       <div class="masonry-item reveal" data-category="webgis">
         <article class="project">
           <div class="project-icon"><i class="bi bi-briefcase"></i></div>
-          <h3>Em Desenvolvimento</h3>
-          <p class="desc">Estamos trabalhando em novas soluções geoespaciais para expandir nosso portfólio. Acompanhe em breve: integração de dados em tempo real, dashboards analíticos avançados e novos módulos de análise multicritério aplicados a planejamento urbano e gestão ambiental.</p>
+          <h3>Under Development</h3>
+          <p class="desc">We are working on new geospatial solutions to expand our portfolio. Coming soon: real-time data integration, advanced analytical dashboards, and new multi-criteria analysis modules applied to urban planning and environmental management.</p>
           <div class="tags">
             <span class="tag">Coming Soon</span>
             <span class="tag">Real-time Data</span>
             <span class="tag">Dashboard</span>
             <span class="tag">Urban Planning</span>
           </div>
-          <a class="project-link disabled"><i class="bi bi-hourglass"></i> Em Breve</a>
+          <a class="project-link disabled"><i class="bi bi-hourglass"></i> Coming Soon</a>
         </article>
       </div>
 
       <div class="masonry-item reveal" data-category="cloud">
         <article class="project">
           <div class="project-icon"><i class="bi bi-lightbulb"></i></div>
-          <h3>Personalizações & Consultoria</h3>
-          <p class="desc">Além das soluções prontas, oferecemos desenvolvimento customizado de aplicações geoespaciais, análises multicritério tailored, arquitetura de pipelines de dados e consultoria em tecnologias de geoprocessamento. Trabalhe conosco para transformar seus desafios territoriais em soluções escaláveis e transparentes.</p>
+          <h3>Custom Solutions & Consulting</h3>
+          <p class="desc">Beyond our ready-made solutions, we offer custom development of geospatial applications, tailored multi-criteria analyses, data pipeline architecture, and consulting in geoprocessing technologies. Partner with us to transform your territorial challenges into scalable and transparent solutions.</p>
           <div class="tags">
             <span class="tag">Custom Development</span>
-            <span class="tag">Consultoria</span>
-            <span class="tag">Arquitetura</span>
-            <span class="tag">Suporte</span>
+            <span class="tag">Consulting</span>
+            <span class="tag">Architecture</span>
+            <span class="tag">Support</span>
           </div>
-          <a class="project-link" href="./index.html#contato"><i class="bi bi-chat-dots"></i> Solicitar Orçamento</a>
+          <a class="project-link" href="./index-en.html#contact"><i class="bi bi-chat-dots"></i> Request a Quote</a>
         </article>
       </div>
     </div>
 
     <section class="panel reveal mt-40">
-      <h2>Tecnologias & Competências</h2>
+      <h2>Technologies & Competencies</h2>
       <div class="tech-tags">
-        <span class="tag">Análise Multicritério (AHP)</span>
-        <span class="tag">Geoprocessamento</span>
+        <span class="tag">Multi-Criteria Analysis (AHP)</span>
+        <span class="tag">Geoprocessing</span>
         <span class="tag">OpenStreetMap API</span>
         <span class="tag">Leaflet</span>
         <span class="tag">WebGIS</span>
@@ -420,21 +411,21 @@ a:hover{color:var(--accent-dark)}
         <span class="tag">JavaScript</span>
         <span class="tag">Shapefile/GDAL</span>
         <span class="tag">Buffer Analysis</span>
-        <span class="tag">Análise Espacial</span>
+        <span class="tag">Spatial Analysis</span>
         <span class="tag">Google Earth Engine</span>
         <span class="tag">QGIS</span>
         <span class="tag">ArcGIS</span>
         <span class="tag">PostgreSQL/PostGIS</span>
-        <span class="tag">Sensoriamento Remoto</span>
-        <span class="tag">Infraestrutura Rodoviária</span>
-        <span class="tag">Indicadores de Gestão</span>
-        <span class="tag">Análise Topográfica</span>
-        <span class="tag">Logística & Transporte</span>
+        <span class="tag">Remote Sensing</span>
+        <span class="tag">Road Infrastructure</span>
+        <span class="tag">Management Indicators</span>
+        <span class="tag">Topographic Analysis</span>
+        <span class="tag">Logistics & Transportation</span>
         <span class="tag">Cloud Computing</span>
       </div>
       <div class="actions">
-        <a class="btn btn-primary" href="./index.html">Ver currículo completo</a>
-        <a class="btn" href="https://www.linkedin.com/in/viniciuscapanema/" target="_blank" rel="noopener noreferrer">Conectar no LinkedIn</a>
+        <a class="btn btn-primary" href="./index-en.html">View Full Resume</a>
+        <a class="btn" href="https://www.linkedin.com/in/viniciuscapanema/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
         <a class="btn" href="http://lattes.cnpq.br/4908905634731966" target="_blank" rel="noopener noreferrer">Lattes CNPq</a>
       </div>
     </section>
@@ -442,10 +433,10 @@ a:hover{color:var(--accent-dark)}
 
   <footer class="footer">
     <div class="footer-action">
-      <a class="btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false"><i class="bi bi-arrow-up"></i> Voltar ao Topo</a>
+      <a class="btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false"><i class="bi bi-arrow-up"></i> Back to Top</a>
     </div>
-    Currículo eletrônico de Vinicius Capanema<br>
-    Desenvolvido e implementado por VPC‑GEOSER 2025
+    Electronic curriculum vitae of Vinicius Capanema<br>
+    Designed and developed by VPC‑GEOSER 2025
   </footer>
 
 <script>

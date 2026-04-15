@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vinicius Capanema — Curriculum Vitae (V07 • Avant)</title>
+<meta name="description" content="Curriculum Vitae of Vinicius Capanema — V07 version with asymmetric layout, serif/sans typography and fluid animations.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+/* Fallback fonts */
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;src:local('Montserrat'),local('Montserrat-Regular'),sans-serif}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;src:local('Montserrat Medium'),local('Montserrat-Medium'),sans-serif}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;src:local('Montserrat SemiBold'),local('Montserrat-SemiBold'),sans-serif}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;src:local('Montserrat Bold'),local('Montserrat-Bold'),sans-serif}
+</style>
+<style>
+/* ===== V07 Avant — tokens ===== */
+:root{
+  --bg:#0a0e14; --fg:#e8eaed; --muted:#9ba3ae;
+  --surface:#141b24; --surface-2:#0f1520; --line:#1f2937;
+  --accent:#60a5fa; --accent-dark:#3b82f6; --accent-light:#dbeafe;
+  --shadow: 0 4px 14px rgba(0,0,0,.3), 0 1px 3px rgba(0,0,0,.2);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,.5), 0 4px 12px rgba(0,0,0,.3);
+  --radius:8px; --radius-lg:16px;
+}
+:root.dark{
+  --bg:#0f1117; --fg:#e8e9ed; --muted:#9ca3af;
+  --surface:#1a1d28; --surface-2:#13161f; --line:#2a2f3d;
+  --accent:#60a5fa; --accent-dark:#3b82f6; --accent-light:#dbeafe;
+  --shadow: 0 4px 14px rgba(0,0,0,.3), 0 1px 3px rgba(0,0,0,.2);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,.5), 0 4px 12px rgba(0,0,0,.3);
+}
+:root.light{
+  --bg:#f8f9fa; --fg:#1a1d28; --muted:#6b7280;
+  --surface:#ffffff; --surface-2:#f1f3f5; --line:#e5e7eb;
+  --accent:#3b82f6; --accent-dark:#2563eb; --accent-light:#93c5fd;
+  --shadow: 0 2px 8px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:16px/1.7 "Montserrat",system-ui,sans-serif}
+h1,h2,h3{font-family:"Montserrat",sans-serif;font-weight:700;line-height:1.2}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent-dark)}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.nav-inner{max-width:1280px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.logo{font:700 28px Inter,system-ui,sans-serif;color:var(--fg);display:flex;flex-direction:column;gap:2px;line-height:1.2}
+.logo::after{content:"Forest Engineer";font-size:12px;font-weight:600;font-family:Inter,system-ui,sans-serif;color:var(--accent);letter-spacing:0.5px}
+.nav-actions{display:flex;gap:12px;align-items:center}
+.btn{padding:8px 16px;border-radius:var(--radius);border:1px solid var(--line);background:var(--surface);color:var(--fg);font-weight:500;cursor:pointer;transition:all .2s}
+.btn:hover{background:var(--surface-2);transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:#fff;border:none}
+.btn-primary:hover{background:var(--accent-dark)}
+
+/* Hero */
+.hero{max-width:1280px;margin:60px auto 40px;padding:0 24px;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+.hero-text h1{font-size:clamp(36px,6vw,64px);margin-bottom:16px;font-weight:900}
+.hero-text h1 span{color:var(--accent)}
+.hero-text .lead{font-size:1.25rem;color:var(--muted);margin-bottom:24px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-avatar{width:100%;aspect-ratio:1;border-radius:var(--radius-lg);background:linear-gradient(135deg,var(--accent-dark),var(--accent));box-shadow:var(--shadow-lg);display:grid;place-items:center;font:900 48px "Montserrat";color:#fff;overflow:hidden}
+.hero-avatar img{width:100%;height:100%;object-fit:cover}
+
+/* Split section */
+.section{max-width:1280px;margin:80px auto;padding:0 24px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.split.reverse{direction:rtl}
+.split.reverse > *{direction:ltr}
+.content h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
+.content p{margin-bottom:16px}
+.content ul{list-style:none;margin-left:0}
+.content li{position:relative;padding-left:28px;margin-bottom:10px}
+.content li::before{content:"\2192";position:absolute;left:0;color:var(--accent);font-weight:700}
+
+/* Cards grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:32px}
+.card{
+  background:
+    linear-gradient(90deg, rgba(96, 165, 250, 0.15), transparent),
+    linear-gradient(135deg, rgba(96, 165, 250, 0.12), transparent),
+    var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;
+  box-shadow:
+    4px 0 12px rgba(0, 0, 0, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    4px 4px 16px rgba(0, 0, 0, 0.15);
+  transition:transform .3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow .3s ease,background .3s ease
+}
+.card p{margin-bottom:16px}
+.card p:last-child{margin-bottom:0}
+.card:hover{
+  transform:translateY(-8px) translateZ(0);
+  box-shadow:
+    6px 0 20px rgba(0, 0, 0, 0.3),
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    6px 6px 24px rgba(0, 0, 0, 0.25)
+}
+.card h3{font-size:1rem;margin-bottom:8px;color:var(--fg);font-weight:600}
+.card h2{font-size:1.25rem;margin-bottom:16px;color:var(--fg);font-weight:700}
+.card .meta{font-size:0.85rem;color:var(--muted);margin-bottom:12px}
+.card p{font-size:0.95rem;line-height:1.6;text-align:justify}
+
+/* Mini cards */
+.mini-card{
+  background:
+    linear-gradient(90deg, rgba(96, 165, 250, 0.15), transparent),
+    linear-gradient(135deg, rgba(96, 165, 250, 0.12), transparent),
+    var(--surface-2);
+  border:1px solid var(--line);border-radius:var(--radius);padding:16px;
+  box-shadow:
+    2px 0 8px rgba(0, 0, 0, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    2px 2px 12px rgba(0, 0, 0, 0.1);
+  transition:transform .3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow .3s ease
+}
+.mini-card:hover{
+  transform:translateY(-4px);
+  box-shadow:
+    3px 0 12px rgba(0, 0, 0, 0.2),
+    0 3px 12px rgba(0, 0, 0, 0.2),
+    3px 3px 16px rgba(0, 0, 0, 0.15)
+}
+.mini-card h3{font-size:0.95rem;margin-bottom:4px;font-weight:600}
+.mini-card .meta{font-size:0.8rem;color:var(--muted)}
+.mini-card .competency-header{font-size:0.95rem;font-weight:600;margin-bottom:8px}
+.mini-card .competency-content{overflow:visible;max-height:none;opacity:1;transition:max-height .4s ease,opacity .4s ease}
+.mini-card .competency-content.expanded{max-height:4000px;opacity:1;margin-top:8px}
+.mini-card .competency-content:not(.expanded){display:none}
+
+/* Tech card spacing */
+.tech-card{margin-top:32px}
+
+/* Content text justification */
+.content p{text-align:justify}
+.content li{text-align:justify}
+.quote{margin-top:20px;padding:20px;border-left:4px solid var(--accent);background:var(--surface-2);border-radius:var(--radius);max-width:100%;text-align:justify}
+
+/* Timeline */
+.timeline{position:relative;padding-left:0;list-style:none;margin:0}
+.timeline.no-padding{padding-left:0}
+.timeline::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:transparent}
+.timeline-item{
+  position:relative;padding-bottom:20px;margin-bottom:12px;
+  background:transparent
+}
+.timeline-item.padding-0{
+  padding-bottom:0
+}
+.timeline::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:transparent}
+.timeline-item h3{font-size:0.95rem;margin-bottom:4px;display:flex;align-items:center;gap:8px;cursor:pointer;-webkit-user-select:none;user-select:none;font-weight:600}
+.timeline-item h3:hover{opacity:.8}
+.timeline-item .meta{color:var(--muted);font-size:0.85rem;margin-bottom:8px}
+.timeline-item .expand-icon{font-size:12px;transition:transform .2s}
+.timeline-item .expand-icon.expanded{transform:rotate(90deg)}
+.timeline-content{overflow:hidden;max-height:0;opacity:0;transition:max-height .4s ease,opacity .4s ease;font-size:0.9rem}
+.timeline-content.expanded{max-height:2000px;opacity:1;margin-top:8px}
+.timeline-content ul{margin:8px 0 0 0;line-height:1.6;padding-left:20px}
+.timeline-content li{margin-bottom:8px;text-align:justify}
+.timeline-content p{text-align:justify;margin-bottom:8px}
+
+/* Card Item */
+.card-item{
+  position:relative;padding-bottom:20px;margin-bottom:12px;
+  background:transparent
+}
+.card-item.padding-0{
+  padding-bottom:0
+}
+.card-item h3{font-size:0.95rem;margin-bottom:4px;display:flex;align-items:center;gap:8px;cursor:pointer;-webkit-user-select:none;user-select:none;font-weight:600}
+.card-item h3:hover{opacity:.8}
+.card-item .meta{color:var(--muted);font-size:0.85rem;margin-bottom:8px}
+.card-item .expand-icon{font-size:12px;transition:transform .2s}
+.card-item .expand-icon.expanded{transform:rotate(90deg)}
+
+/* Competencies */
+.competency-list{list-style:none;padding:0;margin:0}
+.competency-item{margin:12px 0;padding-bottom:12px;border-bottom:none}
+.competency-item:last-child{border-bottom:none}
+.competency-header{
+  cursor:pointer;-webkit-user-select:none;user-select:none;
+  display:flex;align-items:center;gap:8px;font-weight:600;padding:8px 0;font-size:0.95rem
+}
+.competency-header:hover{opacity:.8}
+.competency-header .expand-icon{font-size:12px;transition:transform .2s}
+.competency-header .expand-icon.expanded{transform:rotate(90deg)}
+.competency-content{overflow:hidden;max-height:0;opacity:0;transition:max-height .4s ease,opacity .4s ease}
+.competency-content.expanded{max-height:3000px;opacity:1;margin-top:8px}
+.competency-content p{margin-bottom:12px;font-size:0.9rem;text-align:justify}
+
+/* Tag cloud */
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.tag{padding:6px 14px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);font-size:.9rem;font-weight:500}
+
+/* Footer */
+.footer{max-width:1280px;margin:80px auto 20px;padding:24px;border-top:1px solid var(--line);text-align:center;color:var(--muted)}
+.footer-action{margin-bottom:16px}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* Utils */
+.mb-24{margin-bottom:24px}
+.mb-16{margin-bottom:16px}
+.mt-24{margin-top:24px}
+.mt-20{margin-top:20px}
+.max-w-900{max-width:900px}
+.max-w-700{max-width:700px;margin:auto}
+.text-center{text-align:center}
+.text-muted{color:var(--muted)}
+.ul{list-style:none;padding-left:0}
+.ul li{position:relative;padding-left:0;margin-bottom:8px;text-align:justify}
+.ul li::before{content:"";position:absolute;left:-20px;color:var(--accent);font-weight:700;display:none}
+.quote{margin-top:20px;padding:20px;border-left:4px solid var(--accent);background:var(--surface-2);border-radius:var(--radius);max-width:100%;text-align:justify}
+.form-contact{display:flex;flex-direction:column;gap:16px}
+.form-contact .btn{align-self:center;min-width:200px}
+.field{border:1px solid var(--line);border-radius:var(--radius);padding:14px;background:var(--surface);color:var(--fg);font:inherit}
+.field.textarea{min-height:140px;resize:vertical}
+.hint{font-size:.9rem;color:var(--muted);text-align:center}
+
+/* ===== RESPONSIVE MOBILE-FIRST ===== */
+
+/* Tablet: 640px - 900px */
+@media (max-width:900px){
+  .hero,.split{grid-template-columns:1fr}
+  .split.reverse{direction:ltr}
+  .hero{gap:40px;margin:40px auto 30px}
+  .section{margin:60px auto}
+  .grid{grid-template-columns:1fr;gap:20px}
+}
+
+/* Mobile: up to 640px */
+@media (max-width:640px){
+  body{font-size:15px;line-height:1.6}
+  .nav-inner{padding:12px 16px;flex-wrap:wrap;gap:8px}
+  .logo{font-size:22px}
+  .logo::after{font-size:10px}
+  .nav-actions{gap:8px;width:100%;justify-content:center}
+  .btn{padding:8px 12px;font-size:0.9rem}
+  .hero{
+    margin:24px auto 20px;
+    padding:0 16px;
+    gap:24px;
+    grid-template-columns:1fr;
+  }
+  .hero-text h1{font-size:clamp(28px,8vw,36px);margin-bottom:12px}
+  .hero-text .lead{font-size:1rem;margin-bottom:20px}
+  .hero-actions{flex-direction:column;width:100%;gap:10px}
+  .hero-actions .btn{width:100%;justify-content:center;padding:12px}
+  .hero-avatar{
+    order:-1;
+    max-width:200px;
+    margin:0 auto;
+  }
+  .section{
+    margin:40px auto;
+    padding:0 16px;
+  }
+  .split{gap:30px}
+  .content h2{font-size:clamp(24px,6vw,32px);margin-bottom:12px}
+  .content p{margin-bottom:12px;font-size:0.95rem}
+  .grid{gap:16px;margin-top:24px}
+  .card{
+    padding:16px;
+    margin-bottom:16px;
+  }
+  .card h2{font-size:1.1rem;margin-bottom:12px}
+  .card h3{font-size:0.95rem;margin-bottom:8px}
+  .card p{font-size:0.9rem;margin-bottom:12px}
+  .card .meta{font-size:0.8rem;margin-bottom:8px}
+  .timeline-item,.card-item{padding-bottom:16px;margin-bottom:10px}
+  .timeline-item h3,
+  .card-item h3{font-size:0.9rem;gap:6px}
+  .timeline-content{font-size:0.85rem}
+  .timeline-content ul{padding-left:16px}
+  .timeline-content li{margin-bottom:6px;font-size:0.85rem}
+  .competency-header{font-size:0.9rem;padding:6px 0}
+  .competency-content p{font-size:0.85rem;margin-bottom:10px}
+  .mb-24{margin-bottom:16px}
+  .mb-16{margin-bottom:12px}
+  .mt-24{margin-top:16px}
+  .mt-20{margin-top:16px}
+  .form-contact{gap:12px}
+  .field{padding:12px;font-size:0.95rem}
+  .field.textarea{min-height:120px}
+  .footer{margin:40px auto 16px;padding:16px;font-size:0.85rem}
+  .footer-action{margin-bottom:12px}
+  .content p,
+  .content li,
+  .timeline-content p,
+  .timeline-content li,
+  .card p{text-align:left}
+  .btn,
+  .timeline-item h3,
+  .card-item h3,
+  .competency-header{
+    min-height:44px;
+    display:flex;
+    align-items:center;
+  }
+}
+
+/* Very small mobile: up to 375px (iPhone SE) */
+@media (max-width:375px){
+  body{font-size:14px}
+  .hero-text h1{font-size:clamp(24px,9vw,28px)}
+  .logo{font-size:20px}
+  .card{padding:12px}
+  .nav-inner{padding:10px 12px}
+  .section{padding:0 12px}
+  .hero{padding:0 12px}
+}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">Vinicius Capanema</a>
+      <div class="nav-actions">
+        <a class="btn" href="./portfolio-en.html">Portfolio</a>
+        <a class="btn" href="./index.html" title="Versão em Português"><i class="bi bi-globe"></i> PT</a>
+        <button type="button" class="btn" id="themeToggle" aria-label="Toggle light/dark theme"><i class="bi bi-moon-stars-fill"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Engineering, <span>Remote Sensing</span> & Geospatial Analysis</h1>
+      <p class="lead">Forest Engineer with a Ph.D. in Remote Sensing from INPE, bringing over 15 years of expertise in geospatial analysis, geoprocessing, and the development of web-based solutions for environmental management and infrastructure.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Get in Touch</a>
+        <a class="btn" href="https://www.linkedin.com/in/viniciuscapanema/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
+        <a class="btn" href="http://lattes.cnpq.br/4908905634731966" target="_blank" rel="noopener"><i class="bi bi-journal-text"></i> Lattes</a>
+        <button type="button" class="btn" onclick="exportToPDF()" aria-label="Download CV as PDF"><i class="bi bi-file-pdf"></i> Download CV PDF</button>
+      </div>
+    </div>
+    <div class="hero-avatar"><img src="../../../../static/img/1580298764967.jpg" alt="Vinicius Capanema"></div>
+  </section>
+
+  <section class="section reveal">
+    <div class="card mb-24">
+      <h2>Summary</h2>
+      <p>Vinicius do Prado Capanema holds a Bachelor's degree in Forest Engineering, a specialization in Rural Property Georeferencing accredited by INCRA, a Master's and a Ph.D. in Remote Sensing, and an MBA in Project Management. With a multidisciplinary background, he operates in an integrated manner across research, development, and innovation in the road infrastructure sector. He has extensive experience in conceiving, building, and deploying technology-driven solutions that leverage geoprocessing, geostatistics, and remote sensing for data analysis and manipulation, with emphasis on cloud computing, geographic databases, and spatial data infrastructure (SDI).</p>
+
+      <p>By applying advanced geoprocessing techniques to remote sensing-derived data, he conducts studies focused on monitoring and mapping immediate and adjacent factors that may impact road infrastructure development and management, providing decision support for strategic planning.</p>
+
+      <p>Beyond technical research, he contributes to multidisciplinary projects involving engineering, the environment, and technology, fostering the integration of interdisciplinary teams to ensure effective project delivery. His expertise in forest engineering and remote sensing enables him to perform environmental impact analyses, develop computational models, and create decision-support tools, with integration into cloud architectures and corporate spatial data ecosystems, contributing to project sustainability.</p>
+
+      <p>Alongside operational activities, he is dedicated to knowledge dissemination through the preparation and publication of scientific studies, technical reports, and active participation in conferences, seminars, and training sessions, strengthening best practices and encouraging the continuous improvement of applied methodologies.</p>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="split">
+      <aside class="content">
+        <!-- Core Competencies -->
+        <div class="card mb-24">
+          <h2 class="mb-16">Core Competencies</h2>
+          <div class="grid">
+            <div class="mini-card">
+              <div class="competency-header" onclick="toggleCompetency(this)">
+                <span class="expand-icon">&#9654;</span>
+                <span>Research & Development</span>
+              </div>
+              <div class="competency-content">
+                <p class="text-muted"><strong>Researcher Profile:</strong> Ph.D. in Remote Sensing from INPE with a solid scientific track record (peer-reviewed journal articles, conference presentations, peer review). Expertise in developing innovative methodologies for geospatial analysis and environmental monitoring.</p>
+                <p class="text-muted"><strong>R&D Leadership:</strong> Proven ability to lead and coordinate multidisciplinary research groups, from project conception through publication. Experience in fundraising, research timeline management, and building specialized technical teams.</p>
+                <p class="text-muted"><strong>Technological Innovation:</strong> Development of applied tools and methodologies (FAD-AHP, SIGMA-PLI, WebGIS, indicator calculators), AI integration in research workflows, and automation of analytical processes.</p>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="competency-header" onclick="toggleCompetency(this)">
+                <span class="expand-icon">&#9654;</span>
+                <span>Project & Team Management</span>
+              </div>
+              <div class="competency-content">
+                <p class="text-muted"><strong>Project Coordination:</strong> Planning and execution of complex environmental studies involving multiple stakeholders (DER/SP, SEMIL, environmental agencies). Scope, budget, and deliverable management with a focus on measurable outcomes.</p>
+                <p class="text-muted"><strong>Team Leadership:</strong> Proven experience in coordinating multidisciplinary teams (engineers, geographers, data analysts, developers), fostering a collaborative environment and efficient task distribution.</p>
+                <p class="text-muted"><strong>Institutional Liaison:</strong> Articulation with regulatory bodies (INCRA, IBAMA, SEMA-MT, CETESB), presenting results to decision-makers, and preparing technical reports and opinions for environmental licensing.</p>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="competency-header" onclick="toggleCompetency(this)">
+                <span class="expand-icon">&#9654;</span>
+                <span>Environmental Governance & Sustainability</span>
+              </div>
+              <div class="competency-content">
+                <p class="text-muted"><strong>Environmental Policies:</strong> Structuring environmental governance frameworks, strategic alignment with decarbonization targets (SP Carbono Zero), development of sustainability indicators, and regulatory compliance monitoring.</p>
+                <p class="text-muted"><strong>Risk Management:</strong> Climate risk analysis and mitigation, natural disaster prevention, socio-environmental vulnerability studies, and planning of preventive and corrective actions.</p>
+                <p class="text-muted"><strong>Licensing & Compliance:</strong> Oversight of environmental licensing processes (LP, LI, LO), preparation of EIA/RIMA, PRAD, PCA, management of environmental requirements, and liaison with regulatory authorities.</p>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="competency-header" onclick="toggleCompetency(this)">
+                <span class="expand-icon">&#9654;</span>
+                <span>Geoprocessing & Remote Sensing</span>
+              </div>
+              <div class="competency-content">
+                <p class="text-muted"><strong>Advanced Spatial Analysis:</strong> Satellite image processing (Sentinel, Landsat, MODIS, CBERS) in Google Earth Engine, QGIS, ArcGIS Pro; supervised/unsupervised classification, object-oriented segmentation, and time series analysis.</p>
+                <p class="text-muted"><strong>Spectral Indices:</strong> Calculation and interpretation of NDVI, EVI, NDWI, and NBR for vegetation monitoring, water resources assessment, and fire scar detection; validation with field data.</p>
+                <p class="text-muted"><strong>Practical Applications:</strong> Land use and land cover mapping, multitemporal change detection, forest degradation monitoring, urban sprawl analysis, and infrastructure asset inventory.</p>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="competency-header" onclick="toggleCompetency(this)">
+                <span class="expand-icon">&#9654;</span>
+                <span>Geospatial Data Engineering</span>
+              </div>
+              <div class="competency-content">
+                <p class="text-muted"><strong>Data Modeling:</strong> Design of optimized PostGIS schemas, structure normalization, definition of constraints and geometric validations, spatial indexes (GIST, SP-GIST), and large table partitioning.</p>
+                <p class="text-muted"><strong>ETL/ELT Pipelines:</strong> Development of automated extraction, transformation, and loading workflows for geospatial data (IBGE/SIDRA, SECEX, OpenStreetMap, satellite imagery), orchestration with Airflow/Python, logging and monitoring.</p>
+                <p class="text-muted"><strong>Source Integration:</strong> Consolidation of heterogeneous data (shapefiles, GeoJSON, raster, CSVs, REST APIs), CRS transformations, geometry cleaning and validation, and enrichment with auxiliary datasets.</p>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="competency-header" onclick="toggleCompetency(this)">
+                <span class="expand-icon">&#9654;</span>
+                <span>WebGIS & Application Development</span>
+              </div>
+              <div class="competency-content">
+                <p class="text-muted"><strong>Geospatial Frontend:</strong> Development of interactive interfaces with Leaflet.js (layer control, dynamic filters, custom popups, clustering, heatmaps, drawing tools), integration with REST APIs.</p>
+                <p class="text-muted"><strong>Backend & APIs:</strong> Creation of geospatial APIs with FastAPI (endpoints for spatial queries, buffers, intersections, geocoding), JWT authentication, Swagger/OpenAPI documentation, and performance optimization.</p>
+                <p class="text-muted"><strong>OGC Services:</strong> Publishing WMS/WFS/WMTS via GeoServer and QGIS Server, SLD styling configuration, caching with GeoWebCache, and integration with PostGIS for dynamic data.</p>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="competency-header" onclick="toggleCompetency(this)">
+                <span class="expand-icon">&#9654;</span>
+                <span>Multi-Criteria Analysis & Decision Support</span>
+              </div>
+              <div class="competency-content">
+                <p class="text-muted"><strong>AHP Method (Saaty):</strong> Expertise in Analytic Hierarchy Process for criteria weighting and decision support (applied in DER/SP road jurisdictionalization projects, favorability indicators).</p>
+                <p class="text-muted"><strong>Indicators & Metrics:</strong> Development of indicator adherence evaluation systems, multi-criteria classification (Direct, Strong Proxy, Moderate Proxy, Uncertain), and methodological validation with traceability.</p>
+                <p class="text-muted"><strong>Support Tools:</strong> Creation of interactive calculators and dashboards for scenario analysis, impact simulations, and result visualization for non-technical stakeholders.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="card mb-24">
+          <h2 class="mb-16">Languages</h2>
+          <ul class="ul">
+            <li><strong>English</strong> — Advanced (reading, writing, conversation)</li>
+            <li><strong>Spanish</strong> — Intermediate</li>
+          </ul>
+        </div>
+
+        <!-- Courses -->
+        <div class="card mb-24">
+          <h2 class="mb-16">Courses & Certifications</h2>
+          <ul class="timeline">
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Georeferencing & Surveying</h3>
+              <div class="timeline-content">
+                <ul>
+                  <li>3rd Edition of the Technical Standard for Rural Property Georeferencing (NTGIR) and SIGEF — ANOREG-MT</li>
+                  <li>Official TopoEVN 6 Surveying Certification — Metrica</li>
+                  <li>AutoCAD | TOPOEVN — Professional training course</li>
+                  <li>Technical responsibility in land tenure processes — INTERMAT-MT</li>
+                </ul>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Geoprocessing & GIS</h3>
+              <div class="timeline-content">
+                <ul>
+                  <li>Orbital data processing in GIS platforms (ENVI, SPRING, QGIS, ArcGIS, TERRAVIEW, GEODA, TerraAmazon)</li>
+                  <li>Geoprocessing | Spatial Analysis | R Programming</li>
+                  <li>Land use and land cover change modeling with Dinamica EGO — UFMG (2018)</li>
+                </ul>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Programming & Data Science</h3>
+              <div class="timeline-content">
+                <ul>
+                  <li>Python for Remote Sensing Research — INPE, São José dos Campos</li>
+                  <li>Microsoft Office (Word, Excel, PowerPoint, Internet) — Advanced course</li>
+                </ul>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Environment & Licensing</h3>
+              <div class="timeline-content">
+                <ul>
+                  <li>Rural Environmental Registry (CAR) preparation — SEMA-MT</li>
+                  <li>Technical responsibility in environmental processes — SEMA-MT</li>
+                  <li>Phytogeography — UNEMAT (2008)</li>
+                </ul>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Management & Business</h3>
+              <div class="timeline-content">
+                <ul>
+                  <li>Business strategy | Customer service</li>
+                  <li>Project planning | Project management</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Projects -->
+        <div class="card">
+          <h2 class="mb-16">Projects</h2>
+          <ul class="timeline">
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Satellite-Based Environmental Monitoring (INPE)</h3>
+              <div class="timeline-content">
+                <p class="meta">2017–2018</p>
+                <ul>
+                  <li>Study of Pattern and Process Trajectories in Characterizing Deforestation Dynamics in the Amazon.</li>
+                  <li>Project aimed at supporting the expansion and improvement of satellite-based environmental monitoring and the development of land use and land cover studies in the Amazon region.</li>
+                  <li>Contribution to the implementation of the country's REDD (Reducing Emissions from Deforestation and Forest Degradation) strategy, enabling greater control of deforestation and forest degradation through the strengthening of INPE's monitoring systems.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="card-item padding-0">
+              <h3 onclick="toggleTimeline(this)">e-Sensing: Big Earth Observation Data Analytics</h3>
+              <div class="timeline-content">
+                <p class="meta">Doctoral Research (2018–2022)</p>
+                <ul>
+                  <li>Project with the primary objective of conceiving, building, and deploying a new type of knowledge platform for organizing, accessing, processing, and analyzing large-scale Earth observation data.</li>
+                  <li>The knowledge platform enabled scientists to produce information in innovative ways, based on open-source software, allowing data sharing and result reproducibility.</li>
+                  <li>Focus on improving the extraction of land use and land cover change information using advanced big data analytics and machine learning techniques.</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Technologies & Tools -->
+        <div class="card tech-card">
+          <h2 class="mb-16">Technologies & Tools</h2>
+          <ul class="timeline">
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Geoprocessing & Remote Sensing</h3>
+              <div class="timeline-content">
+                <p class="text-muted"><strong>Desktop GIS:</strong> QGIS (graphical modeler, Python plugins, advanced spatial analysis), ArcGIS/ArcGIS Pro (geoprocessing, network analysis, 3D), TerraView, TerraAmazon (forest monitoring), GEODA (exploratory spatial analysis), AutoCAD (CAD-GIS projects), TopoEVN (surveying and georeferencing).</p>
+                <p class="text-muted"><strong>Cloud & Big Data GEO:</strong> Google Earth Engine (massive satellite image processing, time series, supervised/unsupervised classification, spectral indices NDVI/EVI/NDWI).</p>
+                <p class="text-muted"><strong>Libraries & CLI:</strong> GDAL/OGR (raster/vector conversion and processing via command line and Python), PROJ (coordinate transformations), Rasterio, Fiona, Shapely, GeoPandas.</p>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Programming & Data Analysis</h3>
+              <div class="timeline-content">
+                <p class="text-muted"><strong>Python:</strong> Pandas/GeoPandas (tabular and spatial data manipulation), NumPy/SciPy (scientific computing), Matplotlib/Seaborn (visualization), Scikit-learn (machine learning for image classification), Rasterio/GDAL (raster processing), Shapely/Fiona (vector geometries), PyProj (projections), Requests/BeautifulSoup (web scraping), SQLAlchemy (database ORM).</p>
+                <p class="text-muted"><strong>R:</strong> Spatial statistical analysis, satellite image processing (raster, terra, rgdal), visualization (ggplot2), predictive modeling, time series analysis.</p>
+                <p class="text-muted"><strong>JavaScript:</strong> Intermediate proficiency in web development, DOM manipulation, REST API integration, visualization libraries (Chart.js, Leaflet.js).</p>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Spatial Databases</h3>
+              <div class="timeline-content">
+                <p class="text-muted"><strong>PostgreSQL/PostGIS:</strong> Spatial data modeling, ST_* functions (ST_Intersects, ST_Buffer, ST_Union, ST_Distance, ST_Within), spatial indexes (GIST, SP-GIST, BRIN), topological analysis, reverse geocoding, spatial query optimization, triggers, and stored procedures.</p>
+                <p class="text-muted"><strong>Best Practices:</strong> Schema normalization, geometric constraints and validations, materialized views for complex queries, large table partitioning, backup and restore, replication and high availability.</p>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">WebGIS & Service Publishing</h3>
+              <div class="timeline-content">
+                <p class="text-muted"><strong>Frontend:</strong> Leaflet.js (interactive maps, layer control, dynamic filters, custom popups, clustering plugins, heatmaps, drawing tools), OpenLayers (alternative for complex projects).</p>
+                <p class="text-muted"><strong>Map Servers:</strong> GeoServer (WMS/WFS/WMTS publishing, SLD styling, GeoWebCache caching, PostGIS integration), QGIS Server (lightweight OGC services), MapServer.</p>
+                <p class="text-muted"><strong>Tiles & Performance:</strong> Vector tile generation (MVT), raster tile caching, style optimization, data compression, CDN for global delivery.</p>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">APIs & Geospatial Backend</h3>
+              <div class="timeline-content">
+                <p class="text-muted"><strong>FastAPI:</strong> Development of geospatial REST APIs (endpoints for spatial queries, geometry filters, dynamic buffers), JWT authentication, rate limiting, structured logging, Pydantic validation, automatic documentation (Swagger/OpenAPI).</p>
+                <p class="text-muted"><strong>Optimization:</strong> Optimized SQL queries with EXPLAIN ANALYZE, materialized views, Redis caching, result pagination, GeoJSON response compression, configured CORS.</p>
+                <p class="text-muted"><strong>Integration:</strong> Consumption of external APIs (IBGE, INPE, OpenStreetMap, weather services), webhooks, asynchronous processing with Celery/RQ.</p>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">DevOps & Infrastructure</h3>
+              <div class="timeline-content">
+                <p class="text-muted"><strong>Containers:</strong> Docker (image creation, optimized Dockerfile, multi-stage builds), Docker Compose (local orchestration of full stacks: PostGIS + GeoServer + API + Frontend).</p>
+                <p class="text-muted"><strong>Web Servers:</strong> Nginx (reverse proxy, load balancing, gzip/brotli compression, HTTP caching, SSL/TLS configuration), Apache (alternative for legacy projects).</p>
+                <p class="text-muted"><strong>Deploy & CI/CD:</strong> Git/GitHub (version control, workflows), knowledge of GitHub Actions, deployment on Linux servers (Ubuntu/Debian), basic monitoring with logs.</p>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">AI & Applied Machine Learning</h3>
+              <div class="timeline-content">
+                <p class="text-muted"><strong>AI Tools:</strong> Proficiency in modern artificial intelligence tools (ChatGPT, Claude, GitHub Copilot) applied to code generation, data analysis, process automation, technical documentation, and complex problem-solving.</p>
+                <p class="text-muted"><strong>Geospatial ML:</strong> Supervised satellite image classification (Random Forest, SVM), change detection, object segmentation, spatial predictive analysis, model validation (confusion matrix, accuracy, Kappa).</p>
+                <p class="text-muted"><strong>Natural Language Processing:</strong> Prompt engineering for task optimization, LLM integration in development workflows.</p>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Data Governance & Quality</h3>
+              <div class="timeline-content">
+                <p class="text-muted"><strong>Metadata & Cataloging:</strong> Dataset documentation following ISO 19115/19139 standards, GeoNetwork for cataloging, data lineage tracking (provenance).</p>
+                <p class="text-muted"><strong>Version Control:</strong> Git for code and scripts, shapefile/GeoJSON version control, database change history (audit triggers).</p>
+                <p class="text-muted"><strong>Quality:</strong> Topological geometry validation, overlap/gap detection, completeness analysis, positional accuracy, reproducible documentation with Jupyter Notebooks/R Markdown.</p>
+              </div>
+            </li>
+            <li class="card-item padding-0">
+              <h3 onclick="toggleTimeline(this)">Office & Productivity</h3>
+              <div class="timeline-content">
+                <p class="text-muted"><strong>Microsoft Office:</strong> Word (complex technical report preparation, ABNT formatting, collaborative reviews), PowerPoint (executive presentations with infographics, maps, and dashboards), Excel (data analysis with pivot tables, advanced formulas, VBA macros, Power Query integration), Outlook (email, calendar, and task management).</p>
+                <p class="text-muted"><strong>Other Tools:</strong> Google Workspace (Docs, Sheets, Slides for real-time collaboration), Markdown (technical documentation), LaTeX (scientific documents), Notion/Obsidian (knowledge management).</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="content">
+        <!-- Education -->
+        <div class="card mb-24">
+          <h2 class="mb-16">Education</h2>
+          <div class="grid">
+            <div class="mini-card">
+              <h3><i class="bi bi-mortarboard-fill"></i> Ph.D.</h3>
+              <p class="meta">Remote Sensing · INPE · 2022</p>
+            </div>
+            <div class="mini-card">
+              <h3><i class="bi bi-graph-up"></i> MBA</h3>
+              <p class="meta">Project Management · Unopar · 2020</p>
+            </div>
+            <div class="mini-card">
+              <h3><i class="bi bi-mortarboard-fill"></i> Master's Degree</h3>
+              <p class="meta">Remote Sensing · INPE · 2017</p>
+            </div>
+            <div class="mini-card">
+              <h3><i class="bi bi-rulers"></i> Specialization</h3>
+              <p class="meta">Georeferencing · F. Vale do Juruena · 2010</p>
+            </div>
+            <div class="mini-card">
+              <h3><i class="bi bi-tree-fill"></i> Bachelor's Degree</h3>
+              <p class="meta">Forest Engineering · UNEMAT · 2009</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="card mb-24">
+          <h2 class="mb-16">Professional Experience</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3 onclick="toggleTimeline(this)">SEMIL/SP — Data Engineer</h3>
+              <p class="meta">July 2025 – Present</p>
+              <div class="timeline-content">
+                <ul>
+                  <li>Develops web-based solutions applying geoprocessing and geostatistical data analysis for the Integrated Logistics Plan (PLI).</li>
+                  <li>Supports the construction and development of PLI products focused on infrastructure and logistics management for the State of São Paulo.</li>
+                  <li>Applies advanced spatial data processing techniques to support strategic decision-making.</li>
+                  <li>Integrates data from multiple sources for the creation of dashboards and territorial analysis tools.</li>
+                </ul>
+              </div>
+            </div>
+          <div class="timeline-item">
+            <h3 onclick="toggleTimeline(this)">DER/SP — Interim Environmental Coordinator</h3>
+            <p class="meta">Sep 2024 – Jan 2025</p>
+            <div class="timeline-content">
+              <ul>
+                <li>Led the coordination of environmental governance and sustainability initiatives, structuring guidelines and aligning policies with decarbonization targets (SP Carbono Zero).</li>
+                <li>Coordinated strategic environmental studies for infrastructure management, decarbonization, climate risk assessment, and disaster prevention, applying advanced geoprocessing and remote sensing techniques.</li>
+                <li>Defined data standards and workflows for environmental licensing and preservation programs; integrated dashboards and thematic maps for decision-making.</li>
+                <li>Oversaw environmental licensing processes ensuring regulatory compliance; planned and executed preventive and corrective actions for environmental impact mitigation.</li>
+                <li>Actively participated in formulating environmental policies, best practices, and regulations applied to infrastructure and territorial management.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <h3 onclick="toggleTimeline(this)">DER/SP — Forest Engineer & GIS Specialist</h3>
+            <p class="meta">Aug 2023 – Sep 2024</p>
+            <div class="timeline-content">
+              <ul>
+                <li>Performed maintenance and management of the state road network through satellite imagery, reconciling topology and attributes with administrative sources.</li>
+                <li>Managed road infrastructure assets for socio-environmental adequacy and compliance; implemented compliance routines and partner integrations.</li>
+                <li>Coordinated research and studies aimed at road network maintenance and improvement; developed spatial analyses and technical reports.</li>
+                <li>Documented procedures and metadata; supported R&D focused on automation and geospatial data quality improvement.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <h3 onclick="toggleTimeline(this)">Stantec — Technical Consultant (Remote - Belgium)</h3>
+            <p class="meta">Jan 2024 – Mar 2024</p>
+            <div class="timeline-content">
+              <ul>
+                <li>Engaged in an international technical consulting project providing remote services for operations in Belgium.</li>
+                <li>Performed collection, processing, and analysis of geospatial data involving remote sensing.</li>
+                <li>Applied advanced geoprocessing techniques for spatial data analysis within a European context.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <h3 onclick="toggleTimeline(this)">VEGA Monitoring — Geoprocessing Analyst</h3>
+            <p class="meta">Mar 2022 – Aug 2023</p>
+            <div class="timeline-content">
+              <ul>
+                <li>Performed grain yield modeling at the national level; conducted meta-analyses of sector-specific data for agribusiness decision-making.</li>
+                <li>Developed and managed geospatial databases of cultivated areas for client decision support; generated risk area data for crop planning and commodity trading.</li>
+                <li>Developed ESG and sustainability projects using remote sensing; validated results and produced technical reports.</li>
+                <li>Specialist in the R&D coordination unit, pursuing technologies and methodologies to optimize remote sensing, geoprocessing, and modeling processes.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <h3 onclick="toggleTimeline(this)">GeoBrasilis — GIS Specialist Consultant</h3>
+            <p class="meta">Sep 2021 – Mar 2022</p>
+            <div class="timeline-content">
+              <ul>
+                <li>Monitored urban sprawl expansion around the Rodoanel Mário Covas through multitemporal satellite image classification.</li>
+                <li>Produced technical reports with emphasis on urban monitoring; performed classification and accuracy assessment.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <h3 onclick="toggleTimeline(this)">FUNCATE — Geoprocessing Specialist</h3>
+            <p class="meta">May 2017 – Mar 2018</p>
+            <div class="timeline-content">
+              <ul>
+                <li>Worked on a satellite-based environmental monitoring project for the Amazon biome; produced and analyzed remote sensing data for forest degradation studies.</li>
+                <li>Generated thematic land use and land cover maps using geoprocessing, spatial analysis, and digital image processing techniques.</li>
+                <li>Organized, planned, and managed field campaigns and teams for qualitative land use and land cover data collection in the Amazon.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <h3 onclick="toggleTimeline(this)">Mognos Forest & Civil Engineering — Forest Engineer</h3>
+            <p class="meta">2010 – 2015</p>
+            <div class="timeline-content">
+              <ul>
+                <li>Planned territorial and environmental management for rural enterprises; developed and executed Degraded Area Recovery Plans (PRAD) for permanent preservation areas and legal reserves.</li>
+                <li>Coordinated multidisciplinary teams for environmental monitoring and licensing; developed projects to optimize client service.</li>
+                <li>Prepared and managed administrative processes with INCRA (CCIR, ITR, georeferencing), IBAMA, SEMA-MT, and INTERMAT-MT.</li>
+                <li>Managed forest inventory in native forests, environmental licensing and regularization of industries and rural properties; prepared the Rural Environmental Registry (CAR).</li>
+                <li>Performed geoprocessing and georeferencing in compliance with INCRA technical standards; managed PMFS and PEF; prepared technical reports and EIA/RIMA.</li>
+                <li>Developed maps using GIS (QGIS, ArcGIS, ENVI, TerraView) for quantification and study of the spatiotemporal dynamics of deforestation and forest fires.</li>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Publications -->
+        <div class="card mb-24">
+          <h2 class="mb-16">Publications</h2>
+          <ul class="timeline">
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Characterization of municipalities in the timber production chain</h3>
+              <div class="timeline-content">
+                <p class="meta">XXV IUFRO World Congress · 2019</p>
+                <p class="text-muted">CAPANEMA, V. P.; ESCADA, M. I. S. Characterization of municipalities in the timber production chain in the north of Mato Grosso, Brazil. In: IUFRO World Congress, Curitiba, PR. 2019.</p>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Landscape patterns associated with extractivism in the Amazon</h3>
+              <div class="timeline-content">
+                <p class="meta">XXV IUFRO World Congress · 2019</p>
+                <p class="text-muted">SOUZA, A. R.; ESCADA, M. I. S.; SANTOS, G. V. S.; MONTEIRO, A. M. V.; CAPANEMA, V. P. Landscape patterns associated with extractivism in the Amazon: characterization and mapping of potential açaí occurrence areas in northeastern Pará. In: IUFRO World Congress, Curitiba, PR. 2019.</p>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Comparison between TerraClass Amazônia and MapBiomas</h3>
+              <div class="timeline-content">
+                <p class="meta">Proceedings of the XIX Brazilian Remote Sensing Symposium · 2019</p>
+                <p class="text-muted">CAPANEMA, V. P.; SANCHES, I. D.; ESCADA, M. I. S. Comparison between land use and land cover thematic products from TerraClass Amazônia and MapBiomas: class adherence test. In: Brazilian Remote Sensing Symposium, 19th (SBSR), 2019, Santos. Proceedings... São José dos Campos: INPE, 2019. pp. 724-727. ISBN 978-85-17-00097-3.</p>
+                <p class="text-muted"><a href="http://urlib.net/rep/8JMKD3MGP6W34M/3U67378" target="_blank" rel="noopener">http://urlib.net/rep/8JMKD3MGP6W34M/3U67378</a></p>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Mapping forest degradation intensity patterns</h3>
+              <div class="timeline-content">
+                <p class="meta">Brazilian Journal of Cartography, v. 70, n. 1 · 2018</p>
+                <p class="text-muted">CAPANEMA, V. P.; PINHEIRO, T. F.; ESCADA, M. I. S.; SANT'ANNA, S. J. S. Mapping forest degradation intensity patterns: A case study in the Sinop region, Mato Grosso. Brazilian Journal of Cartography, v. 70, n. 1, pp. 199-225, Jan./Mar. 2018.</p>
+                <p class="text-muted">DOI: <a href="http://dx.doi.org/10.14393/rbcv70n1-45254" target="_blank" rel="noopener">10.14393/rbcv70n1-45254</a></p>
+              </div>
+            </li>
+            <li class="card-item">
+              <h3 onclick="toggleTimeline(this)">Forest Degradation in the Amazon: spatial indicator</h3>
+              <div class="timeline-content">
+                <p class="meta">XVIII Brazilian Remote Sensing Symposium - SBSR · 2017</p>
+                <p class="text-muted">CAPANEMA, V. P.; ESCADA, M. I. S. Forest Degradation in the Amazon: Generation of a Spatial Indicator of Forest Degradation Susceptibility. In: XVIII Brazilian Remote Sensing Symposium - SBSR, Santos, 2017.</p>
+              </div>
+            </li>
+            <li class="card-item padding-0">
+              <h3 onclick="toggleTimeline(this)">Fire scars and land use change patterns in Pará</h3>
+              <div class="timeline-content">
+                <p class="meta">XVIII Brazilian Remote Sensing Symposium - SBSR · 2017</p>
+                <p class="text-muted">SOUZA, G. M.; CAPANEMA, V. P.; ESCADA, M. I. S. Fire scars and land use and land cover change patterns in southwestern Pará, Brazil. In: XVIII Brazilian Remote Sensing Symposium - SBSR, Santos, 2017.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="card mb-24">
+      <h2 class="mb-16">VPC-GEOSER — Geospatial Solutions</h2>
+      <p><strong>Co-Founder</strong> of VPC-GEOSER, a startup specializing in transforming geospatial data into strategic decisions. The company develops <strong>integrated geoprocessing, remote sensing, and data analytics solutions</strong> applied to infrastructure, environmental management, and sustainability.</p>
+      <p>With a focus on <strong>cloud technologies</strong> and <strong>scalable data architectures</strong>, VPC-GEOSER delivers territorial monitoring systems, environmental impact analysis, predictive modeling, and interactive dashboards — connecting raw data to actionable insights for decision-makers.</p>
+      <blockquote class="quote">
+        <strong>Vision:</strong> Democratize access to geospatial intelligence, enabling public and private organizations to make data-driven decisions and contribute to territorial sustainability.
+      </blockquote>
+      <div class="hero-actions mt-24">
+        <a class="btn btn-primary" href="./portfolio-en.html">View Portfolio</a>
+        <a class="btn" href="https://www.linkedin.com/in/viniciuscapanema/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="contact">
+    <div class="card">
+      <h2 class="mb-16 text-center">Get in Touch</h2>
+      <p class="text-center text-muted mb-24">Have a project in mind? Send your message securely.</p>
+      <form id="contactForm" class="form-contact">
+        <textarea id="messageInput" name="message" placeholder="Your message..." required class="field textarea" aria-label="Your message"></textarea>
+        <input type="email" id="emailInput" name="email" placeholder="Your email (optional)" class="field" aria-label="Your email">
+        <button type="submit" class="btn btn-primary" id="submitBtn" aria-label="Send message"><i class="bi bi-send-fill"></i> Send Message</button>
+        <p class="hint">Your data is sent privately.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-action">
+      <a class="btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false"><i class="bi bi-arrow-up"></i> Back to Top</a>
+    </div>
+    Electronic curriculum vitae of Vinicius Capanema<br>
+    Designed and developed by VPC-GEOSER 2025
+  </footer>
+
+<script>
+// Detect Bootstrap Icons loading
+window.addEventListener('load',()=>{
+  const hasBootstrapIcons=document.querySelector('[rel="stylesheet"][href*="bootstrap-icons"]');
+  if(hasBootstrapIcons && !window.bootstrapIconsLoaded){
+    window.bootstrapIconsLoaded=true;
+  }else if(!hasBootstrapIcons){
+    console.warn('Bootstrap Icons did not load. Replacing icons with text.');
+    document.querySelectorAll('[class*="bi-"]').forEach(el=>{
+      const classes=el.className;
+      let text='\u25CF';
+      if(classes.includes('bi-arrow-up')) text='\u2B06';
+      else if(classes.includes('bi-send-fill')) text='\u2709';
+      else if(classes.includes('bi-linkedin')) text='in';
+      else if(classes.includes('bi-journal-text')) text='\uD83D\uDCC4';
+      else if(classes.includes('bi-file-pdf')) text='PDF';
+      else if(classes.includes('bi-box-arrow-up-right')) text='\u2197';
+      else if(classes.includes('bi-moon')) text='\uD83C\uDF19';
+      else if(classes.includes('bi-sun')) text='\u2600';
+      el.textContent=text;
+    });
+  }
+});
+
+// Theme
+const root=document.documentElement;
+const saved=localStorage.getItem('v07-theme');
+if(saved==='light'){
+  root.classList.add('light');
+}else if(!saved){
+  root.classList.add('dark');
+}
+document.getElementById('themeToggle')?.addEventListener('click',()=>{
+  if(root.classList.contains('light')){
+    root.classList.remove('light');
+    root.classList.add('dark');
+    localStorage.setItem('v07-theme','dark');
+  }else{
+    root.classList.remove('dark');
+    root.classList.add('light');
+    localStorage.setItem('v07-theme','light');
+  }
+});
+
+// Reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Timeline expand/collapse
+function toggleTimeline(header){
+  const icon=header.querySelector('.expand-icon');
+  const item=header.closest('.timeline-item');
+  const content=item.querySelector('.timeline-content');
+  icon.classList.toggle('expanded');
+  content.classList.toggle('expanded');
+}
+
+// Competency expand/collapse
+function toggleCompetency(header){
+  const icon=header.querySelector('.expand-icon');
+  const content=header.nextElementSibling;
+  icon.classList.toggle('expanded');
+  content.classList.toggle('expanded');
+}
+
+// Form
+const f=document.getElementById('contactForm');
+const btn=document.getElementById('submitBtn');
+const msg=document.getElementById('messageInput');
+const email=document.getElementById('emailInput');
+f?.addEventListener('submit',async(e)=>{
+  e.preventDefault();
+  if(!msg.value.trim()){msg.focus();return}
+  btn.disabled=true;btn.innerHTML='\u23F3 Sending...';
+  await new Promise(r=>setTimeout(r,800));
+  btn.disabled=false;btn.innerHTML='<i class="bi bi-send-fill"></i> Send Message';
+  msg.value=''; if(email) email.value='';
+  alert('Message recorded locally (configure a backend for actual delivery).');
+});
+
+// Export to PDF
+function exportToPDF(){
+  const pdfUrl='../../../../assets/docs/Curriculo_Vinicius_Capanema_2025.pdf';
+  const link=document.createElement('a');
+  link.href=pdfUrl;
+  link.download='Curriculo_Vinicius_Capanema_2025.pdf';
+  link.style.display='none';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  console.log('\u2705 PDF download initiated');
+}
+</script>
+</body>
+</html>
