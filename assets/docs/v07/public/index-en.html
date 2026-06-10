@@ -351,6 +351,8 @@ a:hover{color:var(--accent-dark)}
       <h2>Summary</h2>
       <p>Vinicius do Prado Capanema holds a Bachelor's degree in Forest Engineering, a specialization in Rural Property Georeferencing accredited by INCRA, a Master's and a Ph.D. in Remote Sensing, and an MBA in Project Management. With a multidisciplinary background, he operates in an integrated manner across research, development, and innovation in the road infrastructure sector. He has extensive experience in conceiving, building, and deploying technology-driven solutions that leverage geoprocessing, geostatistics, and remote sensing for data analysis and manipulation, with emphasis on cloud computing, geographic databases, and spatial data infrastructure (SDI).</p>
 
+      <p><strong>Consolidated experience in applying Artificial Intelligence to geospatial data management and analysis</strong>, with focus on process automation, operational efficiency improvement, and strategic decision support. Works with generative AI as a catalyst for technical productivity, integrating advanced models into geoprocessing routines, remote sensing, data governance, and spatial data engineering. Strong capability in structuring intelligent workflows, optimizing pipelines, qualifying information, standardizing procedures, and enhancing analytical and documentary production. Leverages AI as an executive tool to elevate delivery quality, reduce response time, support complex decision-making, and drive innovation in multidisciplinary, data-driven environments.</p>
+
       <p>By applying advanced geoprocessing techniques to remote sensing-derived data, he conducts studies focused on monitoring and mapping immediate and adjacent factors that may impact road infrastructure development and management, providing decision support for strategic planning.</p>
 
       <p>Beyond technical research, he contributes to multidisciplinary projects involving engineering, the environment, and technology, fostering the integration of interdisciplinary teams to ensure effective project delivery. His expertise in forest engineering and remote sensing enables him to perform environmental impact analyses, develop computational models, and create decision-support tools, with integration into cloud architectures and corporate spatial data ecosystems, contributing to project sustainability.</p>
@@ -366,6 +368,17 @@ a:hover{color:var(--accent-dark)}
         <div class="card mb-24">
           <h2 class="mb-16">Core Competencies</h2>
           <div class="grid">
+            <div class="mini-card">
+              <div class="competency-header" onclick="toggleCompetency(this)">
+                <span class="expand-icon">&#9654;</span>
+                <span>Artificial Intelligence & Geospatial Governance</span>
+              </div>
+              <div class="competency-content">
+                <p class="text-muted"><strong>AI Applied to Geospatial Data:</strong> Consolidated experience in applying Artificial Intelligence for automating and optimizing processes in geoprocessing and remote sensing. Integration of generative AI models into geospatial analysis routines, enhancing technical productivity and delivery quality.</p>
+                <p class="text-muted"><strong>Spatial Data Governance:</strong> Structuring intelligent data workflows, optimizing ETL/ELT pipelines, qualifying and standardizing geospatial information. Development of procedures to ensure consistency, traceability, and reliability of data in corporate spatial data ecosystems.</p>
+                <p class="text-muted"><strong>AI as Executive Tool:</strong> Application of AI to strategic decision support, reducing response time, analyzing complex scenarios, and driving innovation in multidisciplinary environments. Leveraging advanced models to support complex decision-making and drive digital transformation in data-driven organizations.</p>
+              </div>
+            </div>
             <div class="mini-card">
               <div class="competency-header" onclick="toggleCompetency(this)">
                 <span class="expand-icon">&#9654;</span>
@@ -920,15 +933,23 @@ f?.addEventListener('submit',async(e)=>{
 
 // Export to PDF
 function exportToPDF(){
-  const pdfUrl='../../../../assets/docs/Curriculo_Vinicius_Capanema_2025.pdf';
-  const link=document.createElement('a');
-  link.href=pdfUrl;
-  link.download='Curriculo_Vinicius_Capanema_2025.pdf';
-  link.style.display='none';
+  // Detect current language from HTML element
+  const lang = document.documentElement.lang || 'pt-br';
+  const fileName = lang === 'en' 
+    ? 'Curriculo_Vinicius_Capanema_EN_2025.pdf'
+    : 'Curriculo_Vinicius_Capanema_2025.pdf';
+  const pdfUrl = `../../assets/docs/${fileName}`;
+  
+  // Create link and trigger download
+  const link = document.createElement('a');
+  link.href = pdfUrl;
+  link.download = fileName;
+  link.style.display = 'none';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
-  console.log('\u2705 PDF download initiated');
+  
+  console.log(`✅ Download initiated: ${fileName}`);
 }
 </script>
 </body>

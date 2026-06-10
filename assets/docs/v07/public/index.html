@@ -374,6 +374,8 @@ a:hover{color:var(--accent-dark)}
       <h2>Síntese</h2>
       <p>Vinicius do Prado Capanema é bacharel em Engenharia Florestal, especialista em Georreferenciamento de Imóveis Rurais com habilitação no INCRA, mestre e doutor em Sensoriamento Remoto e possui MBA em Gestão de Projetos. Com formação multidisciplinar, atua de maneira integrada em pesquisa, desenvolvimento e inovação na área de infraestrutura rodoviária. Tem forte atuação na idealização, construção e implantação de soluções tecnológicas que utilizam ferramentas de geoprocessamento, geoestatística e conceitos de sensoriamento remoto para análise e manipulação de dados, com ênfase em computação em nuvem, bancos de dados geográficos e infraestrutura de dados geoespaciais (SDI).</p>
 
+      <p><strong>Experiência consolidada no uso de Inteligência Artificial aplicada à gestão e análise de dados geoespaciais</strong>, com foco em automação de processos, aumento de eficiência operacional e suporte estratégico à tomada de decisão. Atuação em IA generativa como aceleradora de produtividade técnica, integrando modelos avançados a rotinas de geoprocessamento, sensoriamento remoto, governança de dados e engenharia de dados espaciais. Forte capacidade de estruturar fluxos inteligentes, otimizar pipelines, qualificar informações, padronizar procedimentos e aprimorar a produção analítica e documental. Utilização de IA como ferramenta executiva para elevar a qualidade das entregas, reduzir tempo de resposta, apoiar decisões complexas e impulsionar inovação em ambientes multidisciplinares e orientados a dados.</p>
+
       <p>Aplicando técnicas avançadas de geoprocessamento a dados derivados de sensoriamento remoto, realiza estudos direcionados ao monitoramento e mapeamento de fatores imediatos e adjacentes que podem interferir no desenvolvimento e na gestão da infraestrutura rodoviária, subsidiando decisões para o planejamento de ações estratégicas.</p>
 
       <p>Além da pesquisa técnica, contribui com projetos multidisciplinares que envolvem engenharia, meio ambiente e tecnologia, promovendo a integração de equipes interdisciplinares para assegurar a execução eficaz dos projetos. Sua experiência em engenharia florestal e sensoriamento remoto permite realizar análises de impacto ambiental, desenvolver modelos computacionais e criar ferramentas de apoio à tomada de decisão, com integração a arquiteturas em nuvem e a ecossistemas de dados espaciais corporativos, contribuindo para a sustentabilidade dos projetos.</p>
@@ -389,6 +391,17 @@ a:hover{color:var(--accent-dark)}
         <div class="card mb-24">
           <h2 class="mb-16">Competências‑chave</h2>
           <div class="grid">
+            <div class="mini-card">
+              <div class="competency-header" onclick="toggleCompetency(this)">
+                <span class="expand-icon">▶</span>
+                <span>Inteligência Artificial & Governança Geoespacial</span>
+              </div>
+              <div class="competency-content">
+                <p class="text-muted"><strong>IA Aplicada a Dados Geoespaciais:</strong> Experiência consolidada no uso de Inteligência Artificial para automação e otimização de processos em geoprocessamento e sensoriamento remoto. Integração de modelos de IA generativa em rotinas de análise geoespacial, elevando produtividade técnica e qualidade das entregas.</p>
+                <p class="text-muted"><strong>Governança de Dados Espaciais:</strong> Estruturação de fluxos inteligentes de dados, otimização de pipelines ETL/ELT, qualificação e padronização de informações geoespaciais. Desenvolvimento de procedimentos para garantir consistência, rastreabilidade e confiabilidade de dados em ecossistemas de dados corporativos.</p>
+                <p class="text-muted"><strong>IA como Ferramenta Executiva:</strong> Aplicação de IA para suporte estratégico à tomada de decisão, redução de tempo de resposta, análise de cenários complexos e inovação em ambientes multidisciplinares. Utilização de modelos avançados para apoiar decisões complexas e impulsionar transformação digital em organizações orientadas a dados.</p>
+              </div>
+            </div>
             <div class="mini-card">
               <div class="competency-header" onclick="toggleCompetency(this)">
                 <span class="expand-icon">▶</span>
@@ -943,19 +956,23 @@ f?.addEventListener('submit',async(e)=>{
 
 // Export to PDF
 function exportToPDF(){
-  // Download direto do PDF gerado pelo Python (server-side)
-  const pdfUrl='../../../../assets/docs/Curriculo_Vinicius_Capanema_2025.pdf';
+  // Detect current language from HTML element
+  const lang = document.documentElement.lang || 'pt-br';
+  const fileName = lang === 'en' 
+    ? 'Curriculo_Vinicius_Capanema_EN_2025.pdf'
+    : 'Curriculo_Vinicius_Capanema_2025.pdf';
+  const pdfUrl = `../../assets/docs/${fileName}`;
   
-  // Criar link de download e disparar clique
-  const link=document.createElement('a');
-  link.href=pdfUrl;
-  link.download='Curriculo_Vinicius_Capanema_2025.pdf';
-  link.style.display='none';
+  // Create link and trigger download
+  const link = document.createElement('a');
+  link.href = pdfUrl;
+  link.download = fileName;
+  link.style.display = 'none';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
   
-  console.log('✅ Download iniciado do PDF');
+  console.log(`✅ Download iniciado: ${fileName}`);
 }
 </script>
 </body>

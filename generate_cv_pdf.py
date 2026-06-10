@@ -21,7 +21,7 @@ from reportlab.platypus import (
 def extract_html_data():
     """Extrai TODOS os dados do HTML"""
     html_file = Path(
-        r"D:\CV_ONLINE_VINICIUS\assets\docs\v07\public\index.html"
+        r"D:\REPOSITORIOS\CV_ONLINE_VINICIUS\assets\docs\v07\public\index.html"
     )
 
     with open(html_file, 'r', encoding='utf-8') as f:
@@ -185,7 +185,7 @@ def generate_pdf():
     """Gera PDF profissional"""
 
     output = Path(
-        r"D:\CV_ONLINE_VINICIUS\assets\docs"
+        r"D:\REPOSITORIOS\CV_ONLINE_VINICIUS\assets\docs"
         r"\Curriculo_Vinicius_Capanema_2025.pdf"
     )
 
@@ -519,7 +519,7 @@ if __name__ == "__main__":
 
     if success:
         output = Path(
-            r"D:\CV_ONLINE_VINICIUS\assets\docs"
+            r"D:\REPOSITORIOS\CV_ONLINE_VINICIUS\assets\docs"
             r"\Curriculo_Vinicius_Capanema_2025.pdf"
         )
         size_kb = output.stat().st_size / 1024
