@@ -247,7 +247,7 @@ a:hover{color:var(--accent-dark)}
   <main class="container">
     <section class="panel reveal">
       <h2>About the Portfolio</h2>
-      <p>Below you will find a selection of our deployed web-based solutions. All applications are conceived under an open-source theoretical and conceptual framework, leveraging open tools and well-established standards tailored to each specific challenge. We operate across domains such as multi-criteria analysis (AHP/Saaty), extraction and processing of geospatial data (OpenStreetMap, DEM, Shapefiles, GeoTIFFs) with cloud computing (Google Earth Engine), WebGIS (Leaflet/OpenLayers, QGIS Server, GeoServer, PostGIS), and logistics/territorial and infrastructure planning — always with reproducible pipelines (Python/GeoPandas/Rasterio, ETL, Git/Docker version control) and integration with systems such as SIGMA-PLI and DER/SP.</p>
+      <p>Below you will find a selection of our deployed web-based solutions, including the integrated ecosystem of the <a href="https://pli-hub.onrender.com/" target="_blank" rel="noopener noreferrer">PLI Hub</a>. All applications are conceived under an open-source theoretical and conceptual framework, leveraging open tools and well-established standards tailored to each specific challenge. We operate across domains such as multi-criteria analysis (AHP/Saaty), extraction and processing of geospatial data (OpenStreetMap, DEM, Shapefiles, GeoTIFFs) with cloud computing (Google Earth Engine), WebGIS (Leaflet/OpenLayers, QGIS Server, GeoServer, PostGIS), and logistics/territorial and infrastructure planning — always with reproducible pipelines (Python/GeoPandas/Rasterio, ETL, Git/Docker version control) and integration with systems such as SIGMA-PLI and DER/SP.</p>
       <p>Reinforcing our commitment to science, we combine scientific principles — modeling, inference, and data governance/quality — with technology — modern architectures, interoperability, and automation — to deliver transparent, auditable, and scalable solutions. This rigorous association between theory and tooling enhances the reliability of our analyses and prepares our products for large volumes and diverse datasets, meeting a wide range of demands.</p>
     </section>
 
@@ -256,25 +256,43 @@ a:hover{color:var(--accent-dark)}
       <section class="filters reveal">
         <button class="filter-pill active" data-filter="all">All Projects</button>
         <button class="filter-pill" data-filter="ahp">Multi-Criteria Analysis</button>
+        <button class="filter-pill" data-filter="acidentes">Accidents &amp; Safety</button>
         <button class="filter-pill" data-filter="webgis">WebGIS</button>
         <button class="filter-pill" data-filter="geoprocessing">Geoprocessing</button>
         <button class="filter-pill" data-filter="cloud">Cloud Computing</button>
+        <button class="filter-pill" data-filter="operacional">PLI Operations</button>
       </section>
     </section>
 
     <div class="masonry" id="projectGrid">
+      <!-- Multi-criteria analysis & decision support -->
       <div class="masonry-item reveal" data-category="ahp">
         <article class="project">
           <div class="project-icon"><i class="bi bi-bullseye"></i></div>
-          <h3>SIGMA - AHP Calculator</h3>
-          <p class="desc">Multi-criteria analysis system using the Analytic Hierarchy Process (AHP) method by Saaty. Supports pairwise comparisons of up to 20 criteria with automatic weight calculation and consistency indices. Generates interactive graphical visualizations and exports results in PDF, CSV, and XLSX formats.</p>
+          <h3>SIGMA — AHP Calculator 2.0</h3>
+          <p class="desc">Multi-criteria decision-support tool based on Saaty's Analytic Hierarchy Process (AHP), with a guided five-step workflow: criteria selection and naming, pairwise comparisons, automatic weight calculation, and consistency ratio (CR) validation. SIGMA-PLI interface with interactive visualizations, manual or matrix upload input, and export to PDF, CSV, and XLSX.</p>
           <div class="tags">
             <span class="tag">AHP/Saaty</span>
-            <span class="tag">JavaScript</span>
+            <span class="tag">SIGMA-PLI</span>
             <span class="tag">Multi-Criteria Analysis</span>
-            <span class="tag">Visualization</span>
+            <span class="tag">JavaScript</span>
           </div>
-          <a class="project-link" href="https://vpcapanema.github.io/FAD-AHP_tool/sigma-ahp.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+          <a class="project-link" href="https://vpc-geoser-ahp-tool-calculator.onrender.com/sigma-ahp.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+        </article>
+      </div>
+
+      <div class="masonry-item reveal" data-category="ahp">
+        <article class="project">
+          <div class="project-icon"><i class="bi bi-bar-chart"></i></div>
+          <h3>Indicator Adherence Calculator 2.0</h3>
+          <p class="desc">PLI SIGMA system in three stages for methodological indicator assessment: minimum data sheet assembly (manual or CSV), scoring with descriptive rubrics, weights, and knockout criteria, and consolidated results with sensitivity analysis and exports. Evaluates seven analytical dimensions — conceptual proximity, causal mechanism, empirical validity, specificity, sensitivity, measurability, and cost-effectiveness.</p>
+          <div class="tags">
+            <span class="tag">Indicators</span>
+            <span class="tag">CSV Upload</span>
+            <span class="tag">Rubrics</span>
+            <span class="tag">PLI SIGMA</span>
+          </div>
+          <a class="project-link" href="https://calculadora-aderencia-indicadores-2-0.onrender.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
@@ -295,38 +313,85 @@ a:hover{color:var(--accent-dark)}
 
       <div class="masonry-item reveal" data-category="ahp">
         <article class="project">
-          <div class="project-icon"><i class="bi bi-bar-chart"></i></div>
-          <h3>Indicator Adherence Calculator</h3>
-          <p class="desc">PLI SIGMA system for methodological assessment of indicators through seven analytical criteria: conceptual proximity, causal mechanism, empirical validity, specificity, sensitivity, measurability, and cost-effectiveness. Classifies indicators into four adherence levels and supports CSV upload for batch analysis.</p>
+          <div class="project-icon"><i class="bi bi-diagram-3"></i></div>
+          <h3>Decision Support System — Model Builder</h3>
+          <p class="desc">Conceptual Model Builder for project hierarchy systems in logistics and transport. Guides the researcher through ten methodological decisions — decision problem, analysis unit, criteria, alternatives, and consolidated model — with choice-support cards, decision logging, progress tracking, and export of the final conceptual model.</p>
           <div class="tags">
-            <span class="tag">Multi-Criteria Analysis</span>
-            <span class="tag">Indicators</span>
-            <span class="tag">CSV Upload</span>
-            <span class="tag">JavaScript</span>
+            <span class="tag">Conceptual Model</span>
+            <span class="tag">Methodology</span>
+            <span class="tag">Decision Support</span>
+            <span class="tag">PLI-SP</span>
           </div>
-          <a class="project-link" href="https://vpcapanema.github.io/calculadora_aderencia_indicadores/home.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+          <a class="project-link" href="https://ferramenta-construcao-sistema-apoio.onrender.com/documento_apoio_construcao_modelo_conceitual.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
-      <div class="masonry-item reveal" data-category="geoprocessing">
+      <div class="masonry-item reveal" data-category="ahp">
         <article class="project">
-          <div class="project-icon"><i class="bi bi-map"></i></div>
-          <h3>FAD - SmartGeo (OSM Extractor)</h3>
-          <p class="desc">Intelligent geoprocessing tool for automated extraction of vector data from OpenStreetMap via API. Enables extraction of roads, rivers, and municipal boundaries using polygon masks. Generates segmented buffers with configurable width and exports results as compressed ESRI Shapefiles (.shp) ready for use in GIS environments.</p>
+          <div class="project-icon"><i class="bi bi-journal-text"></i></div>
+          <h3>D11 Reports — PLI-SP Systematization</h3>
+          <p class="desc">Document portal with multidimensional systematization of the 31 D-11 themes: methodology across five functional axes and ten dimensions, screening into a priority portfolio (25 themes), technical reserve, and D-17/D-18 rerouting. Includes critical adherence assessment of aerial (D11c_09) and climate (D11c_18) themes to the ToR, with a portfolio of 13 detailed projects, KPIs, and AHP criteria.</p>
           <div class="tags">
-            <span class="tag">OpenStreetMap API</span>
-            <span class="tag">Shapefile</span>
-            <span class="tag">Buffer Analysis</span>
-            <span class="tag">Python</span>
+            <span class="tag">Documentation</span>
+            <span class="tag">Theme Screening</span>
+            <span class="tag">Project Portfolio</span>
+            <span class="tag">PLI-SP</span>
           </div>
-          <a class="project-link" href="https://vpcapanema.github.io/FAD-SmartGeo/docs/index.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+          <a class="project-link" href="https://pli-hub.onrender.com/relatorios_d11.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
+      <!-- Accidents & road safety -->
+      <div class="masonry-item reveal" data-category="acidentes operacional">
+        <article class="project">
+          <div class="project-icon"><i class="bi bi-shield-check"></i></div>
+          <h3>SIGMA-PLI</h3>
+          <p class="desc">Integrated Management, Monitoring, and Technical Support System for PLI/SP — central access platform for SIGMA solutions in accident management and PLI Logistics and Infrastructure Program indicators. Institutional portal with role-based authentication and integration with the PLI Hub web application ecosystem.</p>
+          <div class="tags">
+            <span class="tag">SIGMA-PLI</span>
+            <span class="tag">Management</span>
+            <span class="tag">Monitoring</span>
+            <span class="tag">PLI-SP</span>
+          </div>
+          <a class="project-link" href="http://56.125.163.194/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+        </article>
+      </div>
+
+      <div class="masonry-item reveal" data-category="acidentes webgis">
+        <article class="project">
+          <div class="project-icon"><i class="bi bi-graph-up-arrow"></i></div>
+          <h3>Infosiga SP Accidents — Exploratory Analysis</h3>
+          <p class="desc">Analytical portal integrating the public Infosiga SP database (crashes, victims, and vehicles, 2014–2026) with the DER/SP State Road Network. Consolidates 1.36 million crashes with 92.3% geolocation coverage, offering an interactive dashboard (Plotly), geographic analysis by road and sub-segment (Leaflet), executive report, and navigation guide across temporal, demographic, and modal views.</p>
+          <div class="tags">
+            <span class="tag">Infosiga</span>
+            <span class="tag">Plotly</span>
+            <span class="tag">Leaflet</span>
+            <span class="tag">Detran-SP</span>
+          </div>
+          <a class="project-link" href="https://acidentes-infosiga.onrender.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+        </article>
+      </div>
+
+      <div class="masonry-item reveal" data-category="acidentes webgis">
+        <article class="project">
+          <div class="project-icon"><i class="bi bi-car-front"></i></div>
+          <h3>DER Accidents — Exploratory Analysis</h3>
+          <p class="desc">Complete exploratory analysis of crashes on São Paulo state roads (2023–2025), with 39,578 records, 34,324 victims, and 29 interactive charts organized into six thematic categories. Includes full dashboard, compact version for presentations, executive report with strategic recommendations, access guide, and consolidated CSV data download.</p>
+          <div class="tags">
+            <span class="tag">DER/SP</span>
+            <span class="tag">Dashboard</span>
+            <span class="tag">Time Series</span>
+            <span class="tag">Risk Analysis</span>
+          </div>
+          <a class="project-link" href="https://acidentes-der-analise-exploratoria.onrender.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+        </article>
+      </div>
+
+      <!-- WebGIS & interactive maps -->
       <div class="masonry-item reveal" data-category="webgis geoprocessing">
         <article class="project">
           <div class="project-icon"><i class="bi bi-globe-americas"></i></div>
-          <h3>WebGIS - Jurisdictionalization</h3>
+          <h3>WebGIS — Jurisdictionalization</h3>
           <p class="desc">Interactive WebGIS system built with Leaflet for visualization and spatial analysis of road elements subject to jurisdictionalization. Integrates multiple thematic layers (administrative boundaries, environmental restrictions, infrastructure, and projects). Features layer control, measurement tools, and three basemaps (OpenStreetMap, ESRI Street, and Satellite).</p>
           <div class="tags">
             <span class="tag">Leaflet</span>
@@ -338,18 +403,79 @@ a:hover{color:var(--accent-dark)}
         </article>
       </div>
 
+      <div class="masonry-item reveal" data-category="webgis geoprocessing">
+        <article class="project">
+          <div class="project-icon"><i class="bi bi-bezier2"></i></div>
+          <h3>State Road Network Density — SP</h3>
+          <p class="desc">Geospatial study of São Paulo road infrastructure with 21,674 km of roads, 4,779 segments, and 645 municipalities analyzed. Computes density indicators by area and population, classified by administration type, road category, and urban-rural location, with municipal, IGR, and IGI territorial cuts. Includes interactive maps, documented methodology, and applications for planning and accessibility.</p>
+          <div class="tags">
+            <span class="tag">Road Network</span>
+            <span class="tag">Indicators</span>
+            <span class="tag">DER/SP</span>
+            <span class="tag">Interactive Maps</span>
+          </div>
+          <a class="project-link" href="https://densidade-de-malha-estadual-sp.onrender.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+        </article>
+      </div>
+
+      <div class="masonry-item reveal" data-category="webgis operacional">
+        <article class="project">
+          <div class="project-icon"><i class="bi bi-signpost-split"></i></div>
+          <h3>PLI Smart Router</h3>
+          <p class="desc">Intelligent router with conventional routing (shortest path via OSRM) and smart routing that avoids active adversity layers. Define origin and destination by coordinates, map click, or text search (city, address, ZIP code via ViaCEP). Leaflet interface with customizable layers, comparative route panels, and integrated OpenStreetMap data.</p>
+          <div class="tags">
+            <span class="tag">OSRM</span>
+            <span class="tag">ViaCEP</span>
+            <span class="tag">Leaflet</span>
+            <span class="tag">Routing</span>
+          </div>
+          <a class="project-link" href="http://pli-smartrouter.56-125-163-194.sslip.io/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+        </article>
+      </div>
+
+      <div class="masonry-item reveal" data-category="webgis operacional">
+        <article class="project">
+          <div class="project-icon"><i class="bi bi-megaphone"></i></div>
+          <h3>PLI Reporta</h3>
+          <p class="desc">Citizen reporting platform for road incidents — potholes, flooding, crashes, blockages, construction, and signage — and public feedback (praise, suggestions, and complaints). Public workflow with geolocation, photo attachment, and submission confirmation; public map for incident lookup and restricted area for PLI operator moderation and management.</p>
+          <div class="tags">
+            <span class="tag">Citizen Engagement</span>
+            <span class="tag">WebGIS</span>
+            <span class="tag">Moderation</span>
+            <span class="tag">Road Incidents</span>
+          </div>
+          <a class="project-link" href="http://pli-reporta.56-125-163-194.sslip.io/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+        </article>
+      </div>
+
+      <div class="masonry-item reveal" data-category="webgis cloud operacional">
+        <article class="project">
+          <div class="project-icon"><i class="bi bi-cloud-rain-heavy"></i></div>
+          <h3>PLI-HazardTrack — Climate Resilience</h3>
+          <p class="desc">Operational interface of PLI-SP 2050 for monitoring extreme climate risks on the state road network. Integrates geological and hydrological risk by Analysis Unit (PPDC), MERGE/INPE rainfall and WRF forecast (CPTEC/INPE), plus fire risk (INPE RF) aggregated by road segment. Offers interactive map, simple/advanced/historical search, DER/IGC layers, and 96-hour geodynamic evolution.</p>
+          <div class="tags">
+            <span class="tag">MERGE/INPE</span>
+            <span class="tag">PPDC</span>
+            <span class="tag">Climate Resilience</span>
+            <span class="tag">WebGIS</span>
+          </div>
+          <a class="project-link" href="http://pli-hazardtrack.56-125-163-194.sslip.io/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+        </article>
+      </div>
+
+      <!-- Geoprocessing -->
       <div class="masonry-item reveal" data-category="geoprocessing">
         <article class="project">
-          <div class="project-icon"><i class="bi bi-clipboard-data"></i></div>
-          <h3>Shipper Interview Form</h3>
-          <p class="desc">Structured web system for collecting and characterizing freight logistics data in the State of São Paulo. Captures information on products, origins, destinations, transport modes, costs, and decision factors (cost, time, reliability, safety, capacity). Includes modal sensitivity analysis, data validation, and JSON export for downstream processing.</p>
+          <div class="project-icon"><i class="bi bi-map"></i></div>
+          <h3>FAD — SmartGeo (OSM Extractor)</h3>
+          <p class="desc">Intelligent geoprocessing tool for automated extraction of vector data from OpenStreetMap via API. Enables extraction of roads, rivers, and municipal boundaries using polygon masks. Generates segmented buffers with configurable width and exports results as compressed ESRI Shapefiles (.shp) ready for use in GIS environments.</p>
           <div class="tags">
-            <span class="tag">Logistics</span>
-            <span class="tag">Data Collection</span>
-            <span class="tag">Modal Analysis</span>
-            <span class="tag">JavaScript</span>
+            <span class="tag">OpenStreetMap API</span>
+            <span class="tag">Shapefile</span>
+            <span class="tag">Buffer Analysis</span>
+            <span class="tag">Python</span>
           </div>
-          <a class="project-link" href="https://vpcapanema.github.io/formulario_entrevista_embarcadores/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+          <a class="project-link" href="https://vpcapanema.github.io/FAD-SmartGeo/docs/index.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
@@ -368,21 +494,38 @@ a:hover{color:var(--accent-dark)}
         </article>
       </div>
 
-      <div class="masonry-item reveal" data-category="webgis">
+      <!-- PLI operations -->
+      <div class="masonry-item reveal" data-category="operacional">
         <article class="project">
-          <div class="project-icon"><i class="bi bi-briefcase"></i></div>
-          <h3>Under Development</h3>
-          <p class="desc">We are working on new geospatial solutions to expand our portfolio. Coming soon: real-time data integration, advanced analytical dashboards, and new multi-criteria analysis modules applied to urban planning and environmental management.</p>
+          <div class="project-icon"><i class="bi bi-airplane"></i></div>
+          <h3>SRA PLI Starter — Aerial Resources</h3>
+          <p class="desc">Activity Reporting System of the Concremat–Transplan Consortium for PLI-SP aerial resource management. Web platform with role-based authentication (Author, Coordinator, Administrator), aerial activity registration and tracking, operational reporting workflow, and password recovery — starter version of the SRA module integrated into the PLI ecosystem.</p>
           <div class="tags">
-            <span class="tag">Coming Soon</span>
-            <span class="tag">Real-time Data</span>
-            <span class="tag">Dashboard</span>
-            <span class="tag">Urban Planning</span>
+            <span class="tag">Aerial Resources</span>
+            <span class="tag">Reporting</span>
+            <span class="tag">Authentication</span>
+            <span class="tag">PLI-SP</span>
           </div>
-          <a class="project-link disabled"><i class="bi bi-hourglass"></i> Coming Soon</a>
+          <a class="project-link" href="https://sra-pli-starter.onrender.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
+      <div class="masonry-item reveal" data-category="operacional geoprocessing">
+        <article class="project">
+          <div class="project-icon"><i class="bi bi-clipboard-data"></i></div>
+          <h3>Shipper Interview Form</h3>
+          <p class="desc">Structured web system for collecting and characterizing freight logistics data in the State of São Paulo. Captures information on products, origins, destinations, transport modes, costs, and decision factors (cost, time, reliability, safety, capacity). Includes modal sensitivity analysis, data validation, and JSON export for downstream processing.</p>
+          <div class="tags">
+            <span class="tag">Logistics</span>
+            <span class="tag">Data Collection</span>
+            <span class="tag">Modal Analysis</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <a class="project-link" href="https://formulario-entrevista-embarcadores.onrender.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+        </article>
+      </div>
+
+      <!-- Consulting -->
       <div class="masonry-item reveal" data-category="cloud">
         <article class="project">
           <div class="project-icon"><i class="bi bi-lightbulb"></i></div>
@@ -405,7 +548,9 @@ a:hover{color:var(--accent-dark)}
         <span class="tag">Multi-Criteria Analysis (AHP)</span>
         <span class="tag">Geoprocessing</span>
         <span class="tag">OpenStreetMap API</span>
+        <span class="tag">OSRM / ViaCEP</span>
         <span class="tag">Leaflet</span>
+        <span class="tag">Plotly</span>
         <span class="tag">WebGIS</span>
         <span class="tag">Python</span>
         <span class="tag">JavaScript</span>
@@ -413,6 +558,8 @@ a:hover{color:var(--accent-dark)}
         <span class="tag">Buffer Analysis</span>
         <span class="tag">Spatial Analysis</span>
         <span class="tag">Google Earth Engine</span>
+        <span class="tag">MERGE/INPE</span>
+        <span class="tag">Infosiga / Detran-SP</span>
         <span class="tag">QGIS</span>
         <span class="tag">ArcGIS</span>
         <span class="tag">PostgreSQL/PostGIS</span>
@@ -420,7 +567,8 @@ a:hover{color:var(--accent-dark)}
         <span class="tag">Road Infrastructure</span>
         <span class="tag">Management Indicators</span>
         <span class="tag">Topographic Analysis</span>
-        <span class="tag">Logistics & Transportation</span>
+        <span class="tag">Logistics &amp; Transportation</span>
+        <span class="tag">Climate Resilience</span>
         <span class="tag">Cloud Computing</span>
       </div>
       <div class="actions">
