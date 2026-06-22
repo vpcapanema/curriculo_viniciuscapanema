@@ -110,6 +110,10 @@ a:hover{color:var(--accent-dark)}
   line-height:1.5;
   text-align:justify;
   flex-grow:1;
+  min-height:0;
+  max-height:210px;
+  overflow-y:auto;
+  overflow-x:hidden;
 }
 .project .tags{
   display:flex;
@@ -311,36 +315,6 @@ a:hover{color:var(--accent-dark)}
         </article>
       </div>
 
-      <div class="masonry-item reveal" data-category="ahp">
-        <article class="project">
-          <div class="project-icon"><i class="bi bi-diagram-3"></i></div>
-          <h3>Decision Support System — Model Builder</h3>
-          <p class="desc">Conceptual Model Builder for project hierarchy systems in logistics and transport. Guides the researcher through ten methodological decisions — decision problem, analysis unit, criteria, alternatives, and consolidated model — with choice-support cards, decision logging, progress tracking, and export of the final conceptual model.</p>
-          <div class="tags">
-            <span class="tag">Conceptual Model</span>
-            <span class="tag">Methodology</span>
-            <span class="tag">Decision Support</span>
-            <span class="tag">PLI-SP</span>
-          </div>
-          <a class="project-link" href="https://ferramenta-construcao-sistema-apoio.onrender.com/documento_apoio_construcao_modelo_conceitual.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
-        </article>
-      </div>
-
-      <div class="masonry-item reveal" data-category="ahp">
-        <article class="project">
-          <div class="project-icon"><i class="bi bi-journal-text"></i></div>
-          <h3>D11 Reports — PLI-SP Systematization</h3>
-          <p class="desc">Document portal with multidimensional systematization of the 31 D-11 themes: methodology across five functional axes and ten dimensions, screening into a priority portfolio (25 themes), technical reserve, and D-17/D-18 rerouting. Includes critical adherence assessment of aerial (D11c_09) and climate (D11c_18) themes to the ToR, with a portfolio of 13 detailed projects, KPIs, and AHP criteria.</p>
-          <div class="tags">
-            <span class="tag">Documentation</span>
-            <span class="tag">Theme Screening</span>
-            <span class="tag">Project Portfolio</span>
-            <span class="tag">PLI-SP</span>
-          </div>
-          <a class="project-link" href="https://pli-hub.onrender.com/relatorios_d11.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
-        </article>
-      </div>
-
       <!-- Accidents & road safety -->
       <div class="masonry-item reveal" data-category="acidentes operacional">
         <article class="project">
@@ -361,7 +335,7 @@ a:hover{color:var(--accent-dark)}
         <article class="project">
           <div class="project-icon"><i class="bi bi-graph-up-arrow"></i></div>
           <h3>Infosiga SP Accidents — Exploratory Analysis</h3>
-          <p class="desc">Analytical portal integrating the public Infosiga SP database (crashes, victims, and vehicles, 2014–2026) with the DER/SP State Road Network. Consolidates 1.36 million crashes with 92.3% geolocation coverage, offering an interactive dashboard (Plotly), geographic analysis by road and sub-segment (Leaflet), executive report, and navigation guide across temporal, demographic, and modal views.</p>
+          <p class="desc">Analytical portal integrating the Infosiga SP database (2014–2026) with the DER/SP Road Network. Consolidates 1.36 million crashes (92.3% geolocated), with Plotly dashboard, Leaflet map by road and segment, executive report, and navigation guide across temporal, demographic, and modal views.</p>
           <div class="tags">
             <span class="tag">Infosiga</span>
             <span class="tag">Plotly</span>
@@ -376,7 +350,7 @@ a:hover{color:var(--accent-dark)}
         <article class="project">
           <div class="project-icon"><i class="bi bi-car-front"></i></div>
           <h3>DER Accidents — Exploratory Analysis</h3>
-          <p class="desc">Complete exploratory analysis of crashes on São Paulo state roads (2023–2025), with 39,578 records, 34,324 victims, and 29 interactive charts organized into six thematic categories. Includes full dashboard, compact version for presentations, executive report with strategic recommendations, access guide, and consolidated CSV data download.</p>
+          <p class="desc">Exploratory analysis of crashes on São Paulo state roads (2023–2025): 39,578 records, 34,324 victims, and 29 interactive charts in six categories. Includes full dashboard, compact version, executive report, access guide, and CSV data download.</p>
           <div class="tags">
             <span class="tag">DER/SP</span>
             <span class="tag">Dashboard</span>
@@ -390,24 +364,9 @@ a:hover{color:var(--accent-dark)}
       <!-- WebGIS & interactive maps -->
       <div class="masonry-item reveal" data-category="webgis geoprocessing">
         <article class="project">
-          <div class="project-icon"><i class="bi bi-globe-americas"></i></div>
-          <h3>WebGIS — Jurisdictionalization</h3>
-          <p class="desc">Interactive WebGIS system built with Leaflet for visualization and spatial analysis of road elements subject to jurisdictionalization. Integrates multiple thematic layers (administrative boundaries, environmental restrictions, infrastructure, and projects). Features layer control, measurement tools, and three basemaps (OpenStreetMap, ESRI Street, and Satellite).</p>
-          <div class="tags">
-            <span class="tag">Leaflet</span>
-            <span class="tag">WebGIS</span>
-            <span class="tag">Spatial Analysis</span>
-            <span class="tag">JavaScript</span>
-          </div>
-          <a class="project-link" href="https://vinicapanema.github.io/webgis-estadualizacao/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
-        </article>
-      </div>
-
-      <div class="masonry-item reveal" data-category="webgis geoprocessing">
-        <article class="project">
           <div class="project-icon"><i class="bi bi-bezier2"></i></div>
           <h3>State Road Network Density — SP</h3>
-          <p class="desc">Geospatial study of São Paulo road infrastructure with 21,674 km of roads, 4,779 segments, and 645 municipalities analyzed. Computes density indicators by area and population, classified by administration type, road category, and urban-rural location, with municipal, IGR, and IGI territorial cuts. Includes interactive maps, documented methodology, and applications for planning and accessibility.</p>
+          <p class="desc">Geospatial study of São Paulo road network: 21,674 km, 4,779 segments, and 645 municipalities. Density indicators by area and population, by administration, category, and urban-rural location, with municipal, IGR, and IGI cuts, interactive maps, and documented methodology.</p>
           <div class="tags">
             <span class="tag">Road Network</span>
             <span class="tag">Indicators</span>
@@ -421,38 +380,38 @@ a:hover{color:var(--accent-dark)}
       <div class="masonry-item reveal" data-category="webgis operacional">
         <article class="project">
           <div class="project-icon"><i class="bi bi-signpost-split"></i></div>
-          <h3>PLI Smart Router</h3>
-          <p class="desc">Intelligent routing tool integrating geodynamic data and adversity layers to compute safer routes across São Paulo. Compares conventional routing (shortest path via OSRM) with Smart routing that avoids risk areas (mass movement, flooding) and live events such as roadblocks, floods, and accidents. Set origin/destination by coordinates, address or ZIP (ViaCEP), map click (Leaflet), with route export.</p>
+          <h3>PLI — Smart Router</h3>
+          <p class="desc">Intelligent router with conventional routing (shortest path via OSRM) and Smart routing that avoids active adversity layers. Set origin and destination by coordinates, text search (city, address, ZIP/ViaCEP), or Leaflet map click. Route export in JSON and Shapefile.</p>
           <div class="tags">
             <span class="tag">OSRM</span>
             <span class="tag">ViaCEP</span>
             <span class="tag">Leaflet</span>
-            <span class="tag">Geodynamic Risk</span>
+            <span class="tag">Routing</span>
           </div>
-          <a class="project-link" href="https://pli-smartrouter.onrender.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+          <a class="project-link" href="http://pli-smartrouter.56-125-163-194.sslip.io/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
       <div class="masonry-item reveal" data-category="webgis operacional">
         <article class="project">
           <div class="project-icon"><i class="bi bi-megaphone"></i></div>
-          <h3>PLI Reporta</h3>
-          <p class="desc">Collaborative citizen reporting and georeferenced monitoring platform for road incidents — potholes, flooding, crashes, blockages, roadwork, congestion, and signage — and public feedback (praise, suggestions, complaints). Public workflow with photo attachment, interactive map (MapLibre), report moderation, and API interface for PLI operational integration.</p>
+          <h3>PLI — Reporta</h3>
+          <p class="desc">Citizen reporting for road incidents (potholes, flooding, crashes, blockages, roadwork, signage) and public feedback, with geolocation, photos, and public map. For the best reporting experience, access from a mobile device.</p>
           <div class="tags">
-            <span class="tag">MapLibre</span>
+            <span class="tag">Mobile First</span>
             <span class="tag">Crowdsourcing</span>
-            <span class="tag">Moderation</span>
+            <span class="tag">WebGIS</span>
             <span class="tag">Road Incidents</span>
           </div>
-          <a class="project-link" href="https://pli-reporta.onrender.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+          <a class="project-link" href="http://pli-reporta.56-125-163-194.sslip.io/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
       <div class="masonry-item reveal" data-category="webgis cloud operacional">
         <article class="project">
           <div class="project-icon"><i class="bi bi-cloud-rain-heavy"></i></div>
-          <h3>PLI-HazardTrack — Climate Resilience</h3>
-          <p class="desc">Operational interface of PLI-SP 2050 for monitoring extreme climate risks on the state road network. Integrates geological and hydrological risk by Analysis Unit (PPDC), MERGE/INPE rainfall and WRF forecast (CPTEC/INPE), plus fire risk (INPE RF) aggregated by road segment. Offers interactive map, simple/advanced/historical search, DER/IGC layers, and 96-hour geodynamic evolution.</p>
+          <h3>PLI — HazardTrack</h3>
+          <p class="desc">Operational monitoring of extreme climate risks on the state road network: mass movement, flooding, and fire risk (INPE RF). Integrates PPDC, MERGE/INPE rainfall, WRF forecast (CPTEC/INPE), interactive map, search tools, and 96-hour geodynamic evolution.</p>
           <div class="tags">
             <span class="tag">MERGE/INPE</span>
             <span class="tag">PPDC</span>
@@ -463,22 +422,7 @@ a:hover{color:var(--accent-dark)}
         </article>
       </div>
 
-      <!-- Geoprocessing -->
-      <div class="masonry-item reveal" data-category="geoprocessing">
-        <article class="project">
-          <div class="project-icon"><i class="bi bi-map"></i></div>
-          <h3>FAD — SmartGeo (OSM Extractor)</h3>
-          <p class="desc">Intelligent geoprocessing tool for automated extraction of vector data from OpenStreetMap via API. Enables extraction of roads, rivers, and municipal boundaries using polygon masks. Generates segmented buffers with configurable width and exports results as compressed ESRI Shapefiles (.shp) ready for use in GIS environments.</p>
-          <div class="tags">
-            <span class="tag">OpenStreetMap API</span>
-            <span class="tag">Shapefile</span>
-            <span class="tag">Buffer Analysis</span>
-            <span class="tag">Python</span>
-          </div>
-          <a class="project-link" href="https://vpcapanema.github.io/FAD-SmartGeo/docs/index.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
-        </article>
-      </div>
-
+      <!-- Cloud computing -->
       <div class="masonry-item reveal" data-category="cloud geoprocessing">
         <article class="project">
           <div class="project-icon"><i class="bi bi-triangle"></i></div>

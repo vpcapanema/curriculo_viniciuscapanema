@@ -110,6 +110,10 @@ a:hover{color:var(--accent-dark)}
   line-height:1.5;
   text-align:justify;
   flex-grow:1;
+  min-height:0;
+  max-height:210px;
+  overflow-y:auto;
+  overflow-x:hidden;
 }
 .project .tags{
   display:flex;
@@ -320,36 +324,6 @@ a:hover{color:var(--accent-dark)}
         </article>
       </div>
 
-      <div class="masonry-item reveal" data-category="ahp">
-        <article class="project">
-          <div class="project-icon"><i class="bi bi-diagram-3"></i></div>
-          <h3>Sistema Apoio à Decisão — Construtor de Modelo</h3>
-          <p class="desc">Construtor do Modelo Conceitual para sistemas de hierarquização de projetos em logística e transportes. Conduz o pesquisador por dez decisões metodológicas — problema decisório, unidade de análise, critérios, alternativas e modelo consolidado — com cards de apoio à escolha, registro de decisões, barra de progresso e exportação do modelo conceitual final.</p>
-          <div class="tags">
-            <span class="tag">Modelo Conceitual</span>
-            <span class="tag">Metodologia</span>
-            <span class="tag">Apoio à Decisão</span>
-            <span class="tag">PLI-SP</span>
-          </div>
-          <a class="project-link" href="https://ferramenta-construcao-sistema-apoio.onrender.com/documento_apoio_construcao_modelo_conceitual.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
-        </article>
-      </div>
-
-      <div class="masonry-item reveal" data-category="ahp">
-        <article class="project">
-          <div class="project-icon"><i class="bi bi-journal-text"></i></div>
-          <h3>Relatórios D11 — Sistematização PLI-SP</h3>
-          <p class="desc">Portal documental com a sistematização multidimensional dos 31 temas do D-11: metodologia em cinco eixos funcionais e dez dimensões, triagem em carteira prioritária (25 temas), reserva técnica e reroteamento D-17/D-18. Inclui avaliação crítica de aderência dos temas aéreo (D11c_09) e clima (D11c_18) ao TDR, com carteira de 13 projetos detalhados, KPIs e critérios AHP.</p>
-          <div class="tags">
-            <span class="tag">Documentação</span>
-            <span class="tag">Triagem Temática</span>
-            <span class="tag">Carteira de Projetos</span>
-            <span class="tag">PLI-SP</span>
-          </div>
-          <a class="project-link" href="https://pli-hub.onrender.com/relatorios_d11.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
-        </article>
-      </div>
-
       <!-- Acidentes & segurança viária -->
       <div class="masonry-item reveal" data-category="acidentes operacional">
         <article class="project">
@@ -370,7 +344,7 @@ a:hover{color:var(--accent-dark)}
         <article class="project">
           <div class="project-icon"><i class="bi bi-graph-up-arrow"></i></div>
           <h3>Acidentes Infosiga SP — Análise Exploratória</h3>
-          <p class="desc">Portal analítico que integra a base pública Infosiga SP (sinistros, vítimas e veículos, 2014–2026) à Malha Rodoviária Estadual do DER/SP. Consolida 1,36 milhão de sinistros com 92,3% de geolocalização, oferecendo dashboard interativo (Plotly), análise geográfica por rodovia e subtrecho (Leaflet), relatório executivo e guia de navegação entre visões temporais, demográficas e modais.</p>
+          <p class="desc">Portal analítico que integra a base Infosiga SP (2014–2026) à Malha Rodoviária do DER/SP. Consolida 1,36 milhão de sinistros (92,3% geolocalizados), com dashboard Plotly, mapa Leaflet por rodovia e subtrecho, relatório executivo e guia de navegação entre visões temporais, demográficas e modais.</p>
           <div class="tags">
             <span class="tag">Infosiga</span>
             <span class="tag">Plotly</span>
@@ -385,7 +359,7 @@ a:hover{color:var(--accent-dark)}
         <article class="project">
           <div class="project-icon"><i class="bi bi-car-front"></i></div>
           <h3>Acidentes DER — Análise Exploratória</h3>
-          <p class="desc">Análise exploratória completa de acidentes em rodovias estaduais paulistas (2023–2025), com 39.578 registros, 34.324 vítimas e 29 gráficos interativos organizados em seis categorias temáticas. Inclui dashboard completo, versão compacta para apresentações, relatório executivo com recomendações estratégicas, guia de acesso e download de dados consolidados em CSV.</p>
+          <p class="desc">Análise exploratória de acidentes em rodovias estaduais paulistas (2023–2025): 39.578 registros, 34.324 vítimas e 29 gráficos interativos em seis categorias. Inclui dashboard completo, versão compacta, relatório executivo, guia de acesso e download de dados em CSV.</p>
           <div class="tags">
             <span class="tag">DER/SP</span>
             <span class="tag">Dashboard</span>
@@ -399,24 +373,9 @@ a:hover{color:var(--accent-dark)}
       <!-- WebGIS & mapas interativos -->
       <div class="masonry-item reveal" data-category="webgis geoprocessing">
         <article class="project">
-          <div class="project-icon"><i class="bi bi-globe-americas"></i></div>
-          <h3>WebGIS — Estadualização</h3>
-          <p class="desc">Sistema WebGIS interativo desenvolvido com Leaflet para visualização e análise espacial de elementos rodoviários candidatos à estadualização. Integra múltiplas camadas temáticas (bases administrativas, restrições ambientais, infraestrutura e projetos). Interface com controle de camadas, ferramentas de medição e três bases cartográficas (OpenStreetMap, ESRI Rua e Satélite).</p>
-          <div class="tags">
-            <span class="tag">Leaflet</span>
-            <span class="tag">WebGIS</span>
-            <span class="tag">Análise Espacial</span>
-            <span class="tag">JavaScript</span>
-          </div>
-          <a class="project-link" href="https://vinicapanema.github.io/webgis-estadualizacao/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
-        </article>
-      </div>
-
-      <div class="masonry-item reveal" data-category="webgis geoprocessing">
-        <article class="project">
           <div class="project-icon"><i class="bi bi-bezier2"></i></div>
           <h3>Densidade de Malha Estadual — SP</h3>
-          <p class="desc">Estudo geoespacial da infraestrutura rodoviária paulista com 21.674 km de rodovias, 4.779 trechos e 645 municípios analisados. Calcula indicadores de densidade por área e população, classificados por tipo de administração, categoria de rodovia e localização urbano-rural, com recortes municipais, RGIs e RGIMs. Inclui mapas interativos, metodologia documentada e aplicações para planejamento e acessibilidade.</p>
+          <p class="desc">Estudo geoespacial da malha rodoviária paulista: 21.674 km, 4.779 trechos e 645 municípios. Indicadores de densidade por área e população, por administração, categoria e urbano-rural, com recortes municipais, RGIs e RGIMs, mapas interativos e metodologia documentada.</p>
           <div class="tags">
             <span class="tag">Malha Rodoviária</span>
             <span class="tag">Indicadores</span>
@@ -430,38 +389,38 @@ a:hover{color:var(--accent-dark)}
       <div class="masonry-item reveal" data-category="webgis operacional">
         <article class="project">
           <div class="project-icon"><i class="bi bi-signpost-split"></i></div>
-          <h3>PLI Smart Router</h3>
-          <p class="desc">Roteador inteligente que integra dados geodinâmicos e camadas de adversidade para calcular trajetos mais seguros no Estado de São Paulo. Compara rota convencional (menor caminho via OSRM) e rota Smart que desvia áreas de risco (movimento de massa, inundação) e eventos como bloqueios, alagamentos e acidentes. Permite origem/destino por coordenadas, endereço ou CEP (ViaCEP), clique no mapa (Leaflet) e exportação de rotas.</p>
+          <h3>PLI — Smart Router</h3>
+          <p class="desc">Roteador inteligente com rotas convencional (menor caminho via OSRM) e Smart (desvia adversidades das camadas ativas). Origem e destino por coordenadas, busca textual (cidade, endereço, CEP/ViaCEP) ou clique no mapa Leaflet. Exportação de rotas em JSON e Shapefile.</p>
           <div class="tags">
             <span class="tag">OSRM</span>
             <span class="tag">ViaCEP</span>
             <span class="tag">Leaflet</span>
-            <span class="tag">Riscos Geodinâmicos</span>
+            <span class="tag">Roteamento</span>
           </div>
-          <a class="project-link" href="https://pli-smartrouter.onrender.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
+          <a class="project-link" href="http://pli-smartrouter.56-125-163-194.sslip.io/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
         </article>
       </div>
 
       <div class="masonry-item reveal" data-category="webgis operacional">
         <article class="project">
           <div class="project-icon"><i class="bi bi-megaphone"></i></div>
-          <h3>PLI Reporta</h3>
-          <p class="desc">Plataforma colaborativa de reporte cidadão e monitoramento georreferenciado de incidentes viários — buracos, alagamentos, acidentes, bloqueios, obras, lentidão e sinalização — e manifestações (elogios, sugestões e reclamações). Fluxo público com anexo de fotos, mapa interativo (MapLibre), moderação de reportes e interface de API para integração operacional do PLI.</p>
+          <h3>PLI — Reporta</h3>
+          <p class="desc">Reporte cidadão de ocorrências viárias (buracos, alagamentos, acidentes, bloqueios, obras e sinalização) e manifestações, com georreferenciamento, foto e mapa público. Para melhor experiência no fluxo de reporte, recomenda-se acessar por dispositivo móvel.</p>
           <div class="tags">
-            <span class="tag">MapLibre</span>
+            <span class="tag">Mobile First</span>
             <span class="tag">Crowdsourcing</span>
-            <span class="tag">Moderação</span>
+            <span class="tag">WebGIS</span>
             <span class="tag">Ocorrências Viárias</span>
           </div>
-          <a class="project-link" href="https://pli-reporta.onrender.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
+          <a class="project-link" href="http://pli-reporta.56-125-163-194.sslip.io/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
         </article>
       </div>
 
       <div class="masonry-item reveal" data-category="webgis cloud operacional">
         <article class="project">
           <div class="project-icon"><i class="bi bi-cloud-rain-heavy"></i></div>
-          <h3>PLI-HazardTrack — Resiliência Climática</h3>
-          <p class="desc">Interface operacional do PLI-SP 2050 para monitoramento de riscos climáticos extremos na malha rodoviária estadual. Integra risco geológico e hidrológico por Unidade de Análise (PPDC), chuva MERGE/INPE e previsão WRF (CPTEC/INPE), além de risco a incêndios (RF INPE) agregado por trecho. Oferece mapa interativo, busca simples/avançada/histórica, camadas DER/IGC e evolução geodinâmica em 96 h.</p>
+          <h3>PLI — HazardTrack</h3>
+          <p class="desc">Monitoramento operacional de riscos climáticos extremos na malha rodoviária estadual: movimentos de massa, inundação e incêndios (RF INPE). Integra PPDC, chuva MERGE/INPE, previsão WRF (CPTEC/INPE), mapa interativo, buscas e evolução geodinâmica em 96 h.</p>
           <div class="tags">
             <span class="tag">MERGE/INPE</span>
             <span class="tag">PPDC</span>
@@ -472,22 +431,7 @@ a:hover{color:var(--accent-dark)}
         </article>
       </div>
 
-      <!-- Geoprocessamento -->
-      <div class="masonry-item reveal" data-category="geoprocessing">
-        <article class="project">
-          <div class="project-icon"><i class="bi bi-map"></i></div>
-          <h3>FAD — SmartGeo (OSM Extractor)</h3>
-          <p class="desc">Ferramenta de geoprocessamento inteligente para extração automatizada de dados vetoriais do OpenStreetMap via API. Permite extrair estradas, rios e limites municipais usando máscaras poligonais. Gera buffers segmentados com largura configurável e exporta resultados em Shapefiles ESRI (.shp) compactados prontos para uso em SIG.</p>
-          <div class="tags">
-            <span class="tag">OpenStreetMap API</span>
-            <span class="tag">Shapefile</span>
-            <span class="tag">Buffer Analysis</span>
-            <span class="tag">Python</span>
-          </div>
-          <a class="project-link" href="https://vpcapanema.github.io/FAD-SmartGeo/docs/index.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Acessar Aplicação</a>
-        </article>
-      </div>
-
+      <!-- Cloud computing -->
       <div class="masonry-item reveal" data-category="cloud geoprocessing">
         <article class="project">
           <div class="project-icon"><i class="bi bi-triangle"></i></div>
