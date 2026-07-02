@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vinicius Capanema — Currículo (V07 • Avant)</title>
+<title>Vinicius Capanema — Currículo (V07 • Estrutura Convergente)</title>
 <meta name="description" content="Currículo de Vinicius Capanema — versão V07 com layout assimétrico, tipografia serif/sans e animações fluidas.">
 <meta name="color-scheme" content="light dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -207,11 +207,11 @@ a:hover{color:var(--accent);opacity:.92}
 
 .btn-primary{
   border-color:transparent;
-  background:linear-gradient(120deg, var(--accent-dark), var(--accent));
+  background:linear-gradient(120deg, var(--accent), var(--accent-light));
   color:#fff;
 }
 
-.btn-primary:hover{background:linear-gradient(120deg, #8f3d17, var(--accent-dark))}
+.btn-primary:hover{background:linear-gradient(120deg, var(--accent-dark), var(--accent))}
 
 /* Contact modal */
 .contact-modal{
@@ -432,12 +432,12 @@ a:hover{color:var(--accent);opacity:.92}
 .card::before{
   content:"";
   position:absolute;
-  left:8px;
+  left:0;
   top:0;
-  width:calc(100% - 16px);
-  height:6px;
+  width:100%;
+  height:3px;
   background:linear-gradient(90deg, var(--accent), var(--accent-2));
-  border-radius:999px;
+  border-radius:20px 20px 0 0;
   opacity:.85;
 }
 
@@ -802,6 +802,51 @@ a:hover{color:var(--accent);opacity:.92}
 
   <section class="section reveal">
     <div class="split">
+      <div class="card">
+        <h2 class="mb-16">Projetos em Destaque</h2>
+        <ul class="timeline">
+          <li class="card-item">
+            <h3 onclick="toggleTimeline(this)"><a href="https://www.funcate.org.br/msa" target="_blank" rel="noopener" onclick="event.stopPropagation()">Monitoramento Ambiental por Satélite (INPE)</a></h3>
+            <div class="timeline-content">
+              <p class="meta">2017-2018</p>
+              <ul>
+                <li>Estudo das Trajetórias de Padrões e Processos na Caracterização de Dinâmicas do Desmatamento na Amazônia.</li>
+                <li>Projeto com objetivo de apoiar a ampliação e o aprimoramento do monitoramento ambiental por satélites e o desenvolvimento de estudos sobre usos e cobertura da terra na região Amazônia.</li>
+                <li>Contribuição para a implementação da estratégia de REDD (Redução de Emissões por Desmatamento e Degradação) do país, possibilitando o aumento do controle do desmatamento e da degradação florestal através do fortalecimento dos sistemas de monitoramento do INPE.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="card-item padding-0">
+            <h3 onclick="toggleTimeline(this)"><a href="http://www.esensing.dpi.inpe.br/" target="_blank" rel="noopener" onclick="event.stopPropagation()">e-Sensing: Big Earth Observation Data Analytics</a></h3>
+            <div class="timeline-content">
+              <p class="meta">Pesquisa Doutoral (2018-2022)</p>
+              <ul>
+                <li>Projeto com principal objetivo de conceber, construir e implantar um novo tipo de plataforma de conhecimento para organização, acesso, processamento e análise de grandes dados de observação da Terra.</li>
+                <li>A plataforma de conhecimento permitiu aos cientistas produzir informação de forma inovadora, baseada em software livre, permitindo o compartilhamento de dados e reprodutibilidade dos resultados.</li>
+                <li>Foco em melhorar a extração de informações sobre mudança de uso e cobertura do solo utilizando técnicas avançadas de big data analytics e machine learning.</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card mb-24">
+        <h2 class="mb-16">Projeto em Produção</h2>
+        <h3>VPC‑GEOSER — Soluções Geoespaciais</h3>
+        <p><strong>Sócio Fundador</strong> da VPC‑GEOSER, startup especializada em transformar dados geoespaciais em decisões estratégicas. A empresa desenvolve <strong>soluções integradas de geoprocessamento, sensoriamento remoto e análise de dados</strong> aplicadas a infraestrutura, gestão ambiental e sustentabilidade.</p>
+        <p>Com foco em <strong>tecnologias em nuvem</strong> e <strong>arquiteturas de dados escaláveis</strong>, a VPC‑GEOSER entrega sistemas de monitoramento territorial, análise de impacto ambiental, modelagem preditiva e dashboards interativos — conectando dados brutos a insights acionáveis para tomadores de decisão.</p>
+        <blockquote class="quote">
+          <strong>Visão:</strong> Democratizar o acesso a inteligência geoespacial, permitindo que organizações públicas e privadas tomem decisões baseadas em dados e contribuam para a sustentabilidade territorial.
+        </blockquote>
+        <div class="hero-actions mt-24">
+          <a class="btn btn-primary" href="./portfolio.html">Ver Portfólio</a>
+          <a class="btn" href="https://www.linkedin.com/in/viniciuscapanema/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="split">
       <aside class="content">
         <!-- Competências-chave -->
         <div class="card mb-24">
@@ -963,35 +1008,6 @@ a:hover{color:var(--accent);opacity:.92}
           </ul>
         </div>
 
-        <!-- Projetos -->
-        <div class="card">
-          <h2 class="mb-16">Projetos</h2>
-          <ul class="timeline">
-            <li class="card-item">
-              <h3 onclick="toggleTimeline(this)"><a href="https://www.funcate.org.br/msa" target="_blank" rel="noopener" onclick="event.stopPropagation()">Monitoramento Ambiental por Satélite (INPE)</a></h3>
-              <div class="timeline-content">
-                <p class="meta">2017-2018</p>
-                <ul>
-                  <li>Estudo das Trajetórias de Padrões e Processos na Caracterização de Dinâmicas do Desmatamento na Amazônia.</li>
-                  <li>Projeto com objetivo de apoiar a ampliação e o aprimoramento do monitoramento ambiental por satélites e o desenvolvimento de estudos sobre usos e cobertura da terra na região Amazônia.</li>
-                  <li>Contribuição para a implementação da estratégia de REDD (Redução de Emissões por Desmatamento e Degradação) do país, possibilitando o aumento do controle do desmatamento e da degradação florestal através do fortalecimento dos sistemas de monitoramento do INPE.</li>
-                </ul>
-              </div>
-            </li>
-            <li class="card-item padding-0">
-              <h3 onclick="toggleTimeline(this)"><a href="http://www.esensing.dpi.inpe.br/" target="_blank" rel="noopener" onclick="event.stopPropagation()">e-Sensing: Big Earth Observation Data Analytics</a></h3>
-              <div class="timeline-content">
-                <p class="meta">Pesquisa Doutoral (2018-2022)</p>
-                <ul>
-                  <li>Projeto com principal objetivo de conceber, construir e implantar um novo tipo de plataforma de conhecimento para organização, acesso, processamento e análise de grandes dados de observação da Terra.</li>
-                  <li>A plataforma de conhecimento permitiu aos cientistas produzir informação de forma inovadora, baseada em software livre, permitindo o compartilhamento de dados e reprodutibilidade dos resultados.</li>
-                  <li>Foco em melhorar a extração de informações sobre mudança de uso e cobertura do solo utilizando técnicas avançadas de big data analytics e machine learning.</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-
         <!-- Tecnologias & Ferramentas -->
         <div class="card tech-card">
           <h2 class="mb-16">Tecnologias & Ferramentas</h2>
@@ -1071,38 +1087,7 @@ a:hover{color:var(--accent);opacity:.92}
       </aside>
 
       <main class="content">
-        <!-- Formação Acadêmica -->
-        <div class="card mb-24">
-          <h2 class="mb-16">Formação Acadêmica</h2>
-          <div class="grid">
-            <a class="mini-card-link" href="http://mtc-m21d.sid.inpe.br/col/sid.inpe.br/mtc-m21d/2023/02.09.18.15/doc/thisInformationItemHomePage.html" target="_blank" rel="noopener">
-              <div class="mini-card">
-                <h3><i class="bi bi-mortarboard-fill"></i> Doutorado</h3>
-                <p class="meta">Sensoriamento Remoto · INPE · 2022</p>
-              </div>
-            </a>
-            <div class="mini-card">
-              <h3><i class="bi bi-graph-up"></i> MBA</h3>
-              <p class="meta">Gestão de Projetos · Unopar · 2020</p>
-            </div>
-            <a class="mini-card-link" href="http://mtc-m21b.sid.inpe.br/col/sid.inpe.br/mtc-m21b/2017/08.02.18.22/doc/thisInformationItemHomePage.html" target="_blank" rel="noopener">
-              <div class="mini-card">
-                <h3><i class="bi bi-mortarboard-fill"></i> Mestrado</h3>
-                <p class="meta">Sensoriamento Remoto · INPE · 2017</p>
-              </div>
-            </a>
-            <div class="mini-card">
-              <h3><i class="bi bi-rulers"></i> Especialização</h3>
-              <p class="meta">Georreferenciamento · F. Vale do Juruena · 2010</p>
-            </div>
-            <div class="mini-card">
-              <h3><i class="bi bi-tree-fill"></i> Graduação</h3>
-              <p class="meta">Engenharia Florestal · UNEMAT · 2009</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Experiência Profissional (já completa) -->
+        <!-- Experiência Profissional -->
         <div class="card mb-24">
           <h2 class="mb-16">Experiência Profissional</h2>
           <div class="timeline">
@@ -1204,6 +1189,37 @@ a:hover{color:var(--accent);opacity:.92}
           </div>
         </div>
 
+        <!-- Formação Acadêmica -->
+        <div class="card mb-24">
+          <h2 class="mb-16">Formação Acadêmica</h2>
+          <div class="grid">
+            <a class="mini-card-link" href="http://mtc-m21d.sid.inpe.br/col/sid.inpe.br/mtc-m21d/2023/02.09.18.15/doc/thisInformationItemHomePage.html" target="_blank" rel="noopener">
+              <div class="mini-card">
+                <h3><i class="bi bi-mortarboard-fill"></i> Doutorado</h3>
+                <p class="meta">Sensoriamento Remoto · INPE · 2022</p>
+              </div>
+            </a>
+            <div class="mini-card">
+              <h3><i class="bi bi-graph-up"></i> MBA</h3>
+              <p class="meta">Gestão de Projetos · Unopar · 2020</p>
+            </div>
+            <a class="mini-card-link" href="http://mtc-m21b.sid.inpe.br/col/sid.inpe.br/mtc-m21b/2017/08.02.18.22/doc/thisInformationItemHomePage.html" target="_blank" rel="noopener">
+              <div class="mini-card">
+                <h3><i class="bi bi-mortarboard-fill"></i> Mestrado</h3>
+                <p class="meta">Sensoriamento Remoto · INPE · 2017</p>
+              </div>
+            </a>
+            <div class="mini-card">
+              <h3><i class="bi bi-rulers"></i> Especialização</h3>
+              <p class="meta">Georreferenciamento · F. Vale do Juruena · 2010</p>
+            </div>
+            <div class="mini-card">
+              <h3><i class="bi bi-tree-fill"></i> Graduação</h3>
+              <p class="meta">Engenharia Florestal · UNEMAT · 2009</p>
+            </div>
+          </div>
+        </div>
+
         <!-- Publicações -->
         <div class="card mb-24">
           <h2 class="mb-16">Publicações</h2>
@@ -1255,21 +1271,6 @@ a:hover{color:var(--accent);opacity:.92}
           </ul>
         </div>
       </main>
-    </div>
-  </section>
-
-  <section class="section reveal">
-    <div class="card mb-24">
-      <h2 class="mb-16">VPC‑GEOSER — Soluções Geoespaciais</h2>
-      <p><strong>Sócio Fundador</strong> da VPC‑GEOSER, startup especializada em transformar dados geoespaciais em decisões estratégicas. A empresa desenvolve <strong>soluções integradas de geoprocessamento, sensoriamento remoto e análise de dados</strong> aplicadas a infraestrutura, gestão ambiental e sustentabilidade.</p>
-      <p>Com foco em <strong>tecnologias em nuvem</strong> e <strong>arquiteturas de dados escaláveis</strong>, a VPC‑GEOSER entrega sistemas de monitoramento territorial, análise de impacto ambiental, modelagem preditiva e dashboards interativos — conectando dados brutos a insights acionáveis para tomadores de decisão.</p>
-      <blockquote class="quote">
-        <strong>Visão:</strong> Democratizar o acesso a inteligência geoespacial, permitindo que organizações públicas e privadas tomem decisões baseadas em dados e contribuam para a sustentabilidade territorial.
-      </blockquote>
-      <div class="hero-actions mt-24">
-        <a class="btn btn-primary" href="./portfolio.html">Ver Portfólio</a>
-        <a class="btn" href="https://www.linkedin.com/in/viniciuscapanema/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
-      </div>
     </div>
   </section>
 
