@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../../static/bootstrap-icons.min.css">
+<link rel="stylesheet" href="./static/bootstrap-icons.min.css">
 <style>
 /* Fallback fonts e ícones se CDN estiver indisponível */
 @font-face{font-family:'Montserrat';font-style:normal;font-weight:400;src:local('Montserrat'),local('Montserrat-Regular'),sans-serif}
@@ -349,10 +349,11 @@ a:hover{color:var(--accent);opacity:.92}
   margin:16px 0 24px;
   font-size:13px;
   opacity:.9;
-  background:#2a2a2a;
+  background:linear-gradient(165deg, var(--surface-2), rgba(87,184,161,.08));
   padding:12px 16px;
-  border-radius:6px;
-  border-left:4px solid #00d4ff;
+  border-radius:12px;
+  border:1px solid var(--line);
+  border-left:4px solid var(--accent-2);
 }
 
 .hero-stat{
@@ -360,9 +361,9 @@ a:hover{color:var(--accent);opacity:.92}
   flex-direction:column;
   gap:4px;
   padding:10px 12px;
-  border:1px solid rgba(255,255,255,.08);
+  border:1px solid var(--line);
   border-radius:8px;
-  background:rgba(255,255,255,.03);
+  background:rgba(255,255,255,.04);
 }
 
 .hero-stat-title{
@@ -789,7 +790,7 @@ a:hover{color:var(--accent);opacity:.92}
         <button type="button" class="btn" onclick="exportToPDF()" aria-label="Baixar currículo em PDF"><i class="bi bi-file-pdf"></i> Baixar CV PDF</button>
       </div>
     </div>
-    <div class="hero-avatar"><img src="../../../../static/img/1781043435128.png" alt="Vinicius Capanema"></div>
+    <div class="hero-avatar"><img src="./static/img/1781043435128.png" alt="Vinicius Capanema"></div>
   </section>
 
   <section class="section reveal">

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../../static/bootstrap-icons.min.css">
+<link rel="stylesheet" href="./static/bootstrap-icons.min.css">
 <style>
 /* Fallback fonts */
 @font-face{font-family:'Montserrat';font-style:normal;font-weight:400;src:local('Montserrat'),local('Montserrat-Regular'),sans-serif}
@@ -139,6 +139,45 @@ a:hover{color:var(--accent);opacity:.92}
   font-size:1.65rem;
   font-weight:800;
   line-height:1.08;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.logo-name{
+  font-size:1.65rem;
+  font-weight:800;
+}
+
+.logo-role{
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+
+.logo-meta{
+  font-size:.74rem;
+  color:var(--muted);
+  line-height:1.25;
+  letter-spacing:.01em;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  column-gap:16px;
+  row-gap:4px;
+}
+
+.logo-meta i{
+  color:var(--accent);
+  margin-right:0;
+}
+
+.logo-meta-item{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
 }
 
 .nav-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
@@ -245,10 +284,11 @@ a:hover{color:var(--accent);opacity:.92}
   margin:16px 0 24px;
   font-size:13px;
   opacity:.9;
-  background:#2a2a2a;
+  background:linear-gradient(165deg, var(--surface-2), rgba(87,184,161,.08));
   padding:12px 16px;
-  border-radius:6px;
-  border-left:4px solid #00d4ff;
+  border-radius:12px;
+  border:1px solid var(--line);
+  border-left:4px solid var(--accent-2);
 }
 
 .hero-stat{
@@ -256,9 +296,9 @@ a:hover{color:var(--accent);opacity:.92}
   flex-direction:column;
   gap:4px;
   padding:10px 12px;
-  border:1px solid rgba(255,255,255,.08);
+  border:1px solid var(--line);
   border-radius:8px;
-  background:rgba(255,255,255,.03);
+  background:rgba(255,255,255,.04);
 }
 
 .hero-stat-title{
@@ -483,8 +523,11 @@ a:hover{color:var(--accent);opacity:.92}
 
 @media (max-width:640px){
   body{font-size:15px;line-height:1.6}
-  .nav-inner{padding:12px 16px;flex-wrap:wrap;gap:8px}
-  .logo{font-size:22px}
+  .nav-inner{padding:12px 14px;flex-wrap:wrap;justify-content:center}
+  .logo{font-size:1.35rem;align-items:center;text-align:center}
+  .logo-name{font-size:1.35rem}
+  .logo-role{font-size:.65rem}
+  .logo-meta{font-size:.68rem}
   .nav-actions{gap:8px;width:100%;justify-content:center}
   .btn{padding:8px 12px;font-size:.9rem}
   .hero{
@@ -547,7 +590,10 @@ a:hover{color:var(--accent);opacity:.92}
 @media (max-width:375px){
   body{font-size:14px}
   .hero-text h1{font-size:clamp(24px,9vw,28px)}
-  .logo{font-size:20px}
+  .logo{font-size:1.2rem}
+  .logo-name{font-size:1.2rem}
+  .logo-role{font-size:.62rem;letter-spacing:.08em}
+  .logo-meta{font-size:.64rem}
   .card{padding:12px}
   .nav-inner{padding:10px 12px}
   .section{padding:0 12px}
@@ -558,7 +604,14 @@ a:hover{color:var(--accent);opacity:.92}
 <body>
   <nav class="nav">
     <div class="nav-inner">
-      <a href="#" class="logo">Vinicius Capanema</a>
+      <a href="#" class="logo">
+        <span class="logo-name">Vinicius Capanema</span>
+        <span class="logo-role">Forest Engineer</span>
+        <span class="logo-meta">
+          <span class="logo-meta-item"><i class="bi bi-envelope-at-fill"></i>vpc.geoser@outlook.com</span>
+          <span class="logo-meta-item"><i class="bi bi-geo-alt-fill"></i>Sao Paulo-SP</span>
+        </span>
+      </a>
       <div class="nav-actions">
         <a class="btn" href="./portfolio-en.html">Portfolio</a>
         <a class="btn" href="./index.html" title="Versão em Português"><i class="bi bi-globe"></i> PT</a>
@@ -584,7 +637,7 @@ a:hover{color:var(--accent);opacity:.92}
         <button type="button" class="btn" onclick="exportToPDF()" aria-label="Download CV as PDF"><i class="bi bi-file-pdf"></i> Download CV PDF</button>
       </div>
     </div>
-    <div class="hero-avatar"><img src="../../../../static/img/1781043435128.png" alt="Vinicius Capanema"></div>
+    <div class="hero-avatar"><img src="./static/img/1781043435128.png" alt="Vinicius Capanema"></div>
   </section>
 
   <section class="section reveal">

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../../static/bootstrap-icons.min.css">
+<link rel="stylesheet" href="./static/bootstrap-icons.min.css">
 <style>
 /* ===== V08 Web Layout — editorial atlas ===== */
 :root{
@@ -63,7 +63,12 @@ a:hover{color:var(--accent);opacity:.92}
 
 .nav{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .nav-inner{max-width:1364px;margin:auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.logo{color:var(--fg);font-size:1.3rem;font-weight:800;letter-spacing:.02em}
+.logo{display:flex;flex-direction:column;gap:2px;color:var(--fg);font-weight:800;letter-spacing:.02em}
+.logo-name{font-size:1.2rem;line-height:1.1}
+.logo-role{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);font-weight:700}
+.logo-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:.72rem;color:var(--muted);font-weight:600;letter-spacing:0}
+.logo-meta-item{display:inline-flex;align-items:center;gap:6px}
+.logo-meta i{color:var(--accent)}
 .nav-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);font-weight:600;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease}
 .btn:hover{transform:translateY(-1px);border-color:var(--accent-2);background:var(--surface-2);box-shadow:var(--shadow)}
@@ -128,6 +133,9 @@ a:hover{color:var(--accent);opacity:.92}
   /* Navegação */
   .nav-inner{padding:12px 16px;flex-wrap:wrap;gap:8px}
   .logo{font-size:22px}
+  .logo-name{font-size:1.05rem}
+  .logo-role{font-size:.62rem;letter-spacing:.08em}
+  .logo-meta{font-size:.64rem}
   .nav-actions{gap:8px}
   .nav-actions .btn{padding:8px 14px;font-size:14px;min-height:40px}
   
@@ -187,7 +195,14 @@ a:hover{color:var(--accent);opacity:.92}
 <body>
   <nav class="nav">
     <div class="nav-inner">
-      <a href="./index.html" class="logo">VPC‑GEOSER</a>
+      <a href="./index.html" class="logo">
+        <span class="logo-name">Vinicius Capanema</span>
+        <span class="logo-role">Engenheiro Florestal</span>
+        <span class="logo-meta">
+          <span class="logo-meta-item"><i class="bi bi-envelope-at-fill"></i>vpc.geoser@outlook.com</span>
+          <span class="logo-meta-item"><i class="bi bi-geo-alt-fill"></i>Sao Paulo-SP</span>
+        </span>
+      </a>
       <div class="nav-actions">
         <a class="btn" href="./index.html">Currículo</a>
         <a class="btn" href="./portfolio-en.html" title="English version"><i class="bi bi-globe"></i> EN</a>
@@ -200,7 +215,7 @@ a:hover{color:var(--accent);opacity:.92}
     <div class="header-copy">
       <div class="header-kicker"><i class="bi bi-grid-1x2-fill"></i> Portfólio VPC‑GEOSER</div>
       <h1>Portfólio de Projetos</h1>
-      <p>Geossistemas em produção, análise espacial, engenharia de dados e produtos WebGIS desenhados para monitoramento, inteligência territorial e apoio à decisão.</p>
+      <p>Geossistemas em produção, análise espacial, engenharia de dados e desenvolvimento de sistemas aplicados a monitoramento, inteligência territorial e apoio à decisão.</p>
     </div>
   </header>
 
@@ -487,43 +502,77 @@ a:hover{color:var(--accent);opacity:.92}
   </footer>
 
 <script>
-// Theme
-const root=document.documentElement;
-const saved=localStorage.getItem('v07-theme');
-if(saved==='light'){root.classList.add('light')}
-document.getElementById('themeToggle')?.addEventListener('click',()=>{
-  root.classList.toggle('light');
-  const icon = document.querySelector('#themeToggle i');
-  if(root.classList.contains('light')){
-    localStorage.setItem('v07-theme', 'light');
-    icon.className = 'bi bi-moon';
-  }else{
-    localStorage.setItem('v07-theme', 'dark');
-    icon.className = 'bi bi-sun';
+document.addEventListener('DOMContentLoaded',()=>{
+  const hasBootstrapIcons=document.querySelector('[rel="stylesheet"][href*="bootstrap-icons"]');
+  const themeToggle=document.getElementById('themeToggle');
+  const root=document.documentElement;
+  const savedTheme=localStorage.getItem('v07-theme');
+
+  if(hasBootstrapIcons){
+    hasBootstrapIcons.addEventListener('error',()=>{
+      document.querySelectorAll('[class*="bi-"]').forEach(el=>{
+        const classes=el.className;
+        let text='';
+        if(classes.includes('bi-arrow-up')) text='⬆';
+        else if(classes.includes('bi-chat-dots')) text='💬';
+        else if(classes.includes('bi-box-arrow-up-right')) text='↗';
+        else if(classes.includes('bi-envelope-at-fill')) text='✉';
+        else if(classes.includes('bi-geo-alt-fill')) text='📍';
+        else if(classes.includes('bi-grid-1x2-fill')) text='▦';
+        else if(classes.includes('bi-linkedin')) text='in';
+        else if(classes.includes('bi-globe')) text='🌐';
+        else if(classes.includes('bi-moon')) text='🌙';
+        else if(classes.includes('bi-sun')) text='☀';
+        else if(classes.includes('bi-shield-check')) text='🛡';
+        else if(classes.includes('bi-activity')) text='◉';
+        else if(classes.includes('bi-bullseye')) text='◎';
+        else if(classes.includes('bi-signpost-split')) text='⤴';
+        else if(classes.includes('bi-megaphone')) text='📣';
+        else if(classes.includes('bi-cloud-rain-heavy')) text='🌧';
+        else if(classes.includes('bi-graph-up-arrow')) text='📈';
+        else if(classes.includes('bi-car-front')) text='🚗';
+        else if(classes.includes('bi-bezier2')) text='〰';
+        else if(classes.includes('bi-bar-chart')) text='▥';
+        else if(classes.includes('bi-sign-turn-right')) text='↱';
+        else if(classes.includes('bi-triangle')) text='△';
+        else if(classes.includes('bi-clipboard-data')) text='🗒';
+        else if(classes.includes('bi-lightbulb')) text='💡';
+        if(text) el.textContent=text;
+      });
+    });
   }
-});
 
-// Reveal
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  if(savedTheme==='light') root.classList.add('light');
 
-// Filter
-const filters=document.querySelectorAll('.filter-pill');
-const items=document.querySelectorAll('.masonry-item');
-filters.forEach(f=>{
-  f.addEventListener('click',()=>{
-    filters.forEach(x=>x.classList.remove('active'));
-    f.classList.add('active');
-    const cat=f.dataset.filter;
-    items.forEach(item=>{
-      if(cat==='all' || item.dataset.category.includes(cat)){
-        item.style.display='block';
-      }else{
-        item.style.display='none';
-      }
+  if(themeToggle){
+    const icon=themeToggle.querySelector('i');
+    if(icon) icon.className=root.classList.contains('light') ? 'bi bi-moon' : 'bi bi-sun';
+
+    themeToggle.addEventListener('click',()=>{
+      root.classList.toggle('light');
+      const isLight=root.classList.contains('light');
+      localStorage.setItem('v07-theme',isLight ? 'light' : 'dark');
+      if(icon) icon.className=isLight ? 'bi bi-moon' : 'bi bi-sun';
+    });
+  }
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const filters=document.querySelectorAll('.filter-pill');
+  const items=document.querySelectorAll('.masonry-item');
+  filters.forEach(f=>{
+    f.addEventListener('click',()=>{
+      filters.forEach(x=>x.classList.remove('active'));
+      f.classList.add('active');
+      const cat=f.dataset.filter;
+      items.forEach(item=>{
+        item.style.display=(cat==='all' || item.dataset.category.includes(cat)) ? 'block' : 'none';
+      });
     });
   });
 });
 </script>
+
 </body>
 </html>
