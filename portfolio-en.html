@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfolio — VPC‑GEOSER (V08 • Editorial Atlas)</title>
+<link rel="icon" href="./static/brand/favicon.svg" type="image/svg+xml">
+<title>Portfolio — VPC-WEBSISTEMAS E GEOINFORMAÇÃO (V08 • Editorial Atlas)</title>
 <meta name="description" content="Project portfolio in geoprocessing, remote sensing, and data engineering with the updated editorial visual language.">
 <meta name="color-scheme" content="light dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,7 +64,11 @@ a:hover{color:var(--accent);opacity:.92}
 
 .nav{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .nav-inner{max-width:1364px;margin:auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.logo{display:flex;flex-direction:column;gap:2px;color:var(--fg);font-weight:800;letter-spacing:.02em}
+.logo{display:flex;align-items:center;color:var(--fg)}
+.brand-lockup{display:grid;grid-template-columns:64px auto;grid-template-rows:auto auto;column-gap:12px;align-items:center}
+.brand-lockup-icon{grid-row:1 / 3;width:64px;height:64px;object-fit:contain}
+.brand-lockup-name{align-self:end;font-size:clamp(.86rem,1.25vw,1.08rem);line-height:1.05;font-weight:800;letter-spacing:.015em;color:var(--fg)}
+.brand-lockup-slogan{align-self:start;font-size:clamp(.61rem,.82vw,.74rem);line-height:1.15;font-weight:650;color:var(--accent-2)}
 .logo-name{font-size:1.2rem;line-height:1.1}
 .logo-role{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);font-weight:700}
 .logo-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:.72rem;color:var(--muted);font-weight:600;letter-spacing:0}
@@ -77,10 +82,15 @@ a:hover{color:var(--accent);opacity:.92}
 
 .header{max-width:1364px;margin:44px auto 18px;padding:0 22px}
 .header-copy{position:relative;background:linear-gradient(170deg, var(--surface), var(--surface-2));border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:28px clamp(20px,3vw,36px);overflow:hidden}
-.header-copy::before{content:"";position:absolute;width:180px;height:180px;right:-44px;top:-56px;border-radius:50%;background:radial-gradient(circle at center, rgba(231,123,58,.45), transparent 68%)}
+.header-copy::before{content:"";position:absolute;width:310px;height:310px;right:-54px;top:50%;transform:translateY(-50%);background:url("./static/brand/simbolo-vpc-satelite.png") center/contain no-repeat;opacity:.12;filter:saturate(.8);pointer-events:none}
+.header-copy>*{position:relative;z-index:1}
 .header-kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--accent-2);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
 .header h1{font-size:clamp(2rem,5vw,3.1rem);margin-bottom:10px;max-width:14ch}
 .header p{color:var(--muted);font-size:1.03rem;max-width:72ch;text-align:justify}
+.portfolio-copy{max-width:none;margin-top:24px;padding-right:clamp(0px,15vw,210px)}
+.portfolio-copy p{max-width:none;margin:0 0 16px;text-align:justify;-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto}
+.portfolio-copy p:last-child{margin-bottom:0}
+.portfolio-site{margin-top:18px}
 
 .panel,.project{position:relative;background:linear-gradient(170deg, var(--surface), var(--surface-2));border:1px solid var(--line);border-radius:var(--radius-lg)}
 .panel{padding:24px;box-shadow:var(--shadow);margin-bottom:32px}
@@ -118,6 +128,10 @@ a:hover{color:var(--accent);opacity:.92}
 .tech-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .mt-40{margin-top:40px}
 .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.leadership{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center}
+.leadership img{width:120px;height:120px;object-fit:cover;border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.leadership h2{margin-bottom:5px}
+.leadership-role{color:var(--accent-2);font-weight:700;margin-bottom:10px!important}
 
 /* Tablet responsiveness */
 @media (max-width:1000px){
@@ -135,6 +149,10 @@ a:hover{color:var(--accent);opacity:.92}
   .logo-name{font-size:1.05rem}
   .logo-role{font-size:.62rem;letter-spacing:.08em}
   .logo-meta{font-size:.64rem}
+  .brand-lockup{grid-template-columns:48px minmax(0,1fr);column-gap:8px}
+  .brand-lockup-icon{width:48px;height:48px}
+  .brand-lockup-name{font-size:.72rem}
+  .brand-lockup-slogan{font-size:.54rem}
   .nav-actions{gap:8px}
   .nav-actions .btn{padding:8px 14px;font-size:14px;min-height:40px}
   
@@ -142,6 +160,7 @@ a:hover{color:var(--accent);opacity:.92}
   .header-copy{padding:22px 18px}
   .header h1{font-size:clamp(28px,8vw,36px);line-height:1.2}
   .header p{font-size:16px;margin-top:12px}
+  .portfolio-copy{padding-right:0;margin-top:22px}
   
   .container{padding:0 16px;max-width:100%}
   
@@ -164,6 +183,8 @@ a:hover{color:var(--accent);opacity:.92}
   .project .btn,.project-link{padding:10px 16px;font-size:14px;min-height:44px}
   
   p{text-align:left}
+  .leadership{grid-template-columns:1fr;text-align:center}
+  .leadership img{margin:auto}
   
   button,a.btn,.btn,.filter-pill,.project-link{min-height:44px;min-width:44px}
 }
@@ -186,12 +207,11 @@ a:hover{color:var(--accent);opacity:.92}
 <body>
   <nav class="nav">
     <div class="nav-inner">
-      <a href="./index-en.html" class="logo">
-        <span class="logo-name">Vinicius Capanema</span>
-        <span class="logo-role">Forest Engineer</span>
-        <span class="logo-meta">
-          <span class="logo-meta-item"><i class="bi bi-envelope-at-fill"></i>vpc.geoser@outlook.com</span>
-          <span class="logo-meta-item"><i class="bi bi-geo-alt-fill"></i>Sao Paulo-SP</span>
+      <a href="https://www.vpc-websistemas.com.br/" class="logo" aria-label="VPC-WEBSISTEMAS E GEOINFORMAÇÃO — Inteligência em geoprocessamento e sensoriamento remoto">
+        <span class="brand-lockup">
+          <img class="brand-lockup-icon" src="./static/brand/simbolo-vpc-satelite.png" alt="">
+          <span class="brand-lockup-name">VPC-WEBSISTEMAS E GEOINFORMAÇÃO</span>
+          <span class="brand-lockup-slogan">Inteligência em geoprocessamento e sensoriamento remoto</span>
         </span>
       </a>
       <div class="nav-actions">
@@ -204,19 +224,21 @@ a:hover{color:var(--accent);opacity:.92}
 
   <header class="header">
     <div class="header-copy">
-      <div class="header-kicker"><i class="bi bi-grid-1x2-fill"></i> VPC‑GEOSER Portfolio</div>
       <h1>Project Portfolio</h1>
-      <p>Production geosystems, spatial analytics, data engineering, and systems development designed for monitoring, territorial intelligence, and decision support.</p>
+      <p>Geospatial solutions designed to turn complex data into reliable information, territorial intelligence, and better-informed decisions.</p>
+      <div class="portfolio-copy">
+        <p>At VPC-WEBSISTEMAS E GEOINFORMAÇÃO, we transform concrete needs into robust, functional systems that apply technical and scientific knowledge to the processing, analysis, and transformation of data in support of planning, monitoring, and decision-making.</p>
+        <p>Each solution is tailored to the client, based on an understanding of the demand, its context, the processes involved, the available data, and the specific challenges faced by those who will use the system. Geoprocessing, data engineering, automation, and web development are combined according to the requirements of each project — from initial analysis through deployment and continued evolution.</p>
+        <p>Among VPC's products, the PLI/SP ecosystem — the <a href="https://56.125.163.194/pli-hub/" target="_blank" rel="noopener noreferrer">PLI Hub</a> — stands as its major current challenge. Its design involves integrating specialized applications, data, and processes within a shared structure, in which each system addresses specific demands while contributing to the operation and evolution of the whole. The scale and complexity of this initiative have enabled us to exercise our ability to combine technical and scientific knowledge, geoinformation, data engineering, and web development in the construction of integrated solutions for territorial management and strategic planning.</p>
+        <p>To enable systems with this capacity for integration and evolution, we prioritize free and open-source technologies — <em>Free and Open Source Software</em> (FOSS). In addition to eliminating or significantly reducing licensing costs, this model benefits from collaborative development and active communities that continuously improve, document, and test technologies used around the world.</p>
+        <p>For the client, this means greater autonomy over systems and data, technological transparency, easier integration, and the freedom to maintain, adapt, and expand the solution without excessive dependence on a single vendor or proprietary licenses. Resources can therefore be directed toward what truly adds value to the project: understanding the demand, ensuring data quality, developing functionality, and continuously evolving the system.</p>
+        <p>At every stage, VPC remains committed to technical and scientific rigor. Requirements, data, models, and criteria are handled with methodological clarity, traceability, and validation. Reproducible processes and auditable results provide confidence in the use of information and the decisions derived from it. In this way, technical knowledge and evidence are transformed into reliable, sustainable digital solutions that are prepared to evolve.</p>
+      </div>
+      <p class="portfolio-site"><a href="https://www.vpc-websistemas.com.br/" target="_blank" rel="noopener noreferrer">www.vpc-websistemas.com.br</a></p>
     </div>
   </header>
 
   <main class="container">
-    <section class="panel reveal">
-      <h2>About the Portfolio</h2>
-      <p>Below you will find a selection of our deployed web-based solutions, including the integrated ecosystem of the <a href="https://pli-hub.onrender.com/" target="_blank" rel="noopener noreferrer">PLI Hub</a>. All applications are conceived under an open-source theoretical and conceptual framework, leveraging open tools and well-established standards tailored to each specific challenge. We operate across domains such as multi-criteria analysis (AHP/Saaty), extraction and processing of geospatial data (OpenStreetMap, DEM, Shapefiles, GeoTIFFs) with cloud computing (Google Earth Engine), WebGIS (Leaflet/OpenLayers, QGIS Server, GeoServer, PostGIS), and logistics/territorial and infrastructure planning — always with reproducible pipelines (Python/GeoPandas/Rasterio, ETL, Git/Docker version control) and integration with systems such as SIGMA-PLI and DER/SP.</p>
-      <p>Reinforcing our commitment to science, we combine scientific principles — modeling, inference, and data governance/quality — with technology — modern architectures, interoperability, and automation — to deliver transparent, auditable, and scalable solutions. This rigorous association between theory and tooling enhances the reliability of our analyses and prepares our products for large volumes and diverse datasets, meeting a wide range of demands.</p>
-    </section>
-
     <section class="container">
       <h2 class="section-title">Production Solutions</h2>
       <section class="filters reveal">
@@ -242,7 +264,7 @@ a:hover{color:var(--accent);opacity:.92}
             <span class="tag">Monitoring</span>
             <span class="tag">PLI-SP</span>
           </div>
-          <a class="project-link" href="http://56.125.163.194/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+          <a class="project-link" href="https://56.125.163.194/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
@@ -250,14 +272,14 @@ a:hover{color:var(--accent);opacity:.92}
         <article class="project">
           <div class="project-icon"><i class="bi bi-activity"></i></div>
           <h3>SIGMA FAD-Stats</h3>
-          <p class="desc">Web application for dynamized data analysis within the SIGMA/PLI ecosystem, focused on analytical reading, operational querying, and structured navigation of information.</p>
+          <p class="desc">Web application for dynamic data analysis within the SIGMA/PLI ecosystem, focused on analytical interpretation, operational queries, and structured information navigation.</p>
           <div class="tags">
             <span class="tag">FAD-Stats</span>
             <span class="tag">Analytics</span>
             <span class="tag">SIGMA/PLI</span>
             <span class="tag">Web App</span>
           </div>
-          <a class="project-link" href="http://56.125.163.194/fad-stats/2_0/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+          <a class="project-link" href="https://56.125.163.194/fad-stats/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
@@ -272,7 +294,7 @@ a:hover{color:var(--accent);opacity:.92}
             <span class="tag">Multi-Criteria Analysis</span>
             <span class="tag">JavaScript</span>
           </div>
-          <a class="project-link" href="https://vpc-geoser-ahp-tool-calculator.onrender.com/sigma-ahp.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+          <a class="project-link" href="https://vpc-geoser-ahp-tool-calculator.onrender.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
@@ -280,14 +302,14 @@ a:hover{color:var(--accent);opacity:.92}
         <article class="project">
           <div class="project-icon"><i class="bi bi-signpost-split"></i></div>
           <h3>PLI — Smart Router</h3>
-          <p class="desc">Intelligent router with conventional routing (shortest path via OSRM) and Smart routing that avoids active adversity layers. Set origin and destination by coordinates, text search (city, address, ZIP/ViaCEP), or Leaflet map click. Route export in JSON and Shapefile.</p>
+          <p class="desc">Intelligent router offering conventional routing (the shortest path via OSRM) and Smart routing, which avoids hazards identified in active map layers. Origins and destinations can be defined by coordinates, text search (city, address, or postal code via ViaCEP), or by clicking the Leaflet map. Routes can be exported in JSON and Shapefile formats.</p>
           <div class="tags">
             <span class="tag">OSRM</span>
             <span class="tag">ViaCEP</span>
             <span class="tag">Leaflet</span>
             <span class="tag">Routing</span>
           </div>
-          <a class="project-link" href="http://pli-smartrouter.56-125-163-194.sslip.io/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+          <a class="project-link" href="https://56.125.163.194/smart-router/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
@@ -295,14 +317,14 @@ a:hover{color:var(--accent);opacity:.92}
         <article class="project">
           <div class="project-icon"><i class="bi bi-megaphone"></i></div>
           <h3>PLI — Reporta</h3>
-          <p class="desc">Citizen reporting for road incidents (potholes, flooding, crashes, blockages, roadwork, signage) and public feedback, with geolocation, photos, and public map. For the best reporting experience, access from a mobile device.</p>
+          <p class="desc">Citizen channel for reporting road incidents (potholes, flooding, crashes, blockages, roadworks, and signage problems) and submitting public feedback, with geolocation, photographs, and a public map. For the best reporting experience, access from a mobile device is recommended.</p>
           <div class="tags">
             <span class="tag">Mobile First</span>
             <span class="tag">Crowdsourcing</span>
             <span class="tag">WebGIS</span>
             <span class="tag">Road Incidents</span>
           </div>
-          <a class="project-link" href="http://pli-reporta.56-125-163-194.sslip.io/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+          <a class="project-link" href="https://56.125.163.194/pli-reporta/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
@@ -317,7 +339,7 @@ a:hover{color:var(--accent);opacity:.92}
             <span class="tag">Climate Resilience</span>
             <span class="tag">WebGIS</span>
           </div>
-          <a class="project-link" href="http://pli-hazardtrack.56-125-163-194.sslip.io/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
+          <a class="project-link" href="https://56.125.163.194/pli-hazardtrack/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Launch Application</a>
         </article>
       </div>
 
@@ -357,7 +379,7 @@ a:hover{color:var(--accent);opacity:.92}
         <article class="project">
           <div class="project-icon"><i class="bi bi-bezier2"></i></div>
           <h3>State Road Network Density — SP</h3>
-          <p class="desc">Geospatial study of São Paulo road network: 21,674 km, 4,779 segments, and 645 municipalities. Density indicators by area and population, by administration, category, and urban-rural location, with municipal, IGR, and IGI cuts, interactive maps, and documented methodology.</p>
+          <p class="desc">Geospatial study of São Paulo's road network: 21,674 km, 4,779 segments, and 645 municipalities. Presents road-density indicators by area, population, administration, category, and urban or rural location, with municipal, IGR, and IGI breakdowns, interactive maps, and documented methodology.</p>
           <div class="tags">
             <span class="tag">Road Network</span>
             <span class="tag">Indicators</span>
@@ -482,14 +504,27 @@ a:hover{color:var(--accent);opacity:.92}
         <a class="btn" href="http://lattes.cnpq.br/4908905634731966" target="_blank" rel="noopener noreferrer">Lattes CNPq</a>
       </div>
     </section>
+
+    <section class="panel reveal mt-40 leadership">
+      <img src="./static/img/1781043435128.png" alt="Vinicius Capanema">
+      <div>
+        <h2>Vinicius Capanema</h2>
+        <p class="leadership-role">Founder, CEO and Technical Lead</p>
+        <p>VPC-WEBSISTEMAS E GEOINFORMAÇÃO is a technology and geoinformation company founded and led by Vinicius Capanema. Every solution is conceived, developed, and overseen directly by its founder and technical lead.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="./index-en.html">Meet the technical lead</a>
+          <a class="btn" href="https://www.linkedin.com/in/viniciuscapanema/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="footer-action">
       <a class="btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false"><i class="bi bi-arrow-up"></i> Back to Top</a>
     </div>
-    Electronic curriculum vitae of Vinicius Capanema<br>
-    Designed and developed by VPC‑GEOSER 2025
+    Institutional portfolio of VPC-WEBSISTEMAS E GEOINFORMAÇÃO<br>
+    Founded and led by Vinicius Capanema · 2025
   </footer>
 
 <script>

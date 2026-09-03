@@ -569,6 +569,81 @@ a:hover{color:var(--accent);opacity:.92}
 .timeline-content li{margin-bottom:6px}
 .timeline-content p{margin-bottom:8px}
 
+.publication-card-item{
+  padding:20px 0;
+}
+
+.publication-card-item h3{
+  display:block;
+  margin-bottom:10px;
+  cursor:default;
+  -webkit-user-select:text;
+  user-select:text;
+  line-height:1.45;
+}
+
+.publication-card-item h3:hover{color:inherit}
+
+.publication-card-item h3 a{
+  color:inherit;
+}
+
+.publication-card-item h3 a:hover{
+  color:var(--accent);
+}
+
+.publication-layout{
+  display:grid;
+  grid-template-columns:minmax(156px, 188px) minmax(0, 1fr);
+  gap:18px;
+  align-items:stretch;
+}
+
+.publication-visual{
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+  min-height:220px;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:linear-gradient(165deg, rgba(87,184,161,.12), var(--surface-2));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.publication-visual img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  border-radius:10px;
+}
+
+.publication-copy{
+  min-width:0;
+}
+
+.publication-card-item .timeline-content{
+  max-height:none;
+  opacity:1;
+  overflow:visible;
+  margin-top:0;
+}
+
+.publication-meta-line{
+  margin-bottom:8px;
+}
+
+.publication-meta-line{
+  color:var(--muted);
+  font-size:.87rem;
+  line-height:1.65;
+}
+
+.publication-meta-line strong{
+  color:var(--fg);
+}
+
 /* Competencias */
 .competency-list{list-style:none;padding:0;margin:0}
 .competency-item{margin:10px 0;padding-bottom:10px;border-bottom:none}
@@ -687,6 +762,9 @@ a:hover{color:var(--accent);opacity:.92}
   .timeline-item,
   .card-item{padding:8px 0 14px}
 
+  .publication-layout{grid-template-columns:1fr;gap:14px}
+  .publication-visual{min-height:180px;max-width:240px}
+
   .timeline-item h3,
   .card-item h3,
   .competency-header{font-size:.89rem;min-height:42px;display:flex;align-items:center}
@@ -735,7 +813,7 @@ a:hover{color:var(--accent);opacity:.92}
         <span class="logo-role">Engenheiro Florestal</span>
         <span class="logo-meta">
           <span class="logo-meta-item"><i class="bi bi-envelope-at-fill"></i>vpc.geoser@outlook.com</span>
-          <span class="logo-meta-item"><i class="bi bi-geo-alt-fill"></i>Sao Paulo-SP</span>
+          <span class="logo-meta-item"><i class="bi bi-geo-alt-fill"></i>São Paulo-SP</span>
         </span>
       </a>
       <div class="nav-actions">
@@ -762,7 +840,7 @@ a:hover{color:var(--accent);opacity:.92}
         <p class="contact-line">
           <span class="contact-label">Cidade</span>
           <i class="bi bi-geo-alt-fill"></i>
-          Sao Paulo-SP
+          São Paulo-SP
         </p>
         <p class="text-muted">Prefere mensagem inicial por e-mail ou formulário. Assim, o contato fica mais seguro e organizado.</p>
       </div>
@@ -776,11 +854,11 @@ a:hover{color:var(--accent);opacity:.92}
   <section class="hero">
     <div class="hero-text">
       <h1><span>Sensoriamento Remoto</span>, Geoprocessamento, <span>Engenharia de Dados</span> e Desenvolvimento de Sistemas</h1>
-      <p class="lead">Engenheiro Florestal, Mestre e Doutor em Sensoriamento Remoto pelo INPE, com atuação em pesquisa científica aplicada, mudanças climáticas, infraestrutura, logística de transportes e desenvolvimento de geossistemas. Conduz o ciclo completo de soluções geoespaciais, da formulação teórico-conceitual pautada na ciência e da modelagem metodológica à arquitetura de dados, desenvolvimento, implantação e operação, com uso de ferramentas open source, código aberto e interoperabilidade baseada em padrões OGC.</p>
+      <p class="lead">Engenheiro Florestal, Mestre e Doutor em Sensoriamento Remoto pelo INPE, com atuação em pesquisa científica aplicada, mudanças climáticas, infraestrutura, logística de transportes e desenvolvimento de geossistemas. Conduz o ciclo completo de soluções geoespaciais, desde a formulação teórico-conceitual pautada na ciência e a modelagem metodológica até a arquitetura de dados, o desenvolvimento, a implantação e a operação, com uso de tecnologias de código aberto e interoperabilidade baseada em padrões OGC.</p>
       <div class="hero-stats">
         <span class="hero-stat"><span class="hero-stat-title">Aplicações em produção:</span><strong>13</strong></span>
         <span class="hero-stat"><span class="hero-stat-title">Trechos rodoviários em monitoramento:</span><strong>4.583</strong></span>
-        <span class="hero-stat"><span class="hero-stat-title">Rodovias em monitoramento (km):</span><strong>21000</strong></span>
+        <span class="hero-stat"><span class="hero-stat-title">Rodovias em monitoramento (km):</span><strong>21.000</strong></span>
         <span class="hero-stat"><span class="hero-stat-title">Registros geoespaciais processados:</span><strong>1,36M</strong></span>
       </div>
       <div class="hero-actions">
@@ -796,7 +874,7 @@ a:hover{color:var(--accent);opacity:.92}
   <section class="section reveal">
     <div class="card mb-24 synthesis-card">
       <h2>Síntese</h2>
-      <p>Engenheiro Florestal, Mestre e Doutor em Sensoriamento Remoto pelo INPE, com atuação em pesquisa científica aplicada, mudanças climáticas, infraestrutura, logística de transportes e desenvolvimento de geossistemas. Atua na concepção, arquitetura, desenvolvimento e implementação de aplicações geoespaciais, com fundamentação metodológica ancorada na ciência. Emprega stack open source, interoperabilidade orientada por padrões OGC e infraestrutura de dados geoespaciais. Desenvolveu <strong>13 aplicações web</strong> em produção, com processamento de <strong>1,36 milhão de registros geoespaciais</strong> e suporte a monitoramento rodoviário, inteligência territorial e análise de risco climático em escala.</p>
+      <p>Engenheiro Florestal, Mestre e Doutor em Sensoriamento Remoto pelo INPE, com atuação em pesquisa científica aplicada, mudanças climáticas, infraestrutura, logística de transportes e desenvolvimento de geossistemas. Atua na concepção, arquitetura, desenvolvimento e implementação de aplicações geoespaciais, com fundamentação metodológica ancorada na ciência. Emprega tecnologias de código aberto, interoperabilidade orientada por padrões OGC e infraestruturas de dados geoespaciais. Desenvolveu <strong>13 aplicações web</strong> em produção, com processamento de <strong>1,36 milhão de registros geoespaciais</strong> e suporte ao monitoramento rodoviário, à inteligência territorial e à análise de risco climático em escala.</p>
       <p>Transforma problemas técnico-científicos em aplicações operacionais para monitoramento, análise e inteligência territorial. Estrutura fluxos de aquisição, integração, validação e publicação de dados, articulando sensoriamento remoto, modelagem espacial, engenharia de dados, bancos geográficos, APIs, backend e frontend. Atua com foco em rastreabilidade metodológica, desempenho analítico e entrega operacional para pesquisa aplicada, gestão e tomada de decisão.</p>
     </div>
   </section>
@@ -836,7 +914,7 @@ a:hover{color:var(--accent);opacity:.92}
                 <span>Engenharia de Dados Geoespaciais & Pipelines</span>
               </div>
               <div class="competency-content">
-                <p class="text-muted"><strong>Data Engineering aplicado ao território:</strong> Integração de fontes heterogêneas (APIs, tabelas, geometrias e rasters), padronização e disponibilização de dados para análise espacial e dashboards executivos.</p>
+                <p class="text-muted"><strong>Engenharia de dados aplicada ao território:</strong> Integração de fontes heterogêneas (APIs, tabelas, geometrias e rasters), padronização e disponibilização de dados para análise espacial e dashboards executivos.</p>
                 <p class="text-muted"><strong>Qualidade e confiabilidade:</strong> Modelagem e governança de dados espaciais com foco em consistência, rastreabilidade, eficiência de consulta e suporte a ciclos contínuos de atualização.</p>
                 <p class="text-muted"><strong>Keywords ATS:</strong> geospatial data engineering, ETL/ELT, data pipelines, PostgreSQL/PostGIS, data quality, data reliability, interoperabilidade.</p>
               </div>
@@ -881,7 +959,7 @@ a:hover{color:var(--accent);opacity:.92}
               </div>
               <div class="competency-content">
                 <p class="text-muted"><strong>Processamento em escala:</strong> Uso de computação em nuvem para análise geoespacial e sensoriamento remoto, incluindo produtos derivados de DEM e geração de resultados exportáveis para fluxos técnicos.</p>
-                <p class="text-muted"><strong>Integração Earth Observation:</strong> Aplicação de dados de observação da Terra para estudos ambientais, planejamento territorial, apoio a infraestrutura e monitoramento contínuo.</p>
+                <p class="text-muted"><strong>Integração de dados de observação da Terra:</strong> Aplicação de dados de observação da Terra em estudos ambientais, planejamento territorial, apoio à infraestrutura e monitoramento contínuo.</p>
                 <p class="text-muted"><strong>Keywords ATS:</strong> Google Earth Engine, Earth Observation, remote sensing, cloud geospatial, DEM, GeoTIFF, geospatial cloud.</p>
               </div>
             </div>
@@ -974,8 +1052,8 @@ a:hover{color:var(--accent);opacity:.92}
                 <p class="meta">2017-2018</p>
                 <ul>
                   <li>Estudo das Trajetórias de Padrões e Processos na Caracterização de Dinâmicas do Desmatamento na Amazônia.</li>
-                  <li>Projeto com objetivo de apoiar a ampliação e o aprimoramento do monitoramento ambiental por satélites e o desenvolvimento de estudos sobre usos e cobertura da terra na região Amazônia.</li>
-                  <li>Contribuição para a implementação da estratégia de REDD (Redução de Emissões por Desmatamento e Degradação) do país, possibilitando o aumento do controle do desmatamento e da degradação florestal através do fortalecimento dos sistemas de monitoramento do INPE.</li>
+                  <li>Projeto com o objetivo de apoiar a ampliação e o aprimoramento do monitoramento ambiental por satélites e o desenvolvimento de estudos sobre uso e cobertura da terra na região amazônica.</li>
+                  <li>Contribuição para a implementação da estratégia nacional de REDD (Redução de Emissões por Desmatamento e Degradação), ampliando o controle do desmatamento e da degradação florestal por meio do fortalecimento dos sistemas de monitoramento do INPE.</li>
                 </ul>
               </div>
             </li>
@@ -984,9 +1062,9 @@ a:hover{color:var(--accent);opacity:.92}
               <div class="timeline-content">
                 <p class="meta">Pesquisa Doutoral (2018-2022)</p>
                 <ul>
-                  <li>Projeto com principal objetivo de conceber, construir e implantar um novo tipo de plataforma de conhecimento para organização, acesso, processamento e análise de grandes dados de observação da Terra.</li>
-                  <li>A plataforma de conhecimento permitiu aos cientistas produzir informação de forma inovadora, baseada em software livre, permitindo o compartilhamento de dados e reprodutibilidade dos resultados.</li>
-                  <li>Foco em melhorar a extração de informações sobre mudança de uso e cobertura do solo utilizando técnicas avançadas de big data analytics e machine learning.</li>
+                  <li>Projeto com o objetivo principal de conceber, construir e implantar um novo tipo de plataforma de conhecimento para organização, acesso, processamento e análise de grandes volumes de dados de observação da Terra.</li>
+                  <li>A plataforma de conhecimento permitiu aos cientistas produzir informações de forma inovadora, com base em software livre, favorecendo o compartilhamento de dados e a reprodutibilidade dos resultados.</li>
+                  <li>Foco no aprimoramento da extração de informações sobre mudanças de uso e cobertura da terra, com técnicas avançadas de análise de grandes volumes de dados e aprendizado de máquina.</li>
                 </ul>
               </div>
             </li>
@@ -1008,7 +1086,7 @@ a:hover{color:var(--accent);opacity:.92}
             <li class="card-item">
               <h3 onclick="toggleTimeline(this)">Programação & Análise de Dados</h3>
               <div class="timeline-content">
-                <p class="text-muted"><strong>Python:</strong> Pandas/GeoPandas (manipulação de dados tabulares e espaciais), NumPy/SciPy (computação científica), Matplotlib/Seaborn (visualização), Scikit-learn (machine learning aplicado a classificação de imagens), Rasterio/GDAL (processamento raster), Shapely/Fiona (geometrias vetoriais), PyProj (projeções), Requests/BeautifulSoup (web scraping), SQLAlchemy (ORM para bancos de dados).</p>
+                <p class="text-muted"><strong>Python:</strong> Pandas/GeoPandas (manipulação de dados tabulares e espaciais), NumPy/SciPy (computação científica), Matplotlib/Seaborn (visualização), Scikit-learn (aprendizado de máquina aplicado à classificação de imagens), Rasterio/GDAL (processamento raster), Shapely/Fiona (geometrias vetoriais), PyProj (projeções), Requests/BeautifulSoup (extração de dados da web) e SQLAlchemy (ORM para bancos de dados).</p>
                 <p class="text-muted"><strong>R:</strong> Análise estatística espacial, processamento de imagens de satélite (raster, terra, rgdal), visualização (ggplot2), modelagem preditiva, análise de séries temporais.</p>
                 <p class="text-muted"><strong>JavaScript:</strong> Conhecimento intermediário para desenvolvimento web, manipulação de DOM, integração com APIs REST, bibliotecas de visualização (Chart.js, Leaflet.js).</p>
               </div>
@@ -1017,7 +1095,7 @@ a:hover{color:var(--accent);opacity:.92}
               <h3 onclick="toggleTimeline(this)">Banco de Dados Espaciais</h3>
               <div class="timeline-content">
                 <p class="text-muted"><strong>PostgreSQL/PostGIS:</strong> Modelagem de dados espaciais, funções ST_* (ST_Intersects, ST_Buffer, ST_Union, ST_Distance, ST_Within), índices espaciais (GIST, SP-GIST, BRIN), análise topológica, geocodificação reversa, otimização de queries espaciais, triggers e stored procedures.</p>
-                <p class="text-muted"><strong>Boas Práticas:</strong> Normalização de schemas, constraints e validações geométricas, views materializadas para consultas complexas, particionamento de tabelas grandes, backup e restore, replicação e alta disponibilidade.</p>
+                <p class="text-muted"><strong>Boas Práticas:</strong> Normalização de esquemas, restrições e validações geométricas, visualizações materializadas para consultas complexas, particionamento de tabelas grandes, backup e restauração, replicação e alta disponibilidade.</p>
               </div>
             </li>
             <li class="card-item">
@@ -1045,7 +1123,7 @@ a:hover{color:var(--accent);opacity:.92}
               </div>
             </li>
             <li class="card-item">
-              <h3 onclick="toggleTimeline(this)">IA & Machine Learning Aplicado</h3>
+              <h3 onclick="toggleTimeline(this)">IA &amp; Machine Learning Aplicados</h3>
               <div class="timeline-content">
                 <p class="text-muted"><strong>Ferramentas de IA:</strong> Domínio de ferramentas modernas de inteligência artificial (ChatGPT, Claude, GitHub Copilot) aplicadas à geração de código, análise de dados, automação de processos, documentação técnica e resolução de problemas complexos.</p>
                 <p class="text-muted"><strong>ML Geoespacial:</strong> Classificação supervisionada de imagens de satélite (Random Forest, SVM), detecção de mudanças, segmentação de objetos, análise preditiva espacial, validação de modelos (matriz de confusão, acurácia, Kappa).</p>
@@ -1055,7 +1133,7 @@ a:hover{color:var(--accent);opacity:.92}
             <li class="card-item">
               <h3 onclick="toggleTimeline(this)">Governança & Qualidade de Dados</h3>
               <div class="timeline-content">
-                <p class="text-muted"><strong>Metadata & Catalogação:</strong> Documentação de datasets com padrões ISO 19115/19139, GeoNetwork para catalogação, registro de linhagem de dados (proveniência).</p>
+                <p class="text-muted"><strong>Metadados & Catalogação:</strong> Documentação de conjuntos de dados conforme os padrões ISO 19115/19139, uso do GeoNetwork para catalogação e registro da linhagem dos dados (proveniência).</p>
                 <p class="text-muted"><strong>Versionamento:</strong> Git para código e scripts, controle de versões de shapefiles/GeoJSON, histórico de alterações em bancos de dados (triggers de auditoria).</p>
                 <p class="text-muted"><strong>Qualidade:</strong> Validação topológica de geometrias, detecção de overlaps/gaps, análise de completude, acurácia posicional, documentação reprodutível com Jupyter Notebooks/R Markdown.</p>
               </div>
@@ -1063,7 +1141,7 @@ a:hover{color:var(--accent);opacity:.92}
             <li class="card-item padding-0">
               <h3 onclick="toggleTimeline(this)">Office & Produtividade</h3>
               <div class="timeline-content">
-                <p class="text-muted"><strong>Microsoft Office:</strong> Word (elaboração de relatórios técnicos com alta complexidade, formatação ABNT, revisões colaborativas), PowerPoint (apresentações executivas com infográficos, mapas e dashboards), Excel (análise de dados com tabelas dinâmicas, fórmulas avançadas, macros VBA, integração com Power Query), Outlook (gestão de emails, calendários e tarefas).</p>
+                <p class="text-muted"><strong>Microsoft Office:</strong> Word (elaboração de relatórios técnicos de alta complexidade, formatação segundo as normas da ABNT e revisões colaborativas), PowerPoint (apresentações executivas com infográficos, mapas e dashboards), Excel (análise de dados com tabelas dinâmicas, fórmulas avançadas, macros VBA e integração com Power Query) e Outlook (gestão de e-mails, calendários e tarefas).</p>
                 <p class="text-muted"><strong>Outras Ferramentas:</strong> Google Workspace (Docs, Sheets, Slides para colaboração em tempo real), Markdown (documentação técnica), LaTeX (documentos científicos), Notion/Obsidian (gestão de conhecimento).</p>
               </div>
             </li>
@@ -1112,8 +1190,8 @@ a:hover{color:var(--accent);opacity:.92}
               <p class="meta">Julho/2025 – Atual</p>
               <div class="timeline-content">
                 <ul>
-                  <li><strong>Arquitetura de portfólio operacional:</strong> Desenvolveu e arquitetou <strong>13 aplicações web em produção</strong>, processando <strong>1,36 milhões de registros geoespaciais</strong> (base Infosiga 2014-2026 com 92,3% geolocalizados).</li>
-                  <li><strong>Monitoramento territorial integrado:</strong> Mapa interativo com <strong>4.583 trechos rodoviários estaduais</strong> e <strong>1.618 unidades críticas de risco climático</strong> (encosta + inundação) com previsão WRF 96h.</li>
+                  <li><strong>Arquitetura de portfólio operacional:</strong> Desenvolveu e arquitetou <strong>13 aplicações web em produção</strong>, processando <strong>1,36 milhão de registros geoespaciais</strong> (base Infosiga 2014–2026, com 92,3% dos registros geolocalizados).</li>
+                  <li><strong>Monitoramento territorial integrado:</strong> Mapa interativo com <strong>4.583 trechos rodoviários estaduais</strong> e <strong>1.618 unidades críticas de risco climático</strong> (encostas e inundações), com previsão WRF para 96 horas.</li>
                   <li><strong>Pipelines de dados públicos:</strong> Integração de <strong>4+ fontes heterogêneas</strong> em tempo real (MERGE/INPE chuva, PPDC defesa civil, RF INPE incêndios, ViaCEP/OSM). Stack: Python (GeoPandas, Rasterio, FastAPI), PostgreSQL/PostGIS, Leaflet, Docker, IA.</li>
                 </ul>
               </div>
@@ -1144,13 +1222,13 @@ a:hover{color:var(--accent);opacity:.92}
             </div>
           </div>
           <div class="timeline-item">
-            <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span>Stantec — Consultor Técnico (Remoto - Bélgica)</h3>
+            <h3 onclick="toggleTimeline(this)"><span class="expand-icon">▶</span>Stantec — Consultor Técnico (remoto — Bélgica)</h3>
             <p class="meta">Jan/2024 – Mar/2024</p>
             <div class="timeline-content">
               <ul>
                 <li><strong>Consultoria internacional:</strong> Prestou serviços remotos para Stantec em operações na Bélgica, demonstrando capacidade em contexto europeu e multidisciplinar.</li>
                 <li><strong>Análise geoespacial:</strong> Executou coleta, processamento e análise com sensoriamento remoto; aplicou classificação supervisionada e análise de mudanças em contexto europeu.</li>
-                <li><strong>Colaboração global:</strong> Integrou com equipes internacionais, documentou em inglês técnico, entregou relatórios em padrão global.</li>
+                <li><strong>Colaboração global:</strong> Integrou-se a equipes internacionais, produziu documentação em inglês técnico e entregou relatórios segundo padrões globais.</li>
               </ul>
             </div>
           </div>
@@ -1160,8 +1238,8 @@ a:hover{color:var(--accent);opacity:.92}
             <div class="timeline-content">
               <ul>
                 <li><strong>Monitoramento territorial:</strong> Modelou produtividade de grãos em <strong>território nacional</strong> (plantas vs pixels), aplicando Google Earth Engine e séries temporais Sentinel/Landsat.</li>
-                <li><strong>Suporte a decisão:</strong> Elaborou bases geoespaciais de áreas plantadas, gerando inteligência de risco climático para <strong>múltiplos clientes</strong> em negociação de commodities.</li>
-                <li><strong>Projetos ESG:</strong> Desenvolveu monitoring ambiental com sensoriamento remoto; validou acurácia temática e produziu relatórios de sustentabilidade.</li>
+                <li><strong>Suporte à decisão:</strong> Elaborou bases geoespaciais de áreas plantadas, gerando inteligência sobre riscos climáticos para <strong>múltiplos clientes</strong> envolvidos na negociação de commodities.</li>
+                <li><strong>Projetos ESG:</strong> Desenvolveu monitoramento ambiental com sensoriamento remoto, validou a acurácia temática e produziu relatórios de sustentabilidade.</li>
                 <li><strong>P&D:</strong> Liderou busca de novas tecnologias (cloud, ML, IA) para otimizar pipelines e elevar produtividade técnica.</li>
               </ul>
             </div>
@@ -1196,7 +1274,7 @@ a:hover{color:var(--accent);opacity:.92}
               <ul>
                 <li><strong>Planejamento territorial:</strong> Planejou <strong>30+ empreendimentos rurais</strong> em MT; elaborou e executou <strong>PRAD</strong> em APP e reserva legal, atendendo conformidade ambiental de grandes propriedades.</li>
                 <li><strong>Liderança operacional:</strong> Coordenou <strong>equipes multidisciplinares</strong> para monitoramento, licenciamento ambiental e otimização de processos; alcançou <strong>100% de conformidade</strong> regulatória em projetos.</li>
-                <li><strong>Gestão regulatória:</strong> Gerenciou <strong>processos administrativos complexos</strong> junto a INCRA, IBAMA, SEMA-MT; conduziu <strong>inventários florestais</strong> em florestas nativas com alta precisão.</li>
+                <li><strong>Gestão regulatória:</strong> Gerenciou <strong>processos administrativos complexos</strong> junto ao INCRA, ao IBAMA e à SEMA-MT; conduziu <strong>inventários florestais</strong> em florestas nativas com alta precisão.</li>
                 <li><strong>Expertise ambiental:</strong> Elaborou <strong>Cadastros Ambientais Rurais (CAR)</strong>, PMFS/PEF, georreferenciamento INCRA, laudos técnicos, EIA/RIMA conforme normas técnicas.</li>
                 <li><strong>Análise geoespacial:</strong> Desenvolveu mapas SIG (QGIS, ArcGIS, ENVI) para quantificação de dinâmicas de desmatamento, fogo florestal e mudanças de cobertura.</li>
               </ul>
@@ -1209,64 +1287,92 @@ a:hover{color:var(--accent);opacity:.92}
         <div class="card mb-24">
           <h2 class="mb-16">Publicações</h2>
           <ul class="timeline">
-            <li class="card-item">
-              <h3><a href="https://doi.org/10.1016/j.foreco.2022.120170" rel="noopener">Assessing logging legislation parameters and forest growth dissimilarities in the Brazilian Amazon</a></h3>
-              <div class="timeline-content">
-                <p class="meta">Forest Ecology and Management, v. 513 · 2022</p>
-                <p class="text-muted">DO PRADO CAPANEMA, VINICIUS; ESCADA, MARIA ISABEL SOBRAL; ANDRADE, PEDRO R.; LANDINI, LUCAS GUSTAVO. Assessing logging legislation parameters and forest growth dissimilarities in the Brazilian Amazon. Forest Ecology and Management, v. 513, p. 120170, 2022.</p>
-                <p class="text-muted">DOI: <a href="http://dx.doi.org/10.1016/j.foreco.2022.120170" target="_blank" rel="noopener">10.1016/j.foreco.2022.120170</a></p>
+            <li class="card-item publication-card-item">
+              <div class="publication-layout">
+                <a class="publication-visual" href="https://doi.org/10.1016/j.foreco.2022.120170" rel="noopener">
+                  <img src="./assets/docs/v07/public/static/img/forest_management.gif" alt="Capa da revista Forest Ecology and Management">
+                </a>
+                <div class="publication-copy">
+                  <h3><a href="https://doi.org/10.1016/j.foreco.2022.120170" rel="noopener">Assessing logging legislation parameters and forest growth dissimilarities in the Brazilian Amazon</a></h3>
+                  <p class="publication-meta-line"><strong>Revista:</strong> Forest Ecology and Management · <strong>DOI.ORG:</strong> <a href="https://doi.org/10.1016/j.foreco.2022.120170" rel="noopener">10.1016/j.foreco.2022.120170</a> · <strong>Volume/Número:</strong> 513 / 120170 · <strong>Ano:</strong> 2022</p>
+                </div>
               </div>
             </li>
-            <li class="card-item">
-              <h3><a href="https://doi.org/10.5380/raega.v51i0.73066" rel="noopener">Relationship between non-photosynthetic vegetation, intensity of fire and fire radiative power in the Amazon</a></h3>
-              <div class="timeline-content">
-                <p class="meta">RA'E GA (UFPR), v. 52 · 2021</p>
-                <p class="text-muted">CAPANEMA, VINICIUS; DE SOUZA, GREISON MOREIRA; LEITE SILVA JUNIOR, CELSO HENRIQUE. Relationship between non-photosynthetic vegetation, intensity of fire and fire radiative power in the Amazon. RA'E GA (UFPR), v. 52, p. 3, 2021.</p>
-                <p class="text-muted">DOI: <a href="http://dx.doi.org/10.5380/raega.v51i0.73066" target="_blank" rel="noopener">10.5380/raega.v51i0.73066</a></p>
+            <li class="card-item publication-card-item">
+              <div class="publication-layout">
+                <a class="publication-visual" href="https://revistas.ufpr.br/raega/article/view/73066" rel="noopener">
+                  <img src="./assets/docs/v07/public/static/img/raega.png" alt="Identidade visual da revista Ra'e Ga: o Espaço Geográfico em Análise">
+                </a>
+                <div class="publication-copy">
+                  <h3><a href="https://doi.org/10.5380/raega.v51i0.73066" rel="noopener">RELATIONSHIP BETWEEN NON-PHOTOSYNTHETIC VEGETATION, INTENSITY OF FIRE AND FIRE RADIATIVE POWER IN THE AMAZON</a></h3>
+                  <p class="publication-meta-line"><strong>Revista:</strong> Ra'e Ga: o Espaço Geográfico em Análise · <strong>DOI.ORG:</strong> <a href="https://doi.org/10.5380/raega.v51i0.73066" rel="noopener">10.5380/raega.v51i0.73066</a> · <strong>Volume/Número:</strong> 52 / edição temática · <strong>Ano:</strong> 2021</p>
+                </div>
               </div>
             </li>
-            <li class="card-item">
-              <h3><a href="https://doi.org/10.14393/rbcv70n1-45254" rel="noopener">Mapeamento de padrões de intensidade da degradação florestal: estudo de caso na região de Sinop, Mato Grosso</a></h3>
-              <div class="timeline-content">
-                <p class="meta">RBC. Revista Brasileira de Cartografia (Online), v. 70 · 2018</p>
-                <p class="text-muted">CAPANEMA, VINICIUS; PINHEIRO, TAISE; ESCADA, MARIA ISABEL; SANT'ANNA, SIDNEI. Mapeamento de padrões de intensidade da degradação florestal: estudo de caso na região de Sinop, Mato Grosso. RBC. Revista Brasileira de Cartografia (Online), v. 70, p. 199-225, 2018.</p>
-                <p class="text-muted">DOI: <a href="http://dx.doi.org/10.14393/rbcv70n1-45254" target="_blank" rel="noopener">10.14393/rbcv70n1-45254</a></p>
+            <li class="card-item publication-card-item">
+              <div class="publication-layout">
+                <a class="publication-visual" href="https://seer.ufu.br/index.php/revistabrasileiracartografia/article/view/45254" rel="noopener">
+                  <img src="./assets/docs/v07/public/static/img/rbc.png" alt="Capa da edição da Revista Brasileira de Cartografia">
+                </a>
+                <div class="publication-copy">
+                  <h3><a href="https://doi.org/10.14393/rbcv70n1-45254" rel="noopener">Mapeamento de padrões de intensidade da degradação florestal: estudo de caso na região de Sinop, Mato Grosso</a></h3>
+                  <p class="publication-meta-line"><strong>Revista:</strong> Revista Brasileira de Cartografia · <strong>DOI.ORG:</strong> <a href="https://doi.org/10.14393/rbcv70n1-45254" rel="noopener">10.14393/rbcv70n1-45254</a> · <strong>Volume/Número:</strong> 70 / 1 · <strong>Ano:</strong> 2018</p>
+                </div>
               </div>
             </li>
-            <li class="card-item">
-              <h3><a href="https://www.researchgate.net/publication/343211425_Characterization_of_municipalities_in_the_timber_production_chain_in_the_north_of_Mato_Grosso_Brazil" rel="noopener">Characterization of municipalities in the timber production chain</a></h3>
-              <div class="timeline-content">
-                <p class="meta">XXV IUFRO World Congress · 2019</p>
-                <p class="text-muted">CAPANEMA, V. P.; ESCADA, M. I. S. Characterization of municipalities in the timber production chain in the north of Mato Grosso, Brazil. In: CONGRESSO MUNDIAL DA IUFRO, Curitiba, PR. 2019.</p>
+            <li class="card-item publication-card-item">
+              <div class="publication-layout">
+                <a class="publication-visual" href="https://www.researchgate.net/publication/343211425_Characterization_of_municipalities_in_the_timber_production_chain_in_the_north_of_Mato_Grosso_Brazil" rel="noopener">
+                  <img src="./assets/docs/v07/public/static/img/iufro.jpg" alt="Arte oficial do XXV IUFRO World Congress">
+                </a>
+                <div class="publication-copy">
+                  <h3><a href="https://www.researchgate.net/publication/343211425_Characterization_of_municipalities_in_the_timber_production_chain_in_the_north_of_Mato_Grosso_Brazil" rel="noopener">Characterization of municipalities in the timber production chain in the north of Mato Grosso, Brazil</a></h3>
+                  <p class="publication-meta-line"><strong>Evento/Anais:</strong> XXV IUFRO World Congress · <strong>Registro:</strong> publicação em congresso · <strong>Volume/Número:</strong> anais do evento · <strong>Ano:</strong> 2019</p>
+                </div>
               </div>
             </li>
-            <li class="card-item">
-              <h3><a href="https://www.morressier.com/o/event/5d3b15afea7c83e515cbf1f7/article/5d5fdb2dea7c83e515cbf472" rel="noopener">Padrões da paisagem associados ao extrativismo na Amazônia</a></h3>
-              <div class="timeline-content">
-                <p class="meta">XXV IUFRO World Congress · 2019</p>
-                <p class="text-muted">SOUZA, A. R.; ESCADA, M. I. S.; SANTOS, G. V. S.; MONTEIRO, A. M. V.; CAPANEMA, V. P. Padrões da paisagem associados ao extrativismo na Amazônia: caracterização e mapeamento de áreas potenciais de ocorrência de açaí no nordeste Paraense. In: CONGRESSO MUNDIAL DA IUFRO, Curitiba, PR. 2019.</p>
+            <li class="card-item publication-card-item">
+              <div class="publication-layout">
+                <a class="publication-visual" href="https://www.morressier.com/o/event/5d3b15afea7c83e515cbf1f7/article/5d5fdb2dea7c83e515cbf472" rel="noopener">
+                  <img src="./assets/docs/v07/public/static/img/iufro.jpg" alt="Arte oficial do XXV IUFRO World Congress">
+                </a>
+                <div class="publication-copy">
+                  <h3><a href="https://www.morressier.com/o/event/5d3b15afea7c83e515cbf1f7/article/5d5fdb2dea7c83e515cbf472" rel="noopener">Padrões da paisagem associados ao extrativismo na Amazônia: caracterização e mapeamento de áreas potenciais de ocorrência de açaí no nordeste Paraense</a></h3>
+                  <p class="publication-meta-line"><strong>Evento/Anais:</strong> XXV IUFRO World Congress · <strong>Registro:</strong> publicação em congresso · <strong>Volume/Número:</strong> anais do evento · <strong>Ano:</strong> 2019</p>
+                </div>
               </div>
             </li>
-            <li class="card-item">
-              <h3><a href="http://urlib.net/rep/8JMKD3MGP6W34M/3U67378" rel="noopener">Comparação entre TerraClass Amazônia e MapBiomas</a></h3>
-              <div class="timeline-content">
-                <p class="meta">Anais do XIX Simpósio Brasileiro de Sensoriamento Remoto · 2019</p>
-                <p class="text-muted">CAPANEMA, V. P.; SANCHES, I. D.; ESCADA, M. I. S. Comparação entre os produtos temáticos de uso e cobertura da terra do TerraClass Amazônia e MapBiomas: teste de aderência entre classes. In: SIMPÓSIO BRASILEIRO DE SENSORIAMENTO REMOTO, 19. (SBSR), 2019, Santos. Anais... São José dos Campos: INPE, 2019. p. 724-727. ISBN 978-85-17-00097-3.</p>
-                <p class="text-muted"><a href="http://urlib.net/rep/8JMKD3MGP6W34M/3U67378" target="_blank" rel="noopener">http://urlib.net/rep/8JMKD3MGP6W34M/3U67378</a></p>
+            <li class="card-item publication-card-item">
+              <div class="publication-layout">
+                <a class="publication-visual" href="http://urlib.net/rep/8JMKD3MGP6W34M/3U67378" rel="noopener">
+                  <img src="./static/img/publications/sbsr-2019-capa.png" alt="Arte oficial dos anais do XIX Simpósio Brasileiro de Sensoriamento Remoto">
+                </a>
+                <div class="publication-copy">
+                  <h3><a href="http://urlib.net/rep/8JMKD3MGP6W34M/3U67378" rel="noopener">Comparação entre os produtos temáticos de uso e cobertura da terra do TerraClass Amazônia e MapBiomas: teste de aderência entre classes</a></h3>
+                  <p class="publication-meta-line"><strong>Evento/Anais:</strong> Anais do XIX Simpósio Brasileiro de Sensoriamento Remoto · <strong>Registro:</strong> ISBN 978-85-17-00097-3 · <strong>Volume/Número:</strong> XIX edição / p. 724-727 · <strong>Ano:</strong> 2019</p>
+                </div>
               </div>
             </li>
-            <li class="card-item">
-              <h3><a href="https://proceedings.science/sbsr/trabalhos/degradacao-florestal-na-amazonia-geracao-de-um-indicador-espacial-de-suscetibili?lang=pt-br" rel="noopener">Degradação Florestal na Amazônia: indicador espacial</a></h3>
-              <div class="timeline-content">
-                <p class="meta">XVIII Simpósio Brasileiro de Sensoriamento Remoto - SBSR · 2017</p>
-                <p class="text-muted">CAPANEMA, V. P.; ESCADA, M. I. S. Degradação Florestal na Amazônia: Geração de um Indicador Espacial de Suscetibilidade à Degradação Florestal. In: XVIII Simpósio Brasileiro de Sensoriamento Remoto - SBSR, Santos, 2017.</p>
+            <li class="card-item publication-card-item">
+              <div class="publication-layout">
+                <a class="publication-visual" href="https://proceedings.science/sbsr/trabalhos/degradacao-florestal-na-amazonia-geracao-de-um-indicador-espacial-de-suscetibili?lang=pt-br" rel="noopener">
+                  <img src="./static/img/publications/sbsr-2017-capa.jpg" alt="Capa dos anais do XVIII Simpósio Brasileiro de Sensoriamento Remoto">
+                </a>
+                <div class="publication-copy">
+                  <h3><a href="https://proceedings.science/sbsr/trabalhos/degradacao-florestal-na-amazonia-geracao-de-um-indicador-espacial-de-suscetibili?lang=pt-br" rel="noopener">Degradação Florestal na Amazônia: Geração de um Indicador Espacial de Suscetibilidade à Degradação Florestal</a></h3>
+                  <p class="publication-meta-line"><strong>Evento/Anais:</strong> Anais do XVIII Simpósio Brasileiro de Sensoriamento Remoto - SBSR · <strong>Registro:</strong> ISBN 978-85-17-00088-1 · <strong>Volume/Número:</strong> XVIII edição / proceedings · <strong>Ano:</strong> 2017</p>
+                </div>
               </div>
             </li>
-            <li class="card-item padding-0">
-              <h3><a href="https://proceedings.science/sbsr/trabalhos/cicatrizes-de-queimadas-e-padroes-de-mudancas-de-uso-e-cobertura-da-terra-no-sud?lang=pt-br" rel="noopener">Cicatrizes de queimadas e mudanças de uso da terra no Pará</a></h3>
-              <div class="timeline-content">
-                <p class="meta">XVIII Simpósio Brasileiro de Sensoriamento Remoto - SBSR · 2017</p>
-                <p class="text-muted">SOUZA, G. M.; CAPANEMA, V. P.; ESCADA, M. I. S. Cicatrizes de queimadas e padrões de mudanças de uso e cobertura da terra no sudoeste do estado do Pará, Brasil. In: XVIII Simpósio Brasileiro de Sensoriamento Remoto - SBSR, Santos, 2017.</p>
+            <li class="card-item publication-card-item padding-0">
+              <div class="publication-layout">
+                <a class="publication-visual" href="https://proceedings.science/sbsr/trabalhos/cicatrizes-de-queimadas-e-padroes-de-mudancas-de-uso-e-cobertura-da-terra-no-sud?lang=pt-br" rel="noopener">
+                  <img src="./static/img/publications/sbsr-2017-capa.jpg" alt="Capa dos anais do XVIII Simpósio Brasileiro de Sensoriamento Remoto">
+                </a>
+                <div class="publication-copy">
+                  <h3><a href="https://proceedings.science/sbsr/trabalhos/cicatrizes-de-queimadas-e-padroes-de-mudancas-de-uso-e-cobertura-da-terra-no-sud?lang=pt-br" rel="noopener">Cicatrizes de queimadas e padrões de mudanças de uso e cobertura da terra no sudoeste do estado do Pará, Brasil</a></h3>
+                  <p class="publication-meta-line"><strong>Evento/Anais:</strong> Anais do XVIII Simpósio Brasileiro de Sensoriamento Remoto - SBSR · <strong>Registro:</strong> ISBN 978-85-17-00088-1 · <strong>Volume/Número:</strong> XVIII edição / proceedings · <strong>Ano:</strong> 2017</p>
+                </div>
               </div>
             </li>
           </ul>
@@ -1277,11 +1383,13 @@ a:hover{color:var(--accent);opacity:.92}
 
   <section class="section reveal">
     <div class="card mb-24">
-      <h2 class="mb-16">VPC‑GEOSER — Soluções Geoespaciais</h2>
-      <p><strong>Sócio Fundador</strong> da VPC‑GEOSER, startup especializada em transformar dados geoespaciais em decisões estratégicas. A empresa desenvolve <strong>soluções integradas de geoprocessamento, sensoriamento remoto e análise de dados</strong> aplicadas a infraestrutura, gestão ambiental e sustentabilidade.</p>
-      <p>Com foco em <strong>tecnologias em nuvem</strong> e <strong>arquiteturas de dados escaláveis</strong>, a VPC‑GEOSER entrega sistemas de monitoramento territorial, análise de impacto ambiental, modelagem preditiva e dashboards interativos — conectando dados brutos a insights acionáveis para tomadores de decisão.</p>
+      <h2 class="mb-16">VPC-WEBSISTEMAS E GEOINFORMAÇÃO</h2>
+      <p><strong>Inteligência em geoprocessamento e sensoriamento remoto.</strong></p>
+      <p><strong>Fundador, CEO e responsável técnico</strong> da VPC-WEBSISTEMAS E GEOINFORMAÇÃO, empresa especializada em transformar dados geoespaciais em decisões estratégicas. A empresa desenvolve <strong>soluções integradas de geoprocessamento, sensoriamento remoto e análise de dados</strong> aplicadas à infraestrutura, à gestão ambiental e à sustentabilidade.</p>
+      <p>Com foco em <strong>tecnologias em nuvem</strong> e <strong>arquiteturas de dados escaláveis</strong>, a VPC-WEBSISTEMAS E GEOINFORMAÇÃO entrega sistemas de monitoramento territorial, análise de impacto ambiental, modelagem preditiva e dashboards interativos — conectando dados brutos a insights acionáveis para tomadores de decisão.</p>
+      <p><strong>Endereço oficial:</strong> <a href="https://www.vpc-websistemas.com.br/" target="_blank" rel="noopener noreferrer">www.vpc-websistemas.com.br</a></p>
       <blockquote class="quote">
-        <strong>Visão:</strong> Democratizar o acesso a inteligência geoespacial, permitindo que organizações públicas e privadas tomem decisões baseadas em dados e contribuam para a sustentabilidade territorial.
+        <strong>Visão:</strong> Democratizar o acesso à inteligência geoespacial, permitindo que organizações públicas e privadas tomem decisões baseadas em dados e contribuam para a sustentabilidade territorial.
       </blockquote>
       <div class="hero-actions mt-24">
         <a class="btn btn-primary" href="./portfolio.html">Ver Portfólio</a>
@@ -1308,7 +1416,7 @@ a:hover{color:var(--accent);opacity:.92}
       <a class="btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false"><i class="bi bi-arrow-up"></i> Voltar ao Topo</a>
     </div>
     Currículo eletrônico de Vinicius Capanema<br>
-    Desenvolvido e implementado por VPC‑GEOSER 2025
+    Desenvolvido e implementado por VPC-WEBSISTEMAS E GEOINFORMAÇÃO 2025
   </footer>
 
 <script>
